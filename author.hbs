@@ -1,0 +1,54 @@
+{{!< default}}
+
+{{#author}}
+    <div class="author-banner-area">
+        <div class="container">
+            <div class="author-banner-content">
+                <div class="thumb">
+                    {{#if profile_image}}
+                        <img src="{{img_url profile_image}}" alt="{{name}}'s Picture" />
+                    {{/if}}
+                </div>
+                <div class="content">
+                    <h2>{{name}}</h2>
+                    {{#if location}}
+                        <p>{{location}}</p>
+                    {{/if}}
+                    <ul>
+                        {{#if twitter}}
+                            <li><a href="{{twitter_url}}">{{> icons/twitter}}</a></li>
+                        {{/if}}
+                        {{#if website }}
+                            <li><a href="{{website}}">{{> icons/linkedIn}}</a></li>
+                        {{/if}}
+                        {{#if facebook}}
+                            <li><a href="{{facebook_url}}">{{> icons/facebook}}</a></li>
+                        {{/if}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/author}}
+
+
+<div class="blog-area">
+    <div class="container">
+        <div class="home-card-wrapper js-post-wrapper">
+            {{#foreach posts}}
+                 {{> post-card extra_class="js-post-card"}}
+            {{/foreach}}
+        </div>
+        <div class="stories-loadMore show-more-box">
+            <a href="#" class="outline-btn show-more">Load More Articles</a>
+        </div>
+    </div>
+</div>
+
+{{!-- Sign Up Area Start --}}
+<div class="sign-up-area blog-signup">
+    <div class="container">
+        {{> sign-up}}
+    </div>
+</div>
+{{!-- Sign Up Area End --}}

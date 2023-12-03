@@ -1,0 +1,72 @@
+{{!-- Header Start --}}
+<header class="header-area py-5 lg:py-0 {{#is "post"}}post-header{{/is}}{{#is "tag"}}tag-header{{/is}}">
+    <div class="container">
+        <div class="header-wrapper flex items-center justify-between gap-5">
+            <a href="{{@site.url}}" class="logo">
+                {{#if @site.logo}}
+                    <img src="{{@site.logo}}" alt="{{@site.title}}">
+                    {{else}}
+                    <h2>{{@site.title}}</h2>
+                {{/if}}
+            </a>
+            <div class="main-menu">
+                <ul>
+                    <li>
+                        <a href="#">Fertility Check</a>
+                        <ul class="sub-menu hidden">
+                            <li><a href="#">Employee HUB</a></li>
+                            <li><a href="#">Employee Database</a></li>
+                            <li><a href="#">Payroll</a></li>
+                            <li><a href="#">Absences</a></li>
+                            <li><a href="#">Time Tracking</a></li>
+                            <li><a href="#">Shift planner</a></li>
+                            <li><a href="#">Recruiting</a></li>
+                            <li><a href="#">Performance & Goals</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Behandlungen </a>
+                        <ul class="sub-menu hidden">
+                            <li><a href="#">Financial Services</a></li>
+                            <li><a href="#">Public Sector</a></li>
+                            <li><a href="#">Communications</a></li>
+                            <li><a href="#">Manufacturing</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Warum Cada</a></li>
+                    <li>
+                        <a href="#">Ressourcen</a>
+                        <ul class="sub-menu hidden">
+                            <li><a href="#">Financial Services</a></li>
+                            <li><a href="#">Public Sector</a></li>
+                            <li><a href="#">Communications</a></li>
+                            <li><a href="#">Manufacturing</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Mehr</a>
+                        <ul class="sub-menu hidden">
+                            <li><a href="#">Financial Services</a></li>
+                            <li><a href="#">Public Sector</a></li>
+                            <li><a href="#">Communications</a></li>
+                            <li><a href="#">Manufacturing</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-right">
+                <a class="btn-primary" href="#">Kostenfreie Beratung</a>
+                <div class="hamgurger">
+                    <ul class="hmbrgr-icon">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- Progress Bar for posts --}}
+    {{#is "post"}}<div class="progress-bar"></div>{{/is}}
+</header>
+{{!-- Header End --}}

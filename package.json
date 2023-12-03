@@ -1,0 +1,67 @@
+{
+    "name": "cada",
+    "description": "it's a ghost cada theme",
+    "version": "1.0.0",
+    "license": "MIT",
+    "author": {
+        "email": "support@electronthemes.com",
+        "name": "Electronthemes"
+    },
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "scripts": {
+        "dev": "npx tailwindcss -i ./assets/src/style.css -o ./assets/css/style.css --watch"
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme"
+    ],
+    "config": {
+        "posts_per_page": 12,
+        "image_sizes": {
+            "xxs": {
+                "width": 30
+            },
+            "xs": {
+                "width": 100
+            },
+            "s": {
+                "width": 300
+            },
+            "m": {
+                "width": 600
+            },
+            "l": {
+                "width": 1000
+            },
+            "xl": {
+                "width": 2000
+            }
+        },
+        "card_assets": {
+            "exclude": [
+                "bookmark",
+                "gallery"
+            ]
+        },
+        "custom": {
+            "video_title": {
+                "type": "text",
+                "default": "How To Recruit Passive Candidates"
+            },
+            "video_description": {
+                "type": "text",
+                "default": "Despite being under contract at their current job, passive talent can be incredibly desirable job candidates. In this article, we're going to outline the process of recruiting and onboarding passive talent as well as the potential benefits of doing so."
+            }
+        }
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.3.5"
+    },
+    "dependencies": {
+        "@tailwindcss/typography": "^0.5.10"
+    }
+}

@@ -1,0 +1,81 @@
+
+<footer class="pt-[30px] sm:pt-10 lg:pt-[60px]">
+    <div class="footer-area">
+        <div class="container">
+            <div class="max-w-[1224px] mx-auto">
+                <div class="flex items-start justify-between gap-10 flex-col md:flex-row">
+                    <div class="w-full md:w-auto flex flex-col xs:flex-row md:flex-col justify-center xs:justify-between gap-5 md:gap-0 items-center xs:items-stretch">
+                        <a href="{{@site.url}}" class="logo">
+                            {{#if @site.logo}}
+                                <img src="{{@site.logo}}" alt="{{@site.title}}">
+                            {{/if}}
+                        </a>
+                        <ul class="flex items-center gap-5 md:mt-6">
+                            <li class=""><a href="https://instagram.com/cadafertility" target="_blank">
+                                {{> icons/insta}}
+                            </a></li>
+                            <li class=""><a href="https://www.facebook.com/cadafertility" target="_blank">
+                                {{> icons/facebook}}
+                            </a></li>
+                            <li class=""><a href="https://www.linkedin.com/company/cadafertility" target="_blank">
+                                {{> icons/linkedIn}}
+                            </a></li>
+                            <li class=""><a href="#" target="_blank">
+                                {{> icons/twitter}}
+                            </a></li>
+                        </ul>
+                        <div class="mt-12 hidden md:block">
+                            <p>Kunden-App jetzt verfügbar</p>
+                            <ul class="flex gap-4 mt-4">
+                                <li><a href="https://cada-blog-staging.clients-mvst.co/_astro/app-store.a2ac0a5a.webp" target="_blank"><img src="{{asset "/img/app-store.svg"}}" alt="appstore"></a></li>
+                                <li><a href="https://play.google.com/store/apps/details?id=com.cada.fertility" target="_blank"><img src="{{asset "/img/google-play.svg"}}" alt="playstore"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="max-w-full md:max-w-[810px] w-full grid grid-cols-2 sm:grid-cols-4 gap-y-8 gap-x-6">
+                        <div class="w-full">
+                            <h6 class="font-inter text-dark font-medium text-lg mb-5 sm:mb-7 leading-none tracking-[-0.18px]">Dienstleistungen</h6>
+                            <ul class="footer-menu flex flex-col gap-4 text-pragrapgh text-sm xs:text-base leading-none tracking-[-0.16px]">
+                                <li class="du duration-300 transform hover:text-primary hover:translate-x-2"><a href="#">Fruchtbarkeitsanalyse</a></li>
+                                <li class="du duration-300 transform hover:text-primary hover:translate-x-2"><a href="#">Hormontherapie</a></li>
+                                <li class="du duration-300 transform hover:text-primary hover:translate-x-2"><a href="#">IUI</a></li>
+                                <li class="du duration-300 transform hover:text-primary hover:translate-x-2"><a href="#">IVF</a></li>
+                                <li class="du duration-300 transform hover:text-primary hover:translate-x-2"><a href="#">Soziales Einfrieren</a></li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h6 class="font-inter text-dark font-medium text-lg mb-5 sm:mb-7 leading-none tracking-[-0.18px]">Unternehmen</h6>
+                            <ul class="footer-menu flex flex-col gap-4 text-pragrapgh text-sm xs:text-base leading-none tracking-[-0.16px]">
+                                <li class="du duration-300 transform hover:text-primary hover:translate-x-2"><a href="#">Über uns</a></li>
+                                <li class="du duration-300 transform hover:text-primary hover:translate-x-2"><a href="#">Karriere</a></li>
+                                <li class="du duration-300 transform hover:text-primary hover:translate-x-2"><a href="#">Kontakt</a></li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h6 class="font-inter text-dark font-medium text-lg mb-5 sm:mb-7 leading-none tracking-[-0.18px]">Standorte</h6>
+                            <ul class="footer-menu flex flex-col gap-4 text-pragrapgh text-sm xs:text-base leading-none tracking-[-0.16px]">
+                                <li class="du duration-300 transform hover:text-primary hover:translate-x-2"><a href="#">Zurich Bleicherweg</a></li>
+                                <li class="du duration-300 transform hover:text-primary hover:translate-x-2"><a href="#">Zurich Bellerive</a></li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h6 class="font-inter text-dark font-medium text-lg mb-5 sm:mb-7 leading-none tracking-[-0.18px]">Mehr</h6>
+                            <ul class="footer-menu flex flex-col gap-4 text-pragrapgh text-sm xs:text-base leading-none tracking-[-0.16px]">
+                                <li class="du duration-300 transform hover:text-primary hover:translate-x-2"><a href="#">Blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {{!-- Copy Right --}}
+                <div class="flex flex-col md:flex-row items-center justify-center md:justify-between gap-5 mt-10 border-t border-[#ECECEC] py-5 sm:py-10">
+                    <p class="flex-1 text-center md:text-left">© 2023 CADA. Alle Rechte vorbehalten.</p>
+                    <div class="max-w-[510px] w-full flex gap-3 sm:gap-5 justify-center xs:justify-between flex-wrap sm:flex-nowrap -order-1 md:order-last">
+                        <a class=" text-sm leading-none text-[#777C85] tracking-[-0.14px]" href="#">Cookie-Richtlinie</a>
+                        <a class=" text-sm leading-none text-[#777C85] tracking-[-0.14px]" href="#">Terms & amp; Bedingungen</a>
+                        <a class=" text-sm leading-none text-[#777C85] tracking-[-0.14px]" href="#">Datenschutzrichtlinie</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,25 @@
+<div class="single-card-item group">
+    
+        <div class="thumb h-[240px] relative rounded-2xl overflow-hidden">
+            {{#if feature_image}}
+                <a href="{{url}}" class="img">
+                    <img class="w-full h-full object-cover duration-500 transform group-hover:scale-110 " src="{{feature_image}}" alt="{{title}}">
+                </a>
+            {{/if}}
+            {{#primary_tag}}
+                <a href="{{url}}" class="a absolute top-3 left-3 z-10 py-[10px] px-3 bg-[#fff] text-xs text-pragrapgh font-medium leading-none rounded-[32px]">{{name}}</a>
+            {{/primary_tag}}
+        </div>
+    
+    <div class="mt-4 sm:mt-6">
+        
+        <h3 class="text-xl leading-tight text-dark font-medium tracking-[-0.2px] font-inter"><a href="{{url}}">{{title}}</a></h3>
+        <ul class="flex items-center gap-5 mt-4 text-sm text-[#777C85]">
+            <li>{{date published_at format="MMMM DD, YYYY"}}</li>
+            <li class="flex items-center gap-[5px]">
+                {{> icons/clock}}
+                {{reading_time minute="1 min" minutes="% min"}}    
+            </li>
+        </ul>
+    </div>
+</div>
