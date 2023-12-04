@@ -6,7 +6,7 @@
                 {{#if @site.logo}}
                     <img src="{{@site.logo}}" alt="{{@site.title}}">
                     {{else}}
-                    <h2>{{@site.title}}</h2>
+                    <h2 class="site-title-if-no-logo">{{@site.title}}</h2>
                 {{/if}}
             </a>
             <div class="main-menu">
