@@ -27,7 +27,7 @@
         //============== Menu Icon ============== 
         menu_icon: function() {
             $('.main-menu ul li').each(function() {
-                if ($(this).children('.sub-menu').length) {
+                if ($(this).children('.sub-menu,.mega-menu').length) {
                     $(this).children('a')
                     .append(`<svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.792893 0.792893C1.18342 0.402369 1.81658 0.402369 2.2071 0.792893L5.49999 4.08579L8.79288 0.792893C9.1834 0.402369 9.81657 0.402369 10.2071 0.792893C10.5976 1.18342 10.5976 1.81658 10.2071 2.20711L6.2071 6.20711C5.81657 6.59763 5.18341 6.59763 4.79289 6.20711L0.792893 2.20711C0.402369 1.81658 0.402369 1.18342 0.792893 0.792893Z" fill="#3D4044"/></svg>
                     `);
@@ -50,8 +50,8 @@
             });
             $('.main-menu ul li').click(function(e) {
                 e.stopPropagation();
-                $(this).children('.sub-menu').slideToggle().parents('li').siblings().find('.sub-menu').slideUp();
-                $(this).toggleClass('active').siblings().removeClass('active').find('.sub-menu').slideUp();
+                $(this).children('.sub-menu,.mega-menu').slideToggle(200).parents('li').siblings().find('.sub-menu,.mega-menu').slideUp(200);
+                $(this).toggleClass('active').siblings().removeClass('active').find('.sub-menu,.mega-menu').slideUp(200);
             });
         },
 
@@ -178,6 +178,13 @@
                 
             });
         },
+
+        // Footer Menu 
+        footer_menu: () => {
+            $('.signle_footer_item_button').on('click', function() {
+                $(this).toggleClass('active').siblings().slideToggle();
+            })
+        },
     
         
         //================ Document click to hide elements ==================
@@ -185,14 +192,14 @@
             $(document).click(function() {
                 $('.hmbrgr-icon,.main-menu').removeClass('active');
                 $('.language-list').slideUp();
-                $('.sub-menu').slideUp().parents('li').removeClass('active');
+                $('.sub-menu,.mega-menu').slideUp().parents('li').removeClass('active');
                 $('.overlay').removeClass('overlay');
             })
         },
 
         init: function() {
             allfunction.menu_icon()
-            // allfunction.menu_toggle()
+            allfunction.menu_toggle()
             // allfunction.nav_tabs()
             allfunction.loadmore()
             allfunction.stopPropagationElements()
@@ -200,6 +207,7 @@
             allfunction.copyCode()
             allfunction.tocBot()
             allfunction.postContectImageGallery()
+            allfunction.footer_menu()
         },
     }
 

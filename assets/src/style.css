@@ -469,14 +469,61 @@ input {
         align-items: center;
         gap: 40px;
     }
-    .main-menu > ul li {
+    .main-menu > ul > li {
         padding: 35px 0px;
     }
-    .main-menu > ul li a {
+    .main-menu > ul > li > a {
         display: flex;
         align-items: center;
         gap: 5px;
     }
+    .main-menu > ul > li > a > svg {
+        transition: all .3s ease-in-out;
+    }
+    .main-menu > ul > li.active > a > svg {
+        transform: rotateX(180deg);
+    }
+    /* Sub Menu Mega Menu */
+    .mega-menu ,
+    .sub-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+        @apply bg-[#fff] rounded-[16px] overflow-hidden drop-shadow-lg p-[24px] w-[226px];
+
+        display: none;
+    }
+    .mega-menu li a > span,
+    .sub-menu li a > span {
+        display: flex;
+        align-items: center;
+        letter-spacing: -.14px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 22px;
+        color: #000000;
+        gap: 6px;
+    }
+    .mega-menu li a p,
+    .sub-menu li a p {
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 400;
+        margin-top: 4px;
+    }
+
+    .sub-menu ul {
+        @apply flex flex-col gap-4;
+    }
+    .mega-menu ul {
+        @apply grid gap-x-4 gap-y-5 grid-cols-2;
+    }
+    .mega-menu {
+        @apply w-[452px];
+    }
+    
 }
 @media screen and (max-width: 1199px) {
     .main-menu {
@@ -587,6 +634,37 @@ input {
     line-height: 1;
     font-family: 'Plus Jakarta Sans',
 }
+
+
+/* Footer */
+.signle_footer_item_button.active span {
+    transform: rotate(90deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*========================== 
@@ -945,6 +1023,7 @@ a.kg-bookmark-container {
     transition: 0s;
     @apply bg-[#FFF8F3] flex flex-col-reverse overflow-hidden border rounded-xl p-5;
 }
+.kg-bookmark-card {}
 
 .kg-bookmark-thumbnail img {
     @apply w-full;
