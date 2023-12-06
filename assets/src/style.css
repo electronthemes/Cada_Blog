@@ -429,7 +429,7 @@ input {
     transition: all 0.4s ease-out;
     color: #fff;
     letter-spacing: -0.16px; 
-    padding: 16px 24px;
+    padding: 14px 24px;
     border-radius: 8px;
 }
 .btn-primary::after {
@@ -462,6 +462,33 @@ input {
 }
 
 /* Header Style */
+.header-area.sticky-header {
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    right: 0;
+    top: 0;
+    animation-name: fadeInDown;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    box-shadow: 0px 20px 10px -18px rgba(0, 0, 0, 0.07);
+    background: #ffffff;
+}
+
+@keyframes fadeInDown {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+}
+
 .mega-menu ,
 .sub-menu {
     display: none;
@@ -487,6 +514,9 @@ input {
 
 
 @media screen and (min-width: 1199px) {
+    .header-area.sticky-header .main-menu > ul > li {
+        padding: 27px 0px;
+    }
     .main-menu > ul {
         display: flex;
         align-items: center;
@@ -499,6 +529,9 @@ input {
         display: flex;
         align-items: center;
         gap: 5px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #000;
     }
     .main-menu > ul > li > a > svg {
         transition: all .3s ease-in-out;
@@ -530,6 +563,9 @@ input {
     
 }
 @media screen and (max-width: 1199px) {
+    .header-area.sticky-header {
+        padding: 12px 0px;
+    }
     .hamgurger {
         display: flex;
         flex-direction: column;
@@ -544,6 +580,13 @@ input {
         width: 100%;
         height: 2px;
         background-color: #000;
+        transition: all .3s ease-in-out;
+    }
+    .hamgurger.active span.bottom {
+        transform: rotate(-45deg) translate(2px, -4px);
+    }
+    .hamgurger.active span.top {
+        transform: rotate(45deg) translate(0px, 3px);
     }
     .header-area {
         position: relative;
@@ -555,25 +598,95 @@ input {
         width: 444px;
         background-color: #ffffff;
         padding: 40px 0px;
-        max-height: calc(100vh - 96px);
-        
+        z-index: 9999;
+        transform: translateX(444px);
+        transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        opacity: 0;
+        visibility: hidden;
     }
-    .main-menu ul {
-        height: 100%;
+    .main-menu.active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    .main-menu > ul {
+        max-height: calc(100vh - 149px);
         overflow-y: auto;
+        @apply divide-y divide-[#D0D5DD];
     }
-    .main-menu > ul li {
-        padding: 15px 50px;
-
+    .main-menu > ul > li {
+        padding: 20px 50px;
+    }
+    .main-menu > ul > li > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1;
+        color: #000;
     }
     .mega-menu ,
     .sub-menu {
         padding-top: 15px;
     }
+    .mega-menu ul,
+    .sub-menu  ul {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    body {
+        position: relative;
+        z-index: 1;
+    }
+    body::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: #000000;
+        opacity: 0.7;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .3s ease-in-out;
+    }
+    body.overlay::before {
+        opacity: 0.4;
+        visibility: visible;
+    }
 }
 @media screen and (max-width: 575px) {
     .btn-primary {
-        padding: 14px 20px;
+        padding: 12px 20px;
+    }
+    .main-menu {
+        width: 100%;
+        padding: 20px 0px;
+    }
+    .main-menu > ul > li > a {
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .main-menu > ul > li {
+        padding: 20px 30px;
+    }
+    .main-menu ul .btn-primary {
+        font-size: 16px;
+        font-weight: 500;
+        text-align: center;
+        padding: 18px 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .main-menu > ul {
+        max-height: calc(100vh - 92px);
+    }
+    .main-menu {
+        transform: translateX(100%);
     }
 }
 
@@ -604,6 +717,7 @@ input {
     right: 0;
     top: 0;
     z-index: 999;
+    background-color: transparent;
 }
 
 /* Toc BOT */

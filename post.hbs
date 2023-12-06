@@ -14,14 +14,16 @@
             <div class="max-w-[1016px] mx-auto flex items-start gap-6 flex-col sm:flex-row relative">
                 <div class="sm:max-w-[288px] w-full sm:sticky sm:top-5">
                     <div class="toc-inner">
-                        <div class="toc-wrap">
-                            <h5 class="text-xl font-medium leading-none mb-5 font-inter">
+                        <div class="toc-wrap p-5 xs:p-8 sm:p-0 border sm:border-none border-[#DBE0E7] rounded-[20px] sm:rounded-none">
+                            <button class="text-xl w-full font-medium leading-none sm:mb-5 font-inter flex items-center justify-between gap-2 text-dark toc-button">
                                 Content
-                                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683416 -0.097631 1.31658 -0.097631 1.7071 0.292893L4.99999 3.58579L8.29288 0.292893C8.6834 -0.0976311 9.31657 -0.0976311 9.70709 0.292893C10.0976 0.683417 10.0976 1.31658 9.70709 1.70711L5.7071 5.70711C5.31657 6.09763 4.68341 6.09763 4.29289 5.70711L0.292893 1.70711C-0.0976309 1.31658 -0.0976309 0.683417 0.292893 0.292893Z" fill="#777C85"/>
-                                </svg>
-                            </h5>
-                            <div class="js-toc mt-4"></div>
+                                <span class=" block sm:hidden">
+                                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683416 -0.097631 1.31658 -0.097631 1.7071 0.292893L4.99999 3.58579L8.29288 0.292893C8.6834 -0.0976311 9.31657 -0.0976311 9.70709 0.292893C10.0976 0.683417 10.0976 1.31658 9.70709 1.70711L5.7071 5.70711C5.31657 6.09763 4.68341 6.09763 4.29289 5.70711L0.292893 1.70711C-0.0976309 1.31658 -0.0976309 0.683417 0.292893 0.292893Z" fill="#777C85"/>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div class="js-toc pt-4 hidden sm:!block"></div>
                         </div>
                     </div>
                     <div class="post-meta-wrap toc-author-social mt-8 hidden sm:block">
@@ -57,8 +59,6 @@
             </div>
         </div>
     </div>
-
-
 
     {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" include="authors,tags"}}
     {{#if posts}}

@@ -39,7 +39,7 @@
         menu_toggle: function() {
             $('.hamgurger').on("click", function(e) {
                 e.stopPropagation()
-                $('.hmbrgr-icon').toggleClass('active');
+                $(this).toggleClass('active');
                 $('.main-menu').toggleClass('active');
                 if ($(".main-menu").hasClass('active')) {
                     $("body").addClass('overlay');
@@ -185,12 +185,32 @@
                 $(this).toggleClass('active').siblings().slideToggle();
             })
         },
+
+        // Toc Menu 
+        toc_menu: () => {
+            $('.toc-button').on('click', function() {
+                $(this).toggleClass('active').siblings().slideToggle();
+            })
+        },
+
+        sticky_menu: function() {
+            let win = $(window);
+            let sticky_id = $(".header-area");
+            win.on('scroll', function () {
+                let scroll = win.scrollTop();
+                if (scroll < 245) {
+                    sticky_id.removeClass("sticky-header");
+                } else {
+                    sticky_id.addClass("sticky-header");
+                }
+            });
+        },
     
         
         //================ Document click to hide elements ==================
         elementHide: () => {
             $(document).click(function() {
-                $('.hmbrgr-icon,.main-menu').removeClass('active');
+                $('.hamgurger,.main-menu').removeClass('active');
                 $('.language-list').slideUp();
                 $('.sub-menu,.mega-menu').slideUp().parents('li').removeClass('active');
                 $('.overlay').removeClass('overlay');
@@ -200,7 +220,7 @@
         init: function() {
             allfunction.menu_icon()
             allfunction.menu_toggle()
-            // allfunction.nav_tabs()
+            allfunction.sticky_menu()
             allfunction.loadmore()
             allfunction.stopPropagationElements()
             allfunction.elementHide()
@@ -208,6 +228,7 @@
             allfunction.tocBot()
             allfunction.postContectImageGallery()
             allfunction.footer_menu()
+            allfunction.toc_menu()
         },
     }
 
