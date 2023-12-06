@@ -1,5 +1,5 @@
 {{!-- Header Start --}}
-<header class="header-area py-5 lg:py-0 {{#is "post"}}post-header{{/is}}{{#is "tag"}}tag-header{{/is}}">
+<header class="header-area py-5 lg:py-0 {{#is "post"}}post-header{{/is}}">
     <div class="container">
         <div class="header-wrapper flex items-center justify-between gap-5">
             <a href="{{@site.url}}" class="logo">
@@ -119,15 +119,12 @@
                     </li>
                 </ul>
             </div>
-            <div class="header-right">
+            <div class="header-right flex items-center gap-5">
                 <a class="btn-primary" href="#">Kostenfreie Beratung</a>
-                <div class="hamgurger">
-                    <ul class="hmbrgr-icon">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
+                <button class="hamgurger lg:hidden">
+                    <span class="top"></span>
+                    <span class="bottom"></span>
+                </button>
             </div>
         </div>
     </div>
