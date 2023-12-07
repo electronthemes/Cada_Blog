@@ -1384,10 +1384,6 @@ video {
   inset: -0.25rem;
 }
 
-.-bottom-10 {
-  bottom: -2.5rem;
-}
-
 .bottom-0 {
   bottom: 0px;
 }
@@ -1398,10 +1394,6 @@ video {
 
 .left-0 {
   left: 0px;
-}
-
-.left-1 {
-  left: 0.25rem;
 }
 
 .left-3 {
@@ -2604,10 +2596,6 @@ video {
   border-radius: 0.5rem;
 }
 
-.rounded-sm {
-  border-radius: 0.125rem;
-}
-
 .rounded-b {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
@@ -2760,11 +2748,6 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#D0D5DD\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(208 213 221 / var(--tw-bg-opacity));
-}
-
 .bg-\[\#FCF7E8\] {
   --tw-bg-opacity: 1;
   background-color: rgb(252 247 232 / var(--tw-bg-opacity));
@@ -2906,11 +2889,6 @@ video {
   padding: 1.25rem;
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -2929,11 +2907,6 @@ video {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
 }
 
 .py-3 {
@@ -4664,6 +4637,31 @@ input {
 
 .signle_footer_item_button.active span {
   transform: rotate(90deg);
+}
+
+.copied {
+  position: absolute;
+  content: "";
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  padding: 10px 12px;
+  border-radius: 8px 8px 8px 8px;
+  top: -45px;
+  left: 0px;
+  display: none;
+}
+
+.copied::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  top: 85%;
+  left: 13px;
+  transform: rotate(45deg);
 }
 
 /*========================== 
@@ -6900,10 +6898,6 @@ img.kg-bookmark-icon {
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:opacity-100 {
-  opacity: 1;
 }
 
 .prose-headings\:text-ellipsis :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
