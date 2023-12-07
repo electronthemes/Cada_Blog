@@ -464,7 +464,7 @@ input {
 /* Header Style */
 .header-area.sticky-header {
     position: fixed;
-    z-index: 99999;
+    z-index: 999999999999;
     left: 0;
     right: 0;
     top: 0;
@@ -590,10 +590,11 @@ input {
     }
     .header-area {
         position: relative;
+        z-index: 999999999999;
     }
     .main-menu {
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 92px;
         right: 0;
         width: 444px;
         background-color: #ffffff;
@@ -604,6 +605,10 @@ input {
         opacity: 0;
         visibility: hidden;
     }
+    .header-area.sticky-header .main-menu {
+        top: 76px;
+    }
+
     .main-menu.active {
         transform: translateX(0);
         opacity: 1;
@@ -640,16 +645,15 @@ input {
 
     body {
         position: relative;
-        z-index: 1;
+        /* z-index: 1; */
     }
     body::before {
         position: absolute;
         content: "";
         width: 100%;
         height: 100%;
-        z-index: -1;
+        z-index: 999999;
         background-color: #000000;
-        opacity: 0.7;
         visibility: hidden;
         opacity: 0;
         transition: all .3s ease-in-out;
@@ -687,6 +691,12 @@ input {
     }
     .main-menu {
         transform: translateX(100%);
+    }
+    .main-menu {
+        top: 69px;
+    }
+    .header-area.sticky-header .main-menu {
+        top: 53px;
     }
 }
 

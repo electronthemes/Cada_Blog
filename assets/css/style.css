@@ -1504,6 +1504,10 @@ video {
   margin-bottom: 1.25rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -2966,6 +2970,10 @@ video {
   padding-bottom: 4rem;
 }
 
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
 .pb-\[14px\] {
   padding-bottom: 14px;
 }
@@ -4251,7 +4259,7 @@ input {
 
 .header-area.sticky-header {
   position: fixed;
-  z-index: 99999;
+  z-index: 999999999999;
   left: 0;
   right: 0;
   top: 0;
@@ -4403,11 +4411,12 @@ input {
 
   .header-area {
     position: relative;
+    z-index: 999999999999;
   }
 
   .main-menu {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 92px;
     right: 0;
     width: 444px;
     background-color: #ffffff;
@@ -4417,6 +4426,10 @@ input {
     transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
     opacity: 0;
     visibility: hidden;
+  }
+
+  .header-area.sticky-header .main-menu {
+    top: 76px;
   }
 
   .main-menu.active {
@@ -4467,7 +4480,7 @@ input {
 
   body {
     position: relative;
-    z-index: 1;
+    /* z-index: 1; */
   }
 
   body::before {
@@ -4475,7 +4488,7 @@ input {
     content: "";
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 999999;
     background-color: #000000;
     visibility: hidden;
     opacity: 0;
@@ -4522,6 +4535,11 @@ input {
 
   .main-menu {
     transform: translateX(100%);
+    top: 69px;
+  }
+
+  .header-area.sticky-header .main-menu {
+    top: 53px;
   }
 }
 
@@ -7096,10 +7114,6 @@ img.kg-bookmark-icon {
     margin-bottom: 2.5rem;
   }
 
-  .sm\:mb-12 {
-    margin-bottom: 3rem;
-  }
-
   .sm\:mb-5 {
     margin-bottom: 1.25rem;
   }
@@ -7295,8 +7309,8 @@ img.kg-bookmark-icon {
     order: 9999;
   }
 
-  .md\:mb-16 {
-    margin-bottom: 4rem;
+  .md\:mb-14 {
+    margin-bottom: 3.5rem;
   }
 
   .md\:mt-10 {

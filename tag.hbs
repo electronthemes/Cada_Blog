@@ -30,10 +30,10 @@
 <div class="py-[30px] xs:pt-[40px] lg:py-[60px]">
     <div class="container">
         <div class="max-w-[1224px] mx-auto">
-            <div class="post-card-nav mb-8 sm:mb-12 md:mb-16">
+            <div class="post-card-nav mb-6 sm:mb-10 md:mb-14">
                 {{#get "tags" limit="all"}}
                 {{#if tags}}
-                <ul class="flex gap-2 flex-wrap">
+                <ul class="flex gap-2 w-full flex-nowrap overflow-y-auto whitespace-nowrap pb-2">
                     <li><a class="text-[#777C85] duration-300 py-3 sm:py-4 px-5 sm:px-6 text-sm sm:text-base leading-none tracking-[-0.16px] font-medium rounded-lg inline-block c-tags-list__link" href="/">All Categories</a></li>
                     
                     {{#foreach tags}}

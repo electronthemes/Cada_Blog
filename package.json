@@ -46,16 +46,6 @@
                 "bookmark",
                 "gallery"
             ]
-        },
-        "custom": {
-            "video_title": {
-                "type": "text",
-                "default": "How To Recruit Passive Candidates"
-            },
-            "video_description": {
-                "type": "text",
-                "default": "Despite being under contract at their current job, passive talent can be incredibly desirable job candidates. In this article, we're going to outline the process of recruiting and onboarding passive talent as well as the potential benefits of doing so."
-            }
         }
     },
     "devDependencies": {
