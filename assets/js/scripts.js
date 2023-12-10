@@ -48,10 +48,14 @@
                     $('.sub-menu').slideUp().parents('li').removeClass('active');
                 }
             });
-            $('.main-menu ul li').click(function(e) {
+            $('.main-menu ul li').on('click', function(e) {
                 e.stopPropagation();
                 $(this).children('.sub-menu,.mega-menu').slideToggle(200).parents('li').siblings().find('.sub-menu,.mega-menu').slideUp(200);
                 $(this).toggleClass('active').siblings().removeClass('active').find('.sub-menu,.mega-menu').slideUp(200);
+            });
+            
+            $('a[href=#]').on('click', function(e) {
+                e.preventDefault(); 
             });
         },
 
@@ -181,9 +185,16 @@
 
         // Footer Menu 
         footer_menu: () => {
-            $('.signle_footer_item_button').on('click', function() {
-                $(this).toggleClass('active').siblings().slideToggle();
-            })
+            // $(window).width(767, function () {
+            //     $('.signle_footer_item_button').on('click', function() {
+            //         $(this).toggleClass('active').siblings().slideToggle();
+            //     })
+            // });
+            if ($(window).width() < 767) {
+                $('.signle_footer_item_button').on('click', function() {
+                    $(this).toggleClass('active').siblings().slideToggle();
+                })
+            }
         },
 
         // Toc Menu 
@@ -205,14 +216,23 @@
                 }
             });
         },
+
+        btnHideShow: function() {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() !== 0) {
+                    $('#btnHideShow').fadeIn(500);
+                } else {
+                    $('#btnHideShow').fadeOut(500);
+                }
+            });
+        },
     
         
         //================ Document click to hide elements ==================
         elementHide: () => {
             $(document).click(function() {
                 $('.hamgurger,.main-menu').removeClass('active');
-                $('.language-list').slideUp();
-                $('.sub-menu,.mega-menu').slideUp().parents('li').removeClass('active');
+                $('.sub-menu,.mega-menu').hide(100).parents('li').removeClass('active');
                 $('.overlay').removeClass('overlay');
             })
         },
@@ -229,6 +249,7 @@
             allfunction.postContectImageGallery()
             allfunction.footer_menu()
             allfunction.toc_menu()
+            allfunction.btnHideShow()
         },
     }
 
