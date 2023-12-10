@@ -1,0 +1,35 @@
+<div class="max-w-[1224px] mx-auto">
+    <div class="post-card-nav mb-6 sm:mb-10 md:mb-14">
+        {{#get "tags" limit="all"}}
+        {{#if tags}}
+        <ul class="flex gap-2 w-full flex-nowrap overflow-y-auto whitespace-nowrap pb-2">
+            <li><a class="text-[#777C85] duration-300 py-3 sm:py-4 px-5 sm:px-6 text-sm sm:text-base leading-none tracking-[-0.16px] font-medium rounded-lg inline-block c-tags-list__link" href="{{@site.url}}#postLoop-area">All Categories</a></li>
+            
+            {{#foreach tags}}
+            <li id="{{slug}}"><a class="text-[#777C85] duration-300 py-3 sm:py-4 px-5 sm:px-6 text-sm sm:text-base leading-none tracking-[-0.16px] font-medium rounded-lg inline-block c-tags-list__link" href="{{url}}#postLoop-area">{{name}}</a></li>
+            {{/foreach}}
+        </ul>
+        {{/if}}
+        {{/get}}
+        <script>
+            window.addEventListener('DOMContentLoaded', (event) => {
+                var url_pathname = window.location.pathname;
+
+                document.querySelectorAll('.c-tags-list__link').forEach(function (index) {
+                    var current_tag_item = index;
+                    var current_tag_slug = current_tag_item.getAttribute('href').split("#postLoop-area")[0];
+
+                    if (url_pathname === current_tag_slug) {
+                        current_tag_item.parentElement.className += ' ' + 'active';
+                    }
+                });
+            });
+        </script>
+    </div>
+    <div class="grid xs:grid-cols-2 md:grid-cols-3 gap-y-8 md:gap-y-12 gap-x-6">
+        {{#foreach posts}}
+            {{> post-card}}
+        {{/foreach}}
+    </div>
+</div>
+{{pagination}}

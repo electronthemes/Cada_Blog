@@ -185,11 +185,6 @@
 
         // Footer Menu 
         footer_menu: () => {
-            // $(window).width(767, function () {
-            //     $('.signle_footer_item_button').on('click', function() {
-            //         $(this).toggleClass('active').siblings().slideToggle();
-            //     })
-            // });
             if ($(window).width() < 767) {
                 $('.signle_footer_item_button').on('click', function() {
                     $(this).toggleClass('active').siblings().slideToggle();
@@ -263,23 +258,4 @@
 })(jQuery);
 
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    var url_pathname = window.location.pathname;
 
-    document.querySelectorAll('.c-tags-list__link').forEach(function (index) {
-        var current_tag_item = index;
-        if (url_pathname === current_tag_item.getAttribute('href')) {
-            current_tag_item.parentElement.className += ' ' + 'active';
-        }
-    });
-});
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    var jsTocElement = document.querySelector('.js-toc');
-    var hasChildTocList = jsTocElement.querySelector('.toc-list') !== null;
-    if (!hasChildTocList) {
-        var tocWrapElement = jsTocElement.closest('.toc-wrap');
-        tocWrapElement.classList.add('no-child');
-    }
-});

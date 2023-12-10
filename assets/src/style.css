@@ -517,6 +517,10 @@ input {
     letter-spacing: -.28px !important;
     border: none;
     padding: 12px 24px;
+    width: 206px;
+}
+.scroll-mt-100 {
+    scroll-margin-top: 100px;
 }
 
 
@@ -535,7 +539,7 @@ input {
     .main-menu > ul > li > a {
         display: flex;
         align-items: center;
-        gap: 5px;
+        gap: 7px;
         font-size: 16px;
         font-weight: 500;
         color: #000;
@@ -603,7 +607,7 @@ input {
     }
     .main-menu {
         position: fixed;
-        top: 69px;
+        top: 68px;
         right: 0;
         width: 444px;
         background-color: #ffffff;
@@ -613,7 +617,7 @@ input {
         transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
         opacity: 0;
         visibility: hidden;
-        max-height: calc(100vh - 69px);
+        max-height: calc(100vh - 68px);
         overflow-y: auto;
     }
     /* .header-area.sticky-header .main-menu {

@@ -562,9 +562,9 @@ video {
   }
 }
 
-@media (min-width: 1224px) {
+@media (min-width: 1264px) {
   .container {
-    max-width: 1224px;
+    max-width: 1264px;
   }
 }
 
@@ -1364,10 +1364,6 @@ video {
   position: static;
 }
 
-.\!fixed {
-  position: fixed !important;
-}
-
 .fixed {
   position: fixed;
 }
@@ -1440,8 +1436,8 @@ video {
   isolation: auto;
 }
 
-.\!z-\[99999\] {
-  z-index: 99999 !important;
+.\!z-\[9999999999\] {
+  z-index: 9999999999 !important;
 }
 
 .-z-\[1\] {
@@ -1454,14 +1450,6 @@ video {
 
 .z-\[1\] {
   z-index: 1;
-}
-
-.z-\[99999\] {
-  z-index: 99999;
-}
-
-.\!z-\[9999999999\] {
-  z-index: 9999999999 !important;
 }
 
 .-order-1 {
@@ -1585,10 +1573,6 @@ video {
 
 .block {
   display: block;
-}
-
-.\!inline-block {
-  display: inline-block !important;
 }
 
 .inline-block {
@@ -1737,6 +1721,14 @@ video {
 
 .max-w-full {
   max-width: 100%;
+}
+
+.max-w-\[310px\] {
+  max-width: 310px;
+}
+
+.max-w-\[350px\] {
+  max-width: 350px;
 }
 
 .flex-1 {
@@ -4322,6 +4314,11 @@ input {
   letter-spacing: -.28px !important;
   border: none;
   padding: 12px 24px;
+  width: 206px;
+}
+
+.scroll-mt-100 {
+  scroll-margin-top: 100px;
 }
 
 @media screen and (min-width: 1199px) {
@@ -4342,7 +4339,7 @@ input {
   .main-menu > ul > li > a {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 7px;
     font-size: 16px;
     font-weight: 500;
     color: #000;
@@ -4435,7 +4432,7 @@ input {
 
   .main-menu {
     position: fixed;
-    top: 69px;
+    top: 68px;
     right: 0;
     width: 444px;
     background-color: #ffffff;
@@ -4445,7 +4442,7 @@ input {
     transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
     opacity: 0;
     visibility: hidden;
-    max-height: calc(100vh - 69px);
+    max-height: calc(100vh - 68px);
     overflow-y: auto;
   }
 
@@ -6113,9 +6110,9 @@ img.kg-bookmark-icon {
     }
   }
 
-  @media (min-width: 1224px) {
+  @media (min-width: 1264px) {
     .sm\:container {
-      max-width: 1224px;
+      max-width: 1264px;
     }
   }
 
@@ -6876,11 +6873,6 @@ img.kg-bookmark-icon {
   outline-offset: 2px;
 }
 
-.hover\:translate-x-2:hover {
-  --tw-translate-x: 0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .hover\:bg-\[\#F7F8F9\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(247 248 249 / var(--tw-bg-opacity));
@@ -7144,6 +7136,10 @@ img.kg-bookmark-icon {
     top: 1.25rem;
   }
 
+  .sm\:order-last {
+    order: 9999;
+  }
+
   .sm\:mb-10 {
     margin-bottom: 2.5rem;
   }
@@ -7226,6 +7222,10 @@ img.kg-bookmark-icon {
 
   .sm\:flex-nowrap {
     flex-wrap: nowrap;
+  }
+
+  .sm\:justify-between {
+    justify-content: space-between;
   }
 
   .sm\:gap-10 {
@@ -7367,10 +7367,6 @@ img.kg-bookmark-icon {
     margin-top: 18px;
   }
 
-  .md\:block {
-    display: block;
-  }
-
   .md\:w-auto {
     width: auto;
   }
@@ -7438,10 +7434,6 @@ img.kg-bookmark-icon {
 }
 
 @media (min-width: 1199px) {
-  .lg\:\!relative {
-    position: relative !important;
-  }
-
   .lg\:relative {
     position: relative;
   }
@@ -7464,6 +7456,10 @@ img.kg-bookmark-icon {
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
   }
 
   .lg\:gap-\[60px\] {

@@ -89,3 +89,15 @@
     </div>
 </div>
 {{!-- Sign Up Area End --}}
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var jsTocElement = document.querySelector('.js-toc');
+        var hasChildTocList = jsTocElement.querySelector('.toc-list') !== null;
+        if (!hasChildTocList) {
+            var tocWrapElement = jsTocElement.closest('.toc-wrap');
+            tocWrapElement.classList.add('no-child');
+        }
+    });
+</script>
