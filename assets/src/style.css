@@ -743,6 +743,9 @@ input {
     z-index: 999999;
     background-color: transparent;
 }
+body.overlay .post-header {
+    background-color: #fff;
+}
 
 /* Toc BOT */
 .toc-list {
