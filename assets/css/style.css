@@ -4577,7 +4577,7 @@ input {
 
 /* Post Page */
 
-.tag-header,
+.tag-header, 
 .post-header {
   position: absolute;
   content: "";
@@ -4585,8 +4585,13 @@ input {
   left: 0;
   right: 0;
   top: 0;
-  z-index: 999;
+  z-index: 9999999;
   background-color: transparent;
+}
+
+body.overlay .post-header,
+body.overlay .tag-header {
+  background-color: #fff;
 }
 
 /* Toc BOT */
@@ -4642,6 +4647,7 @@ input {
 .toc-list-item.is-active-li {
   color: #000;
   font-weight: 500;
+  list-style: none;
 }
 
 .toc-list-item.is-active-li::before {
