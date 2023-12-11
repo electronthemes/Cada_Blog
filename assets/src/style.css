@@ -789,6 +789,7 @@ input {
 .toc-list-item.is-active-li {
     color: #000;
     font-weight: 500;
+    list-style: none;
 }
 .toc-list-item.is-active-li::before {
     opacity: 1;
