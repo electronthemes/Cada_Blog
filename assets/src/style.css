@@ -743,7 +743,8 @@ input {
     z-index: 999999;
     background-color: transparent;
 }
-body.overlay .post-header {
+body.overlay .post-header,
+body.overlay .tag-header {
     background-color: #fff;
 }
 
