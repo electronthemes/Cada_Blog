@@ -134,14 +134,7 @@
             })
         },
 
-        tocBot: () => {
-            tocbot.init({
-                tocSelector: '.js-toc',
-                contentSelector: '.js-toc-content', 
-                headingSelector: 'h2, h3',
-                hasInnerContainers: true,
-            });
-        },
+       
         
         //================== StopPropagations elements =================
         stopPropagationElements: () => {
@@ -153,7 +146,6 @@
         postContectImageGallery: () => {
             $('.post-content .kg-card img').each(function() {
                 var contentImageSrc = $(this).attr('src');
-                console.log(contentImageSrc)
                 $(this).wrap('<a href=' + contentImageSrc + '></a>')
             });
 
@@ -240,7 +232,6 @@
             allfunction.stopPropagationElements()
             allfunction.elementHide()
             allfunction.copyCode()
-            allfunction.tocBot()
             allfunction.postContectImageGallery()
             allfunction.footer_menu()
             allfunction.toc_menu()

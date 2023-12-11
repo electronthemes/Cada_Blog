@@ -424,15 +424,15 @@ input {
     font-family: 'Inter', sans-serif;
     position: relative;
     overflow: hidden;
-    /* border: 1px solid transparent; */
+    border: 1px solid transparent;
     z-index: 1;
-    transition: all 0.4s ease-out;
+    transition: all 0.1s ease-out;
     color: #fff;
     letter-spacing: -0.16px; 
     padding: 14px 24px;
     border-radius: 8px;
 }
-.btn-primary::after {
+/* .btn-primary::after {
     position: absolute;
     content: "";
     z-index: -1;
@@ -449,17 +449,18 @@ input {
     -ms-transform: skewX(45deg) scale(0, 1);
     transform: skewX(45deg) scale(0, 1);
     background: #ff993e;
-}
+} */
 .btn-primary:hover {
-    background-color: transparent;
-    color: #000;
+    background-color: rgba(0,0,0,.8);
+    color: #ffffff;
+    border-color: #000;
 }
-.btn-primary:hover::after {
+/* .btn-primary:hover::after {
     -webkit-transform: skewX(45deg) scale(1, 1);
     -moz-transform: skewX(45deg) scale(1, 1);
     -ms-transform: skewX(45deg) scale(1, 1);
     transform: skewX(45deg) scale(1, 1);
-}
+} */
 
 /* Header Style */
 .header-area.sticky-header {

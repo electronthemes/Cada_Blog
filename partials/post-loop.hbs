@@ -3,10 +3,10 @@
         {{#get "tags" limit="all"}}
         {{#if tags}}
         <ul class="flex gap-2 w-full flex-nowrap overflow-y-auto whitespace-nowrap pb-2">
-            <li><a class="text-[#777C85] duration-300 py-3 sm:py-4 px-5 sm:px-6 text-sm sm:text-base leading-none tracking-[-0.16px] font-medium rounded-lg inline-block c-tags-list__link" href="{{@site.url}}#postLoop-area">All Categories</a></li>
+            <li class="active"><a class="text-[#777C85] duration-300 py-3 sm:py-4 px-5 sm:px-6 text-sm sm:text-base leading-none tracking-[-0.16px] font-medium rounded-lg inline-block c-tags-list__link" href="{{@site.url}}#articles">All Categories</a></li>
             
             {{#foreach tags}}
-            <li id="{{slug}}"><a class="text-[#777C85] duration-300 py-3 sm:py-4 px-5 sm:px-6 text-sm sm:text-base leading-none tracking-[-0.16px] font-medium rounded-lg inline-block c-tags-list__link" href="{{url}}#postLoop-area">{{name}}</a></li>
+            <li id="{{slug}}"><a class="text-[#777C85] duration-300 py-3 sm:py-4 px-5 sm:px-6 text-sm sm:text-base leading-none tracking-[-0.16px] font-medium rounded-lg inline-block c-tags-list__link" href="{{url}}#articles">{{name}}</a></li>
             {{/foreach}}
         </ul>
         {{/if}}
@@ -17,7 +17,7 @@
 
                 document.querySelectorAll('.c-tags-list__link').forEach(function (index) {
                     var current_tag_item = index;
-                    var current_tag_slug = current_tag_item.getAttribute('href').split("#postLoop-area")[0];
+                    var current_tag_slug = current_tag_item.getAttribute('href').split("#articles")[0];
 
                     if (url_pathname === current_tag_slug) {
                         current_tag_item.parentElement.className += ' ' + 'active';
