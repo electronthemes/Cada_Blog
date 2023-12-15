@@ -4,7 +4,7 @@
         <div class="header-wrapper flex items-center justify-between gap-5">
             <a href="{{@site.url}}" class="logo">
                 {{#if @site.logo}}
-                    <img src="{{@site.logo}}" alt="{{@site.title}}">
+                    <img class="max-w-[100px]" src="{{@site.logo}}" alt="{{@site.title}}">
                     {{else}}
                     <h2 class="site-title-if-no-logo">{{@site.title}}</h2>
                 {{/if}}
@@ -27,7 +27,7 @@
                                         <p>Hormonelle Zyklusuntersützung</p>
                                     </a>
                                 </li>
-                                <li>
+                                <li class="lg:order-none order-4">
                                     <a href="https://cada.com/de/treatment/social-freezing-male/">
                                         <span>
                                             Social Freezing Mann
@@ -36,7 +36,7 @@
                                         <p>Kryokonservierung der Samenzellen</p>
                                     </a>
                                 </li>
-                                <li>
+                                <li class=" lg:order-none order-2">
                                     <a href="https://cada.com/de/treatment/ivf/">
                                         <span>
                                             IVF
@@ -45,7 +45,7 @@
                                         <p>In-Vitro Fertilization</p>
                                     </a>
                                 </li>
-                                <li>
+                                <li class="lg:order-none order-5">
                                     <a href="https://cada.com/de/treatment/social-freezing-female/">
                                         <span>
                                             Social Freezing Frau
@@ -54,7 +54,7 @@
                                         <p>Kryokonservierung der Eizellen</p>
                                     </a>
                                 </li>
-                                <li>
+                                <li class="lg:order-none order-3">
                                     <a href="https://cada.com/de/treatment/iui/">
                                         <span>
                                             IUI
@@ -67,7 +67,7 @@
                         </div>
                     </li>
                     <li><a href="https://cada.com/de/why-cada/">Warum Cada</a></li>
-                    <li class="relative">
+                    {{!-- <li class="relative">
                         <a href="#">Ressourcen</a>
                         <div class="sub-menu">
                             <ul>
@@ -82,10 +82,10 @@
                                 </li>
                             </ul>
                         </div>
-                    </li>
-                    <li class="relative">
+                    </li> --}}
+                    <li class="relative lg:block hidden">
                         <a href="#">Mehr</a>
-                        <div class="sub-menu">
+                        <div class="mega-menu">
                             <ul>
                                 <li>
                                     <a href="https://cada.com/de/about-us/">
@@ -97,6 +97,15 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a href="https://cadafertility.careers.flair.hr/">
+                                        <span>
+                                            Karriere
+                                            <span>{{> icons/menu-items-arrow}}</span>
+                                        </span>
+                                        <p>Informationen zu offenen Stellen bei Cada</p>
+                                    </a>
+                                </li>
+                                <li class=" col-span-2 max-w-[194px]">
                                     <a href="https://cada.com/de/locations/">
                                         <span>
                                             Praxis
@@ -106,12 +115,12 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://cadafertility.careers.flair.hr/">
+                                    <a href="https://cada.com/de/blog/">
                                         <span>
-                                            Karriere
+                                            Blog
                                             <span>{{> icons/menu-items-arrow}}</span>
                                         </span>
-                                        <p>Informationen zu offenen Stellen bei Cada</p>
+                                        <p>informationen und Artikel Zu Kinderwunsch-Themen</p>
                                     </a>
                                 </li>
                             </ul>
@@ -121,14 +130,15 @@
                 <div class="block lg:hidden mt-12 px-5 xs:px-[50px]">
                     <h6 data-v-392db25b="" class="text-base font-inter text-[#777C85] mb-4">Mehr</h6>
                     <ul class="space-y-[16px] text-lg font-medium text-dark tracking-[-.18px] leading-normal">
-                        <li><a href="/de/about-us/">Über uns</a></li>
-                        <li><a href="/de/locations/">Praxis</a></li>
+                        <li><a href="https://cada.com/de/about-us/">Über uns</a></li>
+                        <li><a href="https://cada.com/de/locations/">Praxis</a></li>
+                        <li><a href="https://cada.com/de/blog/">Blog</a></li>
                         <li><a href="https://cadafertility.careers.flair.hr/">Karriere</a></li>
                     </ul>
                 </div>
             </div>
             <div class="header-right flex items-center gap-5">
-                <a class="btn-primary !hidden lg:!inline-block header-button" href="https://booking.cada.com/de/appointment/?_gl=1*48nnnq*_gcl_au*MjAyMjY1OTI5NC4xNzAxNzc5ODUx*_ga*MTUwNTIzNzAxLjE3MDE3Nzk4NTI.*_ga_3Y8RV0505Q*MTcwMTkzNDk5Ni4xMC4xLjE3MDE5MzUwMTYuMC4wLjA.">Kostenfreie Beratung</a>
+                <a class="btn-primary !hidden lg:!inline-block header-button" href="https://booking.cada.com/de/appointment/?_gl=1*hovdgt*_gcl_au*NjE1NDQ0NDgwLjE3MDI2Mjg2OTM.*_ga*MTQzMDc1NTcyMy4xNzAyNjI4Njkz*_ga_3Y8RV0505Q*MTcwMjYzNTMwNy4yLjEuMTcwMjYzNTg1OS4wLjAuMA.." target="_blank">Kostenfreie Beratung</a>
                 <button class="hamgurger lg:hidden">
                     <span class="top"></span>
                     <span class="bottom"></span>

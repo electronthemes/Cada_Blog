@@ -1456,6 +1456,26 @@ video {
   order: -1;
 }
 
+.order-2 {
+  order: 2;
+}
+
+.order-3 {
+  order: 3;
+}
+
+.order-4 {
+  order: 4;
+}
+
+.order-5 {
+  order: 5;
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
 .float-right {
   float: right;
 }
@@ -1703,6 +1723,10 @@ video {
   width: 100%;
 }
 
+.max-w-\[100px\] {
+  max-width: 100px;
+}
+
 .max-w-\[1016px\] {
   max-width: 1016px;
 }
@@ -1721,6 +1745,10 @@ video {
 
 .max-w-full {
   max-width: 100%;
+}
+
+.max-w-\[194px\] {
+  max-width: 194px;
 }
 
 .flex-1 {
@@ -4591,7 +4619,7 @@ input {
 
 body.overlay .post-header,
 body.overlay .tag-header {
-  background-color: #fff;
+  background-color: #fff !important;
 }
 
 /* Toc BOT */
@@ -7201,6 +7229,10 @@ img.kg-bookmark-icon {
     max-width: 320px;
   }
 
+  .sm\:max-w-\[400px\] {
+    max-width: 400px;
+  }
+
   .sm\:max-w-\[496px\] {
     max-width: 496px;
   }
@@ -7376,6 +7408,10 @@ img.kg-bookmark-icon {
     max-width: 440px;
   }
 
+  .md\:max-w-\[520px\] {
+    max-width: 520px;
+  }
+
   .md\:max-w-\[810px\] {
     max-width: 810px;
   }
@@ -7445,6 +7481,14 @@ img.kg-bookmark-icon {
 
   .lg\:right-0 {
     right: 0px;
+  }
+
+  .lg\:order-none {
+    order: 0;
+  }
+
+  .lg\:block {
+    display: block;
   }
 
   .lg\:\!inline-block {
