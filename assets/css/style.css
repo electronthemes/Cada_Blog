@@ -7468,6 +7468,10 @@ img.kg-bookmark-icon {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
+
+  .md\:text-\[48px\] {
+    font-size: 48px;
+  }
 }
 
 @media (min-width: 1199px) {
