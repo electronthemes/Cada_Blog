@@ -1,7 +1,7 @@
 <div class="max-w-[1016px] mx-auto">
     <a href="{{@site.url}}" class="flex items-center gap-[10px]">
         {{> icons/back-arrow}}
-        Back to Blog
+        Zurück zum Blog
     </a>
     <h1 class="text-[34px] xs:text-[44px] md:text-[56px] leadig-[1.1] font-semibold font-Jakarta mt-[18px]">
         {{title}}
@@ -12,7 +12,7 @@
             <a class="text-xs font-medium leading-none text-pragrapgh bg-[#fff] py-[10px] px-3 rounded-[32px] inline-block" href="{{url}}">{{name}}</a>
         </li>
         {{/foreach}}
-        <li>{{date published_at format="MMMM DD, YYYY"}}</li>
+        <li>{{date published_at format="MMM DD, YYYY"}}</li>
         <li class="w-1 h-1 rounded-full bg-dark/20"></li>
         <li>{{reading_time minute="1 mins read" minutes="% mins read"}}</li>
     </ul>

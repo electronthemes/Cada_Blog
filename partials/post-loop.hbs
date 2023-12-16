@@ -3,7 +3,7 @@
         {{#get "tags" limit="all"}}
         {{#if tags}}
         <ul class="flex gap-2 w-full flex-nowrap overflow-y-auto whitespace-nowrap pb-2">
-            <li class=""><a class="text-[#777C85] duration-300 py-3 sm:py-4 px-5 sm:px-6 text-sm sm:text-base leading-none tracking-[-0.16px] font-medium rounded-lg inline-block c-tags-list__link" href="/#articles">All Categories</a></li>
+            <li class=""><a class="text-[#777C85] duration-300 py-3 sm:py-4 px-5 sm:px-6 text-sm sm:text-base leading-none tracking-[-0.16px] font-medium rounded-lg inline-block c-tags-list__link" href="/#articles">Alle Kategorien</a></li>
             
             {{#foreach tags}}
             <li id="{{slug}}"><a class="text-[#777C85] duration-300 py-3 sm:py-4 px-5 sm:px-6 text-sm sm:text-base leading-none tracking-[-0.16px] font-medium rounded-lg inline-block c-tags-list__link" href="{{url}}#articles">{{name}}</a></li>

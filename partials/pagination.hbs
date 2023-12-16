@@ -6,7 +6,7 @@
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.8327 7.00002H1.16602M1.16602 7.00002L6.99935 12.8334M1.16602 7.00002L6.99935 1.16669" stroke="#777C85" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span class="hidden sm:block">Previous</span>
+        <span class="hidden sm:block">Vorherige</span>
     </a>
     {{!-- <ul class="flex gap-[10px] -order-1 xs:order-none w-full xs:w-auto justify-center overflow-auto">
         <li><a class="w-10 h-10 rounded-lg flex items-center justify-center text-sm text-[#777C85] font-medium leading-noen duration-300 hover:bg-[#F7F8F9] hover:text-dark" href="#">1</a></li>
@@ -17,12 +17,12 @@
         <li><a class="w-10 h-10 rounded-lg flex items-center justify-center text-sm text-[#777C85] font-medium leading-noen duration-300 hover:bg-[#F7F8F9] hover:text-dark" href="#">9</a></li>
         <li><a class="w-10 h-10 rounded-lg flex items-center justify-center text-sm text-[#777C85] font-medium leading-noen duration-300 hover:bg-[#F7F8F9] hover:text-dark" href="#">10</a></li>
     </ul> --}}
-    <p class="text-sm font-medium leading-none text-[#344054]">Page {{page}} of {{pages}}</p>
+    <p class="text-sm font-medium leading-none text-[#344054]">Seite {{page}} of {{pages}}</p>
 
     <a href="{{page_url next}}" class="flex items-center gap-[5px] text-sm font-medium leading-none text-[#777C85] duration-300 transform sm:hover:scale-105 justify-center
     w-[36px] h-[36px] sm:w-auto sm:h-auto border sm:border-none border-[#D0D5DD] rounded-lg {{#unless next}}link-disabled{{/unless}}
     ">
-        <span class="hidden sm:block">Next</span>
+        <span class="hidden sm:block">Nächste</span>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.16602 7.00002H12.8327M12.8327 7.00002L6.99935 1.16669M12.8327 7.00002L6.99935 12.8334" stroke="#777C85" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
