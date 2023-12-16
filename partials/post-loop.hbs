@@ -14,6 +14,9 @@
         <script>
             window.addEventListener('DOMContentLoaded', (event) => {
                 var url_pathname = window.location.pathname;
+                var pagesUrlPathname = url_pathname.startsWith('/de/blog/page/') ? '/de/blog/' : window.location.pathname;
+
+                console.log(pagesUrlPathname);
 
                 document.querySelectorAll('.c-tags-list__link').forEach(function (index) {
                     var current_tag_item = index;
