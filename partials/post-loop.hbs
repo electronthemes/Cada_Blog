@@ -13,12 +13,14 @@
         <script>
             window.addEventListener('DOMContentLoaded', (event) => {
                 var url_pathname = window.location.pathname;
+                var pagesUrlPathname = window.location.pathname.split("page/")[0] ? window.location.pathname.split("page/")[0] : window.location.pathname;
+
 
                 document.querySelectorAll('.c-tags-list__link').forEach(function (index) {
                     var current_tag_item = index;
                     var current_tag_slug = current_tag_item.getAttribute('href').split("#articles")[0];
 
-                    if (url_pathname === current_tag_slug) {
+                    if (url_pathname === current_tag_slug || pagesUrlPathname === current_tag_slug) {
                         current_tag_item.parentElement.className += ' ' + 'active';
                     }
                 });

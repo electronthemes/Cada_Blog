@@ -1723,10 +1723,6 @@ video {
   width: 100%;
 }
 
-.max-w-\[100px\] {
-  max-width: 100px;
-}
-
 .max-w-\[1016px\] {
   max-width: 1016px;
 }
@@ -1745,6 +1741,10 @@ video {
 
 .max-w-\[380px\] {
   max-width: 380px;
+}
+
+.max-w-\[86px\] {
+  max-width: 86px;
 }
 
 .max-w-full {
@@ -7467,6 +7467,10 @@ img.kg-bookmark-icon {
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .md\:text-\[48px\] {
+    font-size: 48px;
   }
 }
 
