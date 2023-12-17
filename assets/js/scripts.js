@@ -245,7 +245,16 @@
             document.querySelector('body').classList.add("loaded")  
         });
     });
+    $('.language-wrap').on('click', function(e){
+        e.stopPropagation()
+        $(this).toggleClass('active');
+        $('.language-selector').toggle();
+    });
 
+    $(document).on('click', function(){
+        $('.language-selector').hide();
+        $('.language-wrap').removeClass('active');
+    });
 })(jQuery);
 
 

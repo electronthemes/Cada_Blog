@@ -1268,3 +1268,12 @@ img.kg-bookmark-icon {
     margin-right: 10px;
     margin-left: 0;
 }
+.shadow-box{
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.05);
+}
+.language-selector li{
+    transition: .3s ease-in-out;
+}
+.language-selector li:hover,.language-selector li.active{
+    background-color: #F8F8F8;
+}
