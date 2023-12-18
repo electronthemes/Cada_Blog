@@ -255,6 +255,8 @@
         $('.language-selector').hide();
         $('.language-wrap').removeClass('active');
     });
+
+    $('table').addClass('table').wrap('<div class="table-responsive"></div>')
 })(jQuery);
 
 

@@ -13,9 +13,15 @@ module.exports = {
       'xl': '1264px',
     },
     colors:{
+      transparent: 'transparent',
       dark: '#000000',
       primary: '#ff993e',
       pragrapgh: '#3D4044',
+      white: '#ffffff',//use
+      gray:{
+        80: '#C3C5C5', //use
+        50:'#F7F7F7',
+      },
     },
     fontFamily: {
       inter: ['Inter', 'sans-serif'],

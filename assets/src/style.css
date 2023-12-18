@@ -857,13 +857,13 @@ body.overlay .tag-header {
 .post-content h1,
 .post-content h2,
 .post-content h3 {
-    @apply mt-10 md:mt-16 mb-0 font-medium;
+    @apply mt-8 md:mt-10 mb-0 font-medium;
 }
 
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-    @apply mt-16 mb-0 font-medium;
+    @apply mt-8 mb-0 font-medium;
 }
 
 .post-content h1 {
@@ -871,15 +871,15 @@ body.overlay .tag-header {
 }
 
 .post-content h2 {
-    @apply lg:text-[40px] leading-[1.2] md:text-[36px] text-[28px]
+    @apply lg:text-[36px] leading-[1.2] md:text-[30px] text-[28px]
 }
 
 .post-content h3 {
-    @apply lg:text-[32px] leading-[1.2] md:text-[28px] text-[22px]
+    @apply lg:text-[32px] leading-[1.2] md:text-[26px] text-[22px]
 }
 
 .post-content h4 {
-    @apply lg:text-[20px] leading-[1.2] md:text-[18px] text-[16px]
+    @apply lg:text-[28px] leading-[1.2] md:text-[22px] text-[16px]
 }
 
 .post-content h5 {
@@ -896,7 +896,7 @@ body.overlay .tag-header {
 
 .post-content h1+p,
 .post-content h2+p {
-    @apply mt-4 md:mt-6;
+    @apply mt-4 md:mt-5;
 }
 
 .post-content h3+p,
@@ -1276,4 +1276,52 @@ img.kg-bookmark-icon {
 }
 .language-selector li:hover,.language-selector li.active{
     background-color: #F8F8F8;
+}
+
+
+/* post table design */
+.post-content{}
+
+/* table */
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    margin-top: 2.5rem;
+    overflow-x: auto;
+}
+.post-content td,
+.post-content th {
+    min-width: 200px;
+    @apply border-b border-l border-gray-80 text-left bg-white align-baseline p-4;
+}
+.table {
+    display: table;
+    @apply border border-gray-80;
+}
+.page-content td{
+    border-left: 1px solid #C3C5C5;
+}
+.page-content td,
+.page-content th {
+    @apply bg-gray-50;
+}
+
+.post-content td:first-child,
+.post-content th {
+    @apply text-pragrapgh;
+}
+
+/* .post-content tr:last-child td {
+    @apply border-transparent;
+} */
+.content-wrapper {
+    max-width: calc(100% - 288px) !important;
+}
+@media screen and (max-width: 767px) {
+    .content-wrapper {
+        max-width: 100% !important;
+    }
 }
