@@ -5516,6 +5516,10 @@ table {
   }
 }
 
+.language-selector li:hover span, .language-selector li.active span {
+  color: #000;
+}
+
 .hover\:prose-lg:hover {
   font-size: 1.125rem;
   line-height: 1.7777778;
