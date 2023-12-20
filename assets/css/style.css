@@ -4817,7 +4817,7 @@ body.overlay .tag-header {
 .post-content h1,
 .post-content h2,
 .post-content h3 {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   margin-bottom: 0px;
   font-weight: 500;
 }
@@ -4826,14 +4826,14 @@ body.overlay .tag-header {
   .post-content h1,
 .post-content h2,
 .post-content h3 {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
   }
 }
 
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   margin-bottom: 0px;
   font-weight: 500;
 }
@@ -4949,13 +4949,6 @@ body.overlay .tag-header {
   margin-top: 1rem;
 }
 
-@media (min-width: 992px) {
-  .post-content h1+p,
-.post-content h2+p {
-    margin-top: 1.25rem;
-  }
-}
-
 .post-content h3+p,
 .post-content h4+p,
 .post-content h5+p,
@@ -4985,6 +4978,10 @@ body.overlay .tag-header {
 
 figure.kg-card {
   margin-top: 2.5rem;
+}
+
+.post-content p+p {
+  margin-top: 24px;
 }
 
 .post-content a:not(.outline-btn) {
@@ -5517,6 +5514,11 @@ table {
 
 .language-selector li:hover span, .language-selector li.active span {
   color: #000;
+}
+
+b,
+strong {
+  font-weight: 600 !important;
 }
 
 .hover\:prose-lg:hover {

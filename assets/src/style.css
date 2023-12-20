@@ -857,13 +857,13 @@ body.overlay .tag-header {
 .post-content h1,
 .post-content h2,
 .post-content h3 {
-    @apply mt-8 md:mt-10 mb-0 font-medium;
+    @apply mt-6 md:mt-8 mb-0 font-medium;
 }
 
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-    @apply mt-8 mb-0 font-medium;
+    @apply mt-6 mb-0 font-medium;
 }
 
 .post-content h1 {
@@ -896,7 +896,7 @@ body.overlay .tag-header {
 
 .post-content h1+p,
 .post-content h2+p {
-    @apply mt-4 md:mt-5;
+    @apply mt-4;
 }
 
 .post-content h3+p,
@@ -918,12 +918,12 @@ body.overlay .tag-header {
 figure.kg-card {
     @apply mt-10;
 }
-
+.post-content p+p {
+    margin-top: 24px;
+}
 .post-content a:not(.outline-btn) {
     color: #FD7C0F;
 }
-
-
 .post-content>*:not(.kg-card) {
     align-self: flex-start;
 }
@@ -1327,4 +1327,9 @@ table {
 }
 .language-selector li:hover span, .language-selector li.active span {
     color: #000;
+}
+
+b,
+strong {
+  font-weight: 600 !important;
 }
