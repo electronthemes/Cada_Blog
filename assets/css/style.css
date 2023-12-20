@@ -4864,13 +4864,13 @@ body.overlay .tag-header {
 
 @media (min-width: 992px) {
   .post-content h2 {
-    font-size: 30px;
+    font-size: 30px !important;
   }
 }
 
 @media (min-width: 1199px) {
   .post-content h2 {
-    font-size: 36px;
+    font-size: 36px !important;
   }
 }
 
@@ -4881,13 +4881,13 @@ body.overlay .tag-header {
 
 @media (min-width: 992px) {
   .post-content h3 {
-    font-size: 26px;
+    font-size: 26px !important;
   }
 }
 
 @media (min-width: 1199px) {
   .post-content h3 {
-    font-size: 32px;
+    font-size: 32px !important;
   }
 }
 
@@ -4898,13 +4898,13 @@ body.overlay .tag-header {
 
 @media (min-width: 992px) {
   .post-content h4 {
-    font-size: 22px;
+    font-size: 22px !important;
   }
 }
 
 @media (min-width: 1199px) {
   .post-content h4 {
-    font-size: 28px;
+    font-size: 28px !important;
   }
 }
 
@@ -4915,7 +4915,7 @@ body.overlay .tag-header {
 
 @media (min-width: 992px) {
   .post-content h5 {
-    font-size: 18px;
+    font-size: 18px !important;
   }
 }
 
@@ -4926,7 +4926,7 @@ body.overlay .tag-header {
 
 @media (min-width: 992px) {
   .post-content h6 {
-    font-size: 18px;
+    font-size: 18px !important;
   }
 }
 
@@ -5470,20 +5470,19 @@ table {
   min-width: 200px;
   border-bottom-width: 1px;
   border-left-width: 1px;
-  --tw-border-opacity: 1;
   border-color: rgb(195 197 197 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-border-opacity: 0.3;
   padding: 1rem;
   text-align: left;
   vertical-align: baseline;
+  background-color:rgba(249, 250, 251,1);
 }
 
 .table {
   display: table;
   border-width: 1px;
-  --tw-border-opacity: 1;
   border-color: rgb(195 197 197 / var(--tw-border-opacity));
+  --tw-border-opacity: 0.3;
 }
 
 .page-content td{
