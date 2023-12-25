@@ -1334,12 +1334,10 @@ strong {
   font-weight: 600 !important;
 }
 @media screen and (min-width: 1199px) {
-    
     .mega-menu, .sub-menu {
         transform: translateX(calc(-50% - 30px)) scale(0.9);
         overflow: hidden;
-        display: block;
-        
+        display: block !important;
         visibility: hidden;
         transform-origin: center right;
     }
