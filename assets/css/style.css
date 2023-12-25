@@ -5521,6 +5521,26 @@ strong {
   font-weight: 600 !important;
 }
 
+@media screen and (min-width: 1199px) {
+  .mega-menu, .sub-menu {
+    transform: translateX(calc(-50% - 30px)) scale(0.9);
+    overflow: hidden;
+    display: block;
+    visibility: hidden;
+    transform-origin: center right;
+  }
+
+  .main-menu ul li:hover .mega-menu {
+    transition: .15s ease-in-out;
+    transform:  translateX(calc(-50% - 30px)) scale(1);
+    visibility: visible;
+  }
+
+  .main-menu > ul > li:hover> a > svg {
+    transform: rotateX(180deg);
+  }
+}
+
 .hover\:prose-lg:hover {
   font-size: 1.125rem;
   line-height: 1.7777778;
