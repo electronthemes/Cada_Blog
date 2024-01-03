@@ -5525,7 +5525,7 @@ strong {
   .mega-menu, .sub-menu {
     transform: translateX(calc(-50% - 30px)) scale(0.9);
     overflow: hidden;
-    display: block;
+    display: block !important;
     visibility: hidden;
     transform-origin: center right;
   }
