@@ -465,7 +465,7 @@ input {
 /* Header Style */
 .header-area.sticky-header {
     position: fixed;
-    z-index: 999999999999;
+    z-index: 999;
     left: 0;
     right: 0;
     top: 0;

@@ -146,11 +146,11 @@
         postContectImageGallery: () => {
             $('.post-content .kg-card img').each(function() {
                 var contentImageSrc = $(this).attr('src');
-                $(this).wrap('<a href=' + contentImageSrc + '></a>')
+                $(this).wrap('<a class="image-popup-class" href=' + contentImageSrc + '></a>')
             });
 
             $('.zoom-gallery').magnificPopup({
-                delegate: 'a',
+                delegate: '.image-popup-class',
                 type: 'image',
                 closeOnContentClick: false,
                 closeBtnInside: false,
@@ -158,7 +158,7 @@
                 image: {
                     verticalFit: true,
                     titleSrc: function(item) {
-                        return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+                        return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('src')+'" target="_blank">image source</a>';
                     }
                 },
                 gallery: {
@@ -168,7 +168,7 @@
                     enabled: true,
                     duration: 300, // don't foget to change the duration also in CSS
                     opener: function(element) {
-                        return element.find('img');
+                        return element.find('.kg-card img');
                     }
                 }
                 

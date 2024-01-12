@@ -1715,6 +1715,10 @@ video {
   max-height: 15rem;
 }
 
+.max-h-\[500px\] {
+  max-height: 500px;
+}
+
 .w-1 {
   width: 0.25rem;
 }
@@ -4361,7 +4365,7 @@ input {
 
 .header-area.sticky-header {
   position: fixed;
-  z-index: 999999999999;
+  z-index: 999;
   left: 0;
   right: 0;
   top: 0;
