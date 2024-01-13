@@ -1715,6 +1715,10 @@ video {
   max-height: 15rem;
 }
 
+.max-h-\[300px\] {
+  max-height: 300px;
+}
+
 .max-h-\[500px\] {
   max-height: 500px;
 }
@@ -2832,6 +2836,11 @@ video {
 .border-\[\#ECECEC\] {
   --tw-border-opacity: 1;
   border-color: rgb(236 236 236 / var(--tw-border-opacity));
+}
+
+.border-\[\#dedde6\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(222 221 230 / var(--tw-border-opacity));
 }
 
 .bg-\[\#000\] {
@@ -4570,7 +4579,7 @@ input {
   }
 
   .main-menu > ul > li {
-    padding: 20px 50px;
+    padding: 27px 50px;
   }
 
   .main-menu > ul > li > a {
@@ -4579,7 +4588,7 @@ input {
     justify-content: space-between;
     gap: 10px;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1;
     color: #000;
   }
@@ -4664,12 +4673,6 @@ input {
 
 .post-card-nav ul li a {
   border: 1px solid transparent;
-}
-
-.post-card-nav ul li:hover a,
-.post-card-nav ul li.active a {
-  border-color: #DBE0E7;
-  color: #000;
 }
 
 .success .success-message{
@@ -5543,6 +5546,20 @@ strong {
   .main-menu > ul > li:hover> a > svg {
     transform: rotateX(180deg);
   }
+
+  .post-card-nav ul li:hover a,
+    .post-card-nav ul li.active a {
+    border-color: #DBE0E7;
+    color: #000;
+  }
+}
+
+.click-category svg{
+  transition: .3s ease-in-out;
+}
+
+.click-category.active svg{
+  transform: rotate(180deg);
 }
 
 .hover\:prose-lg:hover {
@@ -7684,6 +7701,10 @@ strong {
 
   .lg\:\!inline-block {
     display: inline-block !important;
+  }
+
+  .lg\:flex {
+    display: flex;
   }
 
   .lg\:\!hidden {

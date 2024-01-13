@@ -2,28 +2,50 @@
     <div class="post-card-nav mb-6 sm:mb-10 md:mb-14">
         {{#get "tags" limit="all"}}
         {{#if tags}}
-        <ul class="flex gap-2 w-full flex-nowrap overflow-y-auto whitespace-nowrap pb-2">
+        <ul class="gap-2 w-full flex-nowrap overflow-y-auto whitespace-nowrap pb-2 lg:flex hidden">
             <li class=""><a class="text-[#777C85] duration-300 py-3 sm:py-4 px-5 sm:px-6 text-sm sm:text-base leading-none tracking-[-0.16px] font-medium rounded-lg inline-block c-tags-list__link" href="/de/blog/#articles">Alle Kategorien</a></li>
             {{#foreach tags}}
             <li id="{{slug}}"><a class="text-[#777C85] duration-300 py-3 sm:py-4 px-5 sm:px-6 text-sm sm:text-base leading-none tracking-[-0.16px] font-medium rounded-lg inline-block c-tags-list__link" href="{{url}}#articles">{{name}}</a></li>
             {{/foreach}}
         </ul>
+        <div class="relative py-4 px-6 rounded-[8px] border border-[#dedde6] lg:hidden block">
+            <div class="flex items-center justify-between gap-5 click-category">
+                <h4 class="text-[#000]  text-sm sm:text-base leading-none tracking-[-0.16px] font-semibold inline-block">Alle Kategorien</h4>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.29289 7.29289C5.68342 6.90237 6.31658 6.90237 6.7071 7.29289L9.99999 10.5858L13.2929 7.29289C13.6834 6.90237 14.3166 6.90237 14.7071 7.29289C15.0976 7.68342 15.0976 8.31658 14.7071 8.70711L10.7071 12.7071C10.3166 13.0976 9.68341 13.0976 9.29289 12.7071L5.29289 8.70711C4.90237 8.31658 4.90237 7.68342 5.29289 7.29289Z" fill="#777C85"/>
+                </svg>
+            </div>
+            <div class="hidden category__item">
+                <ul class="max-h-[300px] overflow-y-auto mt-6 grid gap-6 pb-2">
+                    <li id="{{slug}}"><a class="text-[#000] text-sm sm:text-base leading-none tracking-[-0.16px] font-normal inline-block c-tags-list__link" href="/de/blog/#articles">Alle Kategorien</a></li>
+                    {{#foreach tags}}
+                        <li id="{{slug}}"><a class="text-[#000] text-sm sm:text-base leading-none tracking-[-0.16px] font-normal inline-block c-tags-list__link" href="{{url}}#articles">{{name}}</a></li>
+                    {{/foreach}}
+                </ul>
+            </div>
+            
+        </div>
+        
         {{/if}}
         {{/get}}
         <script>
+            const clickCategory = document.querySelector('.click-category');
             window.addEventListener('DOMContentLoaded', (event) => {
                 var url_pathname = window.location.pathname;
                 var pagesUrlPathname = window.location.pathname.split("page/")[0] ? window.location.pathname.split("page/")[0] : window.location.pathname;
 
-
-                document.querySelectorAll('.c-tags-list__link').forEach(function (index) {
+                const tagListLink = document.querySelectorAll('.c-tags-list__link');
+                tagListLink.forEach(function (index) {
                     var current_tag_item = index;
                     var current_tag_slug = current_tag_item.getAttribute('href').split("#articles")[0];
 
                     if (url_pathname === current_tag_slug || pagesUrlPathname === current_tag_slug) {
                         current_tag_item.parentElement.className += ' ' + 'active';
+                        console.log(current_tag_item.innerText);
+                        clickCategory.querySelector('h4').innerText = current_tag_item.innerText;
                     }
                 });
+
             });
         </script>
     </div>

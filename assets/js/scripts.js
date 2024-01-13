@@ -257,6 +257,15 @@
     });
 
     $('table').addClass('table').wrap('<div class="table-responsive"></div>')
+    $('.click-category').on('click', function(e){
+        e.stopPropagation()
+        $(this).toggleClass('active');
+        $(this).next().slideToggle();
+    })
+    $(document).on('click', function(){
+        $('.click-category').removeClass('active');
+        $('.category__item').slideUp();
+    });
 })(jQuery);
 
 

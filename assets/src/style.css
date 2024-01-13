@@ -635,7 +635,7 @@ input {
         @apply divide-y divide-[#D0D5DD];
     }
     .main-menu > ul > li {
-        padding: 20px 50px;
+        padding: 27px 50px;
     }
     .main-menu > ul > li > a {
         display: flex;
@@ -643,7 +643,7 @@ input {
         justify-content: space-between;
         gap: 10px;
         font-size: 24px;
-        font-weight: 600;
+        font-weight: 500;
         line-height: 1;
         color: #000;
     }
@@ -690,10 +690,6 @@ input {
         width: 100%;
         padding: 20px 0px;
     }
-    .main-menu > ul > li > a {
-        font-size: 20px;
-        font-weight: 500;
-    }
     .main-menu > ul > li {
         padding: 20px;
     }
@@ -718,11 +714,7 @@ input {
 .post-card-nav ul li a {
     border: 1px solid transparent;
 }
-.post-card-nav ul li:hover a,
-.post-card-nav ul li.active a {
-    border-color: #DBE0E7;
-    color: #000;
-}
+
 
 .success .success-message{
     display: block;
@@ -1349,4 +1341,17 @@ strong {
     .main-menu > ul > li:hover> a > svg {
         transform: rotateX(180deg);
     }
+    .post-card-nav ul li:hover a,
+    .post-card-nav ul li.active a {
+        border-color: #DBE0E7;
+        color: #000;
+    }
+}
+
+.click-category svg{
+    transition: .3s ease-in-out;
+}
+
+.click-category.active svg{
+    transform: rotate(180deg);
 }
