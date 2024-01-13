@@ -577,9 +577,9 @@ input {
     
 }
 @media screen and (max-width: 1199px) {
-    /* .header-area.sticky-header {
-        padding: 12px 0px;
-    } */
+    .category__item ul li.active {
+        display: none;
+    }
     .hamgurger {
         display: flex;
         flex-direction: column;

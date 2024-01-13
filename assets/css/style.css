@@ -4508,9 +4508,9 @@ input {
 }
 
 @media screen and (max-width: 1199px) {
-  /* .header-area.sticky-header {
-        padding: 12px 0px;
-    } */
+  .category__item ul li.active {
+    display: none;
+  }
 
   .hamgurger {
     display: flex;
@@ -4640,11 +4640,6 @@ input {
   .main-menu {
     width: 100%;
     padding: 20px 0px;
-  }
-
-  .main-menu > ul > li > a {
-    font-size: 20px;
-    font-weight: 500;
   }
 
   .main-menu > ul > li {
