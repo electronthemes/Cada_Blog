@@ -465,7 +465,7 @@ input {
 /* Header Style */
 .header-area.sticky-header {
     position: fixed;
-    z-index: 999;
+    z-index: 999999;
     left: 0;
     right: 0;
     top: 0;
@@ -618,9 +618,8 @@ input {
         transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
         opacity: 0;
         visibility: hidden;
-        max-height: calc(100vh - 80px);
+        height: calc(100vh - 80px);
         overflow-y: auto;
-        height: 100%;
     }
     /* .header-area.sticky-header .main-menu {
         max-height: calc(100vh - 74px);
