@@ -4555,7 +4555,7 @@ input {
     transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
     opacity: 0;
     visibility: hidden;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 72px);
     overflow-y: auto;
   }
 
@@ -4574,12 +4574,12 @@ input {
     --tw-divide-y-reverse: 0;
     border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
     border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
-    --tw-divide-opacity: 1;
-    border-color: rgb(208 213 221 / var(--tw-divide-opacity));
+    border-color: rgb(98 125 152 / var(--tw-divide-opacity));
+    --tw-divide-opacity: 0.1;
   }
 
   .main-menu > ul > li {
-    padding: 27px 50px;
+    padding: 28px 50px;
   }
 
   .main-menu > ul > li > a {
@@ -4595,14 +4595,14 @@ input {
 
   .mega-menu ,
     .sub-menu {
-    padding-top: 15px;
+    padding-top: 24px;
   }
 
   .mega-menu ul,
     .sub-menu  ul {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 24px;
   }
 
   body {
@@ -4629,6 +4629,10 @@ input {
   body.overlay::before {
     opacity: 0.4;
     visibility: visible;
+  }
+
+  .mega-menu ul li a span svg {
+    display: none;
   }
 }
 
