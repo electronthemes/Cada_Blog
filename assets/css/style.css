@@ -4643,11 +4643,7 @@ input {
 
   .main-menu {
     width: 100%;
-    padding: 20px 0px;
-  }
-
-  .main-menu > ul > li {
-    padding: 20px;
+    padding: 20px 0px 90px;
   }
 
   .main-menu ul .btn-primary {
@@ -4659,12 +4655,21 @@ input {
     justify-content: center;
   }
 
-  .main-menu > ul {
-    max-height: calc(100vh - 92px);
-  }
-
   .main-menu {
     transform: translateX(100%);
+  }
+
+  .main-menu > ul > li {
+    padding: 28px 24px;
+  }
+
+  .hamgurger {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hamgurger.active span.bottom {
+    transform: rotate(-45deg) translate(2px, -5px);
   }
 }
 
