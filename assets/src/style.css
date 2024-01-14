@@ -693,7 +693,9 @@ input {
         width: 100%;
         padding: 20px 0px 90px;
     }
-
+    .main-menu.active{
+        @apply border-t border-[#627d98] border-opacity-10;
+    }
     .main-menu ul .btn-primary {
         font-size: 16px;
         font-weight: 500;

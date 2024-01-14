@@ -4,7 +4,7 @@
         <div class="header-wrapper flex items-center justify-between gap-5">
             <a href="https://cada.com/de" class="logo">
                 {{#if @site.logo}}
-                    <img class="max-w-[86px]" src="{{@site.logo}}" alt="{{@site.title}}">
+                    <img class="md:max-w-[86px] max-w-[60px]" src="{{@site.logo}}" alt="{{@site.title}}">
                     {{else}}
                     <h2 class="site-title-if-no-logo">{{@site.title}}</h2>
                 {{/if}}
@@ -27,13 +27,13 @@
                                         <p>Hormonelle Zyklusuntersützung</p>
                                     </a>
                                 </li>
-                                <li class="lg:order-none order-4">
+                                <li class="lg:order-none order-5">
                                     <a href="https://cada.com/de/treatment/social-freezing-male/">
                                         <span>
-                                            Social Freezing Mann
+                                            Social Freezing für Sie
                                             <span>{{> icons/menu-items-arrow}}</span>
                                         </span>
-                                        <p>Kryokonservierung der Samenzellen</p>
+                                        <p>Kryokonservierung der Eizellen</p>
                                     </a>
                                 </li>
                                 <li class=" lg:order-none order-2">
@@ -45,13 +45,13 @@
                                         <p>In-Vitro Fertilization</p>
                                     </a>
                                 </li>
-                                <li class="lg:order-none order-5">
+                                <li class="lg:order-none order-4">
                                     <a href="https://cada.com/de/treatment/social-freezing-female/">
                                         <span>
-                                            Social Freezing Frau
+                                            Social Freezing für Ihn
                                             <span>{{> icons/menu-items-arrow}}</span>
                                         </span>
-                                        <p>Kryokonservierung der Eizellen</p>
+                                        <p>Kryokonservierung der Samenzellen</p>
                                     </a>
                                 </li>
                                 <li class="lg:order-none order-3">
@@ -107,6 +107,7 @@
                                         <p>informationen und Artikel Zu Kinderwunsch-Themen</p>
                                     </a>
                                 </li>
+                                
                             </ul>
                         </div>
                     </li>
@@ -123,13 +124,13 @@
             </div>
             <div class="header-right flex items-center gap-5">
                 <div class="relative">
-                    <div class="language-wrap flex items-center gap-[4px] py-[6px] pl-[12px] pr-[16px]  border border-[#000] h-[48px] w-[70px] rounded-[8px] cursor-pointer">
+                    <div class="language-wrap flex items-center gap-[4px] py-[6px] md:pl-[12px] md:pr-[16px] px-2  border border-[#000] h-[30px] md:h-[48px] w-[60px] md:w-[70px] rounded-[8px] cursor-pointer">
                         <div>
                             {{> icons/global}}
                         </div>
-                        <span class="text-[14px] leading-[22px] tracking-[-0.14px] font-medium text-[#000] block">DE</span>
+                        <span class="md:text-[14px] text-[12px] leading-[22px] tracking-[-0.14px] font-medium text-[#000] block">DE</span>
                     </div>
-                    <ul class="language-selector absolute mt-6 right-0 md:right-auto md:left-1/2 md:-translate-x-1/2 max-h-60 w-[160px] overflow-auto bg-[#fff] py-2 z-30 hidden rounded-[8px] shadow-box">
+                    <ul class="language-selector absolute mt-3 md:mt-6 right-0 md:right-auto md:left-1/2 md:-translate-x-1/2 max-h-60 w-[160px] overflow-auto bg-[#fff] py-2 z-30 hidden rounded-[8px] shadow-box">
                         <li class="py-2 px-6">
                             <div class="relative cursor-pointer select-none sm:text-sm">
                                 <a href="https://cada.com/en/blog/" class="truncate text-start font-normal text-[14px] flex items-center gap-4 flex-wrap">
