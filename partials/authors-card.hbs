@@ -1,0 +1,45 @@
+<div class="lg:py-10 lg:px-8 author-card sm:p-8 xs:p-5 authors-card rounded-[20px] xs:border xs:border-[#DEDDE6] xs:flex xs:flex-wrap xs:gap-8 md:gap-10">
+    <div class="flex lg:gap-10 gap-4 items-start lg:flex-row flex-col">
+        <div class="lg:block hidden">
+            {{> authors-social}}
+        </div>
+        {{#if profile_image }}
+        <div class="w-full">
+            <img class="rounded-[20px] w-full max-w-[330px] xs:w-[230px] sm:w-[290px] sm:min-h-[300px] object-cover" src="{{profile_image}}" alt="{{name}}">
+        </div>
+        {{/if}}
+        <div class="lg:hidden block w-full">
+            <div class="click-author-title flex items-start flex-wrap justify-between gap-5">
+                <h4 class="text-[20px] font-medium tracking-[-0.2px] mb-2">{{name}}</h4>
+                <div class="xs:hidden block mt-2.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.351472 0.751497C0.820101 0.282867 1.5799 0.282867 2.04853 0.751497L6 4.70298L9.95147 0.751497C10.4201 0.282867 11.1799 0.282867 11.6485 0.751497C12.1172 1.22013 12.1172 1.97993 11.6485 2.44856L6.84853 7.24856C6.3799 7.71719 5.6201 7.71719 5.15147 7.24856L0.351472 2.44856C-0.117157 1.97993 -0.117157 1.22013 0.351472 0.751497Z" fill="#777C85"/>
+                    </svg>
+                </div>
+                
+            </div>
+            {{#if location}}
+                <h6 class="text-[14px] font-normal tracking-[-0.14px] leading-[1.57] xs:mb-4 text-[#3D4044] text-opacity-[0.8]">{{location}}</h6>
+            {{/if}}
+            <div class="xs:block hidden">
+                {{> authors-social}}
+            </div>
+            
+        </div>
+    </div>
+    <div class="flex-1">
+        <div class="lg:block hidden">
+            <h4 class="text-[20px] font-medium tracking-[-0.2px] mb-2">{{name}}</h4>
+            {{#if location}}
+                <h6 class="text-[14px] font-normal tracking-[-0.14px] leading-[1.57] mb-6 text-[#3D4044] text-opacity-[0.8]">{{location}}</h6>
+            {{/if}}
+        </div>
+        <div class="show-author-bio xs:block hidden">
+            <p class="text-[18px] text-[#3D4044] xs:mt-0 mt-4">{{bio}}</p>
+            <div class="xs:hidden block mt-6">
+                {{> authors-social}}
+            </div>
+        </div>
+        
+    </div>
+</div>

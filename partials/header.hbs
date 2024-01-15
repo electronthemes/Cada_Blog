@@ -176,3 +176,47 @@
     {{#is "post"}}<div class="progress-bar"></div>{{/is}}
 </header>
 {{!-- Header End --}}
+{{#is "post"}}
+<script>
+    const handleProgressBar = (offsetNumber) => {
+            const progressBar = document.querySelector('.progress-bar');
+            const blogTitle = document.querySelector('.site-logo');
+            if (progressBar) {
+                window.addEventListener('scroll', (event) => {
+                    // Progressbar
+                    var scrollTop = document.querySelector('.post-content')["scrollTop"] ||
+                        document.documentElement["scrollTop"] ||
+                        document.body["scrollTop"];
+
+
+                    var scrollBottom = (document.querySelector('.post-content')["scrollHeight"] ||
+                        document.documentElement["scrollHeight"] ||
+                        document.body["scrollHeight"] -
+                        document.documentElement.scrollHeight);
+
+                    scrollPercent = Math.round((scrollTop - offsetNumber) / scrollBottom * 100);
+
+                    if (scrollPercent <= 101) {
+                        if (scrollTop < offsetNumber) {
+                            // console.log('Test: ' + scrollTop)
+                            document.body.classList.remove('body-content--scrolled')
+                        } else {
+                            // console.log('Scrolled: ' + scrollTop, scrollPercent)
+                            document.body.classList.add('body-content--scrolled')
+                        }
+                        progressBar.style.setProperty("--scroll", scrollPercent + "%");
+                    } else {
+                        document.body.classList.add('body-content--scrolled')
+                        progressBar.style.setProperty("--scroll", '101%');
+                    }
+                }, false);
+            }
+        }
+
+        if (window.outerWidth < 767) {
+            handleProgressBar(245);
+        } else {
+            handleProgressBar(245);
+        }
+</script>
+{{/is}}

@@ -1365,3 +1365,47 @@ strong {
 .click-category.active svg{
     transform: rotate(180deg);
 }
+
+/* authorpage style start here */
+.author-banner {
+    background-image: url(../img/author-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: top left;
+}
+.custom-author-page .header-area {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+.custom-author-page .header-area.sticky-header {
+    position: fixed;
+    top: 0;
+    background: #fff;
+}
+
+
+.progress-bar {
+    visibility: var(--global-progress-bar);
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: var(--scroll);
+    z-index: 60;
+    background: #111717;
+    bottom: -2px;
+    transition: .4s ease-in;
+}
+
+.progress-bar::before {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #111717;
+    content: '';
+    transform: translateY(-50%);
+}

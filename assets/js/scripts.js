@@ -214,7 +214,11 @@
             });
         },
     
-        
+        authorShow:function(){
+            $('.click-author-title').on('click',function(){
+                $(this).toggleClass('active').parents('.author-card').children().children('.show-author-bio').slideToggle(300);
+            })
+        },
         //================ Document click to hide elements ==================
         elementHide: () => {
             $(document).click(function() {
@@ -236,6 +240,7 @@
             allfunction.footer_menu()
             allfunction.toc_menu()
             allfunction.btnHideShow()
+            allfunction.authorShow()
         },
     }
 

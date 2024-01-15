@@ -1,0 +1,26 @@
+
+<div class="lg:w-[40px]">
+    <ul class="flex lg:flex-col lg:gap-2.5 gap-3 lg:items-start items-center">
+        {{#if meta_description }}
+        <li>
+            <a class="xs:h-10 h-8 xs:w-10 w-8 block" href="{{meta_description }}">
+                {{> icons/border-linkdin}}
+            </a>
+        </li>
+        {{/if}}
+        {{#if twitter_description}}
+        <li>
+            <a class="xs:h-10 h-8 xs:w-10 w-8 block" href="{{twitter_description}}">
+                {{> icons/border-instra}}
+            </a>
+        </li>
+        {{/if}}
+        {{#if og_description}}
+        <li>
+            <a class="xs:h-10 h-8 xs:w-10 w-8 block" href="{{og_description}}">
+                {{> icons/border-plus}}
+            </a>
+        </li>
+        {{/if}}
+    </ul>
+</div>

@@ -1,0 +1,27 @@
+{{#has any="facebook, twitter, website"}}
+<div class="lg:w-[40px]">
+    <ul class="flex lg:flex-col lg:gap-2.5 gap-3 lg:items-start items-center">
+        {{#if website}}
+        <li>
+            <a class="xs:h-10 h-8 xs:w-10 w-8 block" href="{{website_url}}">
+                {{> icons/border-linkdin}}
+            </a>
+        </li>
+        {{/if}}
+        {{#if twitter}}
+        <li>
+            <a class="xs:h-10 h-8 xs:w-10 w-8 block" href="{{twitter_url}}">
+                {{> icons/border-instra}}
+            </a>
+        </li>
+        {{/if}}
+        {{#if facebook}}
+        <li>
+            <a class="xs:h-10 h-8 xs:w-10 w-8 block" href="{{facebook_url}}">
+                {{> icons/border-plus}}
+            </a>
+        </li>
+        {{/if}}
+    </ul>
+</div>
+{{/has}}
