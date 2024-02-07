@@ -5238,8 +5238,15 @@ hr {
 }
 
 .post-content .kg-callout-card {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .post-content .kg-callout-card {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
 
 .post-content .kg-callout-card div.kg-callout-text {

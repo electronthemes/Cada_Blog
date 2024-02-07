@@ -1037,7 +1037,7 @@ hr {
 }
 
 .post-content .kg-callout-card {
-    @apply text-lg;
+    @apply text-base md:text-lg;
 }
 .post-content .kg-callout-card div.kg-callout-text {
     @apply text-[1em];
