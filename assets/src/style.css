@@ -1036,6 +1036,13 @@ hr {
     @apply w-auto block mx-auto;
 }
 
+.post-content .kg-callout-card {
+    @apply text-lg;
+}
+.post-content .kg-callout-card div.kg-callout-text {
+    @apply text-[1em];
+}
+
 .kg-width-wide,
 .kg-width-full {
     width: 100%;
