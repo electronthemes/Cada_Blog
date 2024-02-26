@@ -455,12 +455,6 @@ input {
     color: #ffffff;
     border-color: #000;
 }
-/* .btn-primary:hover::after {
-    -webkit-transform: skewX(45deg) scale(1, 1);
-    -moz-transform: skewX(45deg) scale(1, 1);
-    -ms-transform: skewX(45deg) scale(1, 1);
-    transform: skewX(45deg) scale(1, 1);
-} */
 
 /* Header Style */
 .header-area.sticky-header {
@@ -1040,6 +1034,13 @@ hr {
 
 .post-content img {
     @apply w-auto block mx-auto;
+}
+
+.post-content .kg-callout-card {
+    @apply text-base md:text-lg;
+}
+.post-content .kg-callout-card div.kg-callout-text {
+    @apply text-[1em];
 }
 
 .kg-width-wide,
