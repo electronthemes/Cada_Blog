@@ -1348,6 +1348,11 @@ strong {
         transform:  translateX(calc(-50% - 30px)) scale(1);
         visibility: visible;
     }
+    .main-menu ul li:hover .sub-menu {
+        transition: .15s ease-in-out;
+        transform:  translateX(calc(-50% - 30px)) scale(1);
+        visibility: visible;
+    }
     .main-menu > ul > li:hover> a > svg {
         transform: rotateX(180deg);
     }
