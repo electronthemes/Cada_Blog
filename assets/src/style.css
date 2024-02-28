@@ -1466,3 +1466,12 @@ strong {
         padding: 24px 0px;
     }
 }
+.signUp-btn {
+    width: 267.67px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    letter-spacing: -.28px !important;
+}
