@@ -1426,6 +1426,7 @@ strong {
 }
 .same-header-style .header-wrapper .header-button {
     padding: 12px 25.6px;
+    width: auto;
 }
 .same-header-style .header-wrapper .header-button span{
     transform: translateY(1px);
