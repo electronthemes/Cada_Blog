@@ -1699,6 +1699,10 @@ video {
   display: none;
 }
 
+.\!h-\[28px\] {
+  height: 28px !important;
+}
+
 .h-1 {
   height: 0.25rem;
 }
@@ -5753,7 +5757,7 @@ strong {
 
 /* header matching css style here */
 
-.same-header-style .header-wrapper .logo img{
+.same-header-style .header-wrapper .logo img {
   height: 27px;
   /* width: 86px; */
   width: 83px;
@@ -8203,11 +8207,6 @@ strong {
   .lg\:py-\[60px\] {
     padding-top: 60px;
     padding-bottom: 60px;
-  }
-
-  .lg\:py-\[95px\] {
-    padding-top: 95px;
-    padding-bottom: 95px;
   }
 
   .lg\:py-\[93px\] {

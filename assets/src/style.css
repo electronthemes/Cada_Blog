@@ -1418,11 +1418,11 @@ strong {
 
 
 /* header matching css style here */
-.same-header-style .header-wrapper .logo img{
+.same-header-style .header-wrapper .logo img {
     height: 27px;
     /* width: 86px; */
     width: 83px;
-    transform: translateX(0.5px);
+    transform: translateX(1.2px);
 }
 .same-header-style .header-wrapper .header-button {
     padding: 12px 25px;
