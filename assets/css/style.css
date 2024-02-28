@@ -5761,7 +5761,7 @@ strong {
   height: 27px;
   /* width: 86px; */
   width: 83px;
-  transform: translateX(0.5px);
+  transform: translateX(1.2px);
 }
 
 .same-header-style .header-wrapper .header-button {
