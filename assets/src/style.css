@@ -399,7 +399,7 @@ input {
 /* Container ================================ */
 .container,
 .container-fluid {
-    padding: 0px 16px;
+    padding: 0px 20px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -455,11 +455,17 @@ input {
     color: #ffffff;
     border-color: #000;
 }
+/* .btn-primary:hover::after {
+    -webkit-transform: skewX(45deg) scale(1, 1);
+    -moz-transform: skewX(45deg) scale(1, 1);
+    -ms-transform: skewX(45deg) scale(1, 1);
+    transform: skewX(45deg) scale(1, 1);
+} */
 
 /* Header Style */
 .header-area.sticky-header {
     position: fixed;
-    z-index: 999999;
+    z-index: 999999999999;
     left: 0;
     right: 0;
     top: 0;
@@ -512,12 +518,10 @@ input {
     letter-spacing: -.28px !important;
     border: none;
     padding: 12px 24px;
-    width: 206px;
 }
 .scroll-mt-100 {
     scroll-margin-top: 100px;
 }
-
 
 
 /* ============== */
@@ -1143,11 +1147,9 @@ strong {
   font-weight: 600 !important;
 }
 
-
 .click-category svg{
     transition: .3s ease-in-out;
 }
-
 .click-category.active svg{
     transform: rotate(180deg);
 }
@@ -1196,17 +1198,14 @@ strong {
     transform: translateY(-50%);
 }
 
-
 /* header matching css style here */
 .same-header-style .header-wrapper .logo img{
     height: 27px;
-    /* width: 86px; */
     width: 83px;
     transform: translateX(1.5px);
 }
 .same-header-style .header-wrapper .header-button {
     padding: 12px 25.6px 12px 24.5px;
-    width: auto;
 }
 .same-header-style .header-wrapper .header-button span {
     transform: translateY(1px) translateX(0.5px);
@@ -1214,6 +1213,23 @@ strong {
 }
 .same-header-style .main-menu > ul {
     gap: 40px;
+}
+.header-right {
+    gap: 16px;
+}
+.main-menu {
+    transform: translateX(-3px);
+}
+.language-wrap svg {
+    width: 18px;
+    height: 18px;
+}
+.language-wrap {
+    border: none;
+    background: rgba(0,0,0,0.05);
+    gap: 3px;
+    padding-left: 15px !important;
+    width: 70.63px !important;
 }
 .main-menu > ul > li > a > svg {
     padding-left: 1px;
@@ -1234,25 +1250,32 @@ strong {
 .same-header-style .main-menu > ul > li a svg path {
     fill: #474a4f;
 }
-.header-right {
-    gap: 16px;
+ul.language-selector {
+    width: 74px !important;
+    margin-top: 17px !important;
+    left: 3px !important;
+    transform: translateX(0px) !important;
 }
-.main-menu {
-    transform: translateX(-3px);
+ul.language-selector li{
+    background-color: transparent;
+    position: relative;
+    transition: .3s ease-in-out;
 }
-.language-wrap svg {
-    width: 18px;
-    height: 18px;
+ul.language-selector li:hover{
+    background-color: #f7f5f0;
 }
-.language-wrap {
-    border: none;
-    background: rgba(0,0,0,0.05);
-    gap: 3px;
-    padding-left: 14px !important;
+ul.language-selector li:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-color: transparent;
+    transition: .3s ease-in;
 }
-.language-wrap svg {
-    width: 18px;
-    height: 18px;
+ul.language-selector li:hover:after{
+    background-color: #000;
 }
 @media screen and (min-width: 1199px){
     .header-area.same-header-style.sticky-header .main-menu > ul > li {
@@ -1264,7 +1287,6 @@ strong {
 
 
 .signUp-btn {
-    width: 252.91px;
     height: 50px;
     display: flex;
     align-items: center;
@@ -1275,22 +1297,21 @@ strong {
 @media screen and (min-width: 1280px) {
     
     .mega-menu, .sub-menu {
-        transform: translateX(calc(-50% - 30px)) scale(0.9);
+        transform: translateX(-50%) translateY(10px) scale(0.9) !important;
         overflow: hidden;
         display: block !important;
-        
         visibility: hidden;
         transform-origin: center right;
     }
     .main-menu ul li:hover .mega-menu {
-        transition: .15s ease-in-out;
-        transform:  translateX(calc(-50% - 30px)) scale(1);
+        transform:  translateX(-50%) translateY(0px) scale(1) !important;
         visibility: visible;
+        transition: .2s ease-in-out;
     }
     .main-menu ul li:hover .sub-menu {
-        transition: .15s ease-in-out;
-        transform:  translateX(calc(-50% - 30px)) scale(1);
+        transform:  translateX(-50%) translateY(0px) scale(1) !important;
         visibility: visible;
+        transition: .2s ease-in-out;
     }
     .main-menu > ul > li:hover> a > svg {
         transform: rotateX(180deg);
@@ -1354,6 +1375,10 @@ strong {
 }
 
 @media screen and (max-width: 1279px) {
+    .container,
+    .container-fluid {
+        padding: 0px 16px;
+    }
     header.header-area {
         padding: 21px 0px !important;
     }
@@ -1591,3 +1616,7 @@ strong {
         margin-top: 17px !important;
     }
 }
+
+
+
+
