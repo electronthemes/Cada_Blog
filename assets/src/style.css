@@ -1616,7 +1616,9 @@ ul.language-selector li:hover:after{
         margin-top: 17px !important;
     }
 }
-
+.shadow-box-dark {
+    box-shadow: 0px 4px 24px 0px #0000001f;
+}
 
 
 
