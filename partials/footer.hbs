@@ -4,35 +4,41 @@
         <div class="container">
             <div class="max-w-[1224px] mx-auto">
                 <div class="flex items-start justify-between gap-10 flex-col md:flex-row">
-                    <div class="w-full md:w-auto flex flex-col xs:flex-row md:flex-col justify-center xs:justify-between gap-5 md:gap-0 items-center xs:items-stretch">
+                    <div class="w-full md:w-auto flex flex-col xs:flex-row md:flex-col justify-center xs:justify-between gap-5 md:gap-0 items-center xs:items-stretch transform translate-y-[-5px]">
                         <a href="https://cada.com/de" class="logo">
                             {{#if @site.logo}}
-                                <img src="{{@site.logo}}" class="max-w-[86px]" alt="{{@site.title}}">
+                                <img src="{{@site.logo}}" class="max-w-[86px] !h-[28px]" alt="{{@site.title}}">
                             {{/if}}
                         </a>
-                        <ul class="flex items-center gap-5 md:mt-6">
-                            <li class=""><a href="https://instagram.com/cadafertility" target="_blank">
-                                {{> icons/insta}}
+                        <ul class="flex items-center gap-5 md:mt-[26px] ml-[3px]">
+                            <li class=""><a class="w-[16px] block" href="https://instagram.com/cadafertility" target="_blank">
+                                <span class="w-full">{{> icons/insta}}</span>
                             </a></li>
-                            <li class=""><a href="https://www.facebook.com/cadafertility" target="_blank">
-                                {{> icons/facebook}}
+                            <li class=""><a class="w-[16px] block" href="https://www.facebook.com/cadafertility" target="_blank">
+                                <span class="w-full">
+                                    {{> icons/facebook}}
+                                </span>
                             </a></li>
-                            <li class=""><a href="https://www.linkedin.com/company/cadafertility" target="_blank">
-                                {{> icons/linkedIn}}
+                            <li class=""><a class="w-[16px] block" href="https://www.linkedin.com/company/cadafertility" target="_blank">
+                                <span class="w-full">
+                                    {{> icons/linkedIn}}
+                                </span>
                             </a></li>
-                            <li class=""><a href="#" target="_blank">
-                                {{> icons/twitter}}
+                            <li class=""><a class="w-[16px] block" href="#" target="_blank">
+                                <span class="w-full">
+                                    {{> icons/twitter}}
+                                </span>
                             </a></li>
                         </ul>
                     </div>
-                    <div class="max-w-full md:max-w-[810px] w-full grid sm:grid-cols-4 sm:gap-y-8 sm:gap-x-6 divide-y sm:divide-y-0 divide-[#2f30341a]">
+                    <div class="max-w-full md:max-w-[974px] w-full grid sm:grid-cols-4 sm:gap-y-8 sm:gap-x-6 divide-y sm:divide-y-0 divide-[#2f30341a]">
                         <div class="w-full signle_footer_item pb-[14px] sm:pb-0">
-                            <div class="flex items-center justify-between gap-2 w-full sm:mb-7 signle_footer_item_button active">
-                                <h6 class="font-inter text-dark font-medium text-lg leading-none tracking-[-0.18px]">Quicklinks</h6>
+                            <div class="flex items-center justify-between gap-2 w-full sm:mb-7 md:mb-[37px] signle_footer_item_button active">
+                                <h6 class="font-inter text-dark font-medium text-lg leading-none tracking-normal">Quicklinks</h6>
                                 <span class="block sm:hidden duration-300">{{> icons/ftr-arrow}}</span>
                             </div>
                             <div class="footer-menu sm:!block pt-4 sm:pt-0">
-                                <ul class="flex flex-col gap-4 text-pragrapgh text-sm xs:text-base leading-none tracking-[-0.16px]">
+                                <ul class="flex flex-col gap-4 text-pragrapgh text-sm xs:text-base leading-none tracking-normal">
                                     <li class="du duration-300"><a href="https://cada.com/de/analysis/">Fruchtbarkeitsanalyse</a></li>
                                     <li class="du duration-300"><a href="https://cada.com/de/why-cada/">Warum Cada</a></li>
                                     <li class="du duration-300"><a href="https://cada.com/de/locations/">Cada Praxis</a></li>
@@ -40,24 +46,24 @@
                             </div>
                         </div>
                         <div class="w-full signle_footer_item py-[14px] sm:py-0">
-                            <div class="flex items-center justify-between gap-2 w-full sm:mb-7 signle_footer_item_button">
-                                <h6 class="font-inter text-dark font-medium text-lg leading-none tracking-[-0.18px]">Behandlungen</h6>
+                            <div class="flex items-center justify-between gap-2 w-full sm:mb-7 md:mb-[37px] signle_footer_item_button">
+                                <h6 class="font-inter text-dark font-medium text-lg leading-none tracking-normal">Behandlungen</h6>
                                 <span class="block sm:hidden duration-300">{{> icons/ftr-arrow}}</span>
                             </div>
                             <div class="footer-menu hidden sm:!block pt-4 sm:pt-0">
-                                <ul class=" flex flex-col gap-4 text-pragrapgh text-sm xs:text-base leading-none tracking-[-0.16px]">
+                                <ul class=" flex flex-col gap-4 text-pragrapgh text-sm xs:text-base leading-none tracking-normal">
                                     <li class="du duration-300"><a href="https://cada.com/de/treatment/ht/">Hormontherapie</a></li>
                                     <li class="du duration-300"><a href="https://cada.com/de/treatment/iui/">IUI</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="w-full signle_footer_item py-[14px] sm:py-0">
-                            <div class="flex items-center justify-between gap-2 w-full sm:mb-7 signle_footer_item_button">
-                                <h6 class="font-inter text-dark font-medium text-lg leading-none tracking-[-0.18px]">Ressourcen</h6>
+                            <div class="flex items-center justify-between gap-2 w-full sm:mb-7 md:mb-[37px] signle_footer_item_button">
+                                <h6 class="font-inter text-dark font-medium text-lg leading-none tracking-normal">Ressourcen</h6>
                                 <span class="block sm:hidden duration-300">{{> icons/ftr-arrow}}</span>
                             </div>
                             <div class="footer-menu hidden sm:!block pt-4 sm:pt-0">
-                                <ul class=" flex flex-col gap-4 text-pragrapgh text-sm xs:text-base leading-none tracking-[-0.16px]">
+                                <ul class=" flex flex-col gap-4 text-pragrapgh text-sm xs:text-base leading-none tracking-normal">
                                     <li class="du duration-300"><a href="https://cada.com/de/video/">Cada TV</a></li>
                                     <li class="du duration-300"><a href="https://cada.com/de/blog/">Blog</a></li>
                                     <li class="du duration-300"><a href="https://cada.com/de/glossary/">Glossar</a></li>
@@ -65,12 +71,12 @@
                             </div>
                         </div>
                         <div class="w-full signle_footer_item pt-[14px] sm:pt-0">
-                            <div class="flex items-center justify-between gap-2 w-full sm:mb-7 signle_footer_item_button">
-                                <h6 class="font-inter text-dark font-medium text-lg leading-none tracking-[-0.18px]">Unternehmen</h6>
+                            <div class="flex items-center justify-between gap-2 w-full sm:mb-7 md:mb-[37px] signle_footer_item_button">
+                                <h6 class="font-inter text-dark font-medium text-lg leading-none tracking-normal">Unternehmen</h6>
                                 <span class="block sm:hidden duration-300">{{> icons/ftr-arrow}}</span>
                             </div>
                             <div class="footer-menu hidden sm:!block pt-4 sm:pt-0">
-                                <ul class=" flex flex-col gap-4 text-pragrapgh text-sm xs:text-base leading-none tracking-[-0.16px]">
+                                <ul class=" flex flex-col gap-4 text-pragrapgh text-sm xs:text-base leading-none tracking-normal">
                                     <li class="du duration-300"><a href="https://cada.com/de/about-us/">Über uns</a></li>
                                     <li class="du duration-300"><a href="https://cadafertility.careers.flair.hr/">Karriere</a></li>
                                     <li class="du duration-300"><a href="https://cada.com/de/contact/">Kontakt</a></li>
@@ -80,13 +86,13 @@
                     </div>
                 </div>
                 {{!-- Copy Right --}}
-                <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-5 mt-10 border-t border-[#ECECEC] py-5 sm:py-10">
-                    <p class="flex-1 text-center text-sm text-[#777C85] md:text-left">© {{date format="YYYY"}} Cada Health AG. All Rights reserved.</p>
-                    <div class="max-w-[350px] w-full flex gap-3 sm:gap-5 justify-center xs:justify-between flex-wrap sm:flex-nowrap -order-1 sm:order-last">
-                        <a class="text-sm leading-none text-[#777C85] tracking-[-0.14px]" href="https://cada.com/de/imprint/">Impressum</a>
-                        <a class=" text-sm leading-none text-[#777C85] tracking-[-0.14px]" href="https://cada.com/de/cookie-policy/">Cookies</a>
-                        <a class=" text-sm leading-none text-[#777C85] tracking-[-0.14px]" href="https://cada.com/de/terms-and-conditions/">AGBs</a>
-                        <a class=" text-sm leading-none text-[#777C85] tracking-[-0.14px]" href="https://cada.com/de/privacy-policy/">Datenschutz</a>
+                <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-5 mt-10 border-t border-[#ECECEC] py-5 sm:py-[41px]">
+                    <p class="flex-1 text-center text-sm text-[#777c85] md:text-left tracking-normal">© {{date format="YYYY"}} Cada Health AG. All Rights reserved.</p>
+                    <div class="max-w-[448px] w-full flex gap-3 sm:gap-[41px] justify-center xs:justify-end flex-wrap sm:flex-nowrap -order-1 sm:order-last">
+                        <a class="text-sm leading-none text-[#777C85] tracking-normal" href="https://cada.com/de/imprint/">Impressum</a>
+                        <a class=" text-sm leading-none text-[#777C85] tracking-normal" href="https://cada.com/de/cookie-policy/">Cookies</a>
+                        <a class=" text-sm leading-none text-[#777C85] tracking-normal" href="https://cada.com/de/terms-and-conditions/">AGBs</a>
+                        <a class=" text-sm leading-none text-[#777C85] tracking-normal" href="https://cada.com/de/privacy-policy/">Datenschutz</a>
                     </div>
                 </div>
             </div>

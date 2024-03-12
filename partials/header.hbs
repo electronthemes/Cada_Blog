@@ -1,5 +1,5 @@
 {{!-- Header Start --}}
-<header class="header-area py-5 lg:py-0 bg-[#fff] {{#is "post"}}post-header{{/is}}">
+<header class="header-area same-header-style py-5 lg:py-0 bg-[#fff] {{#is "post"}}post-header{{/is}}">
     <div class="container">
         <div class="header-wrapper flex items-center justify-between gap-5">
             <a href="https://cada.com/de" class="logo">
@@ -143,41 +143,17 @@
                         </div>
                         <span class="md:text-[14px] text-[12px] leading-[22px] tracking-[-0.14px] font-medium text-[#000] block">DE</span>
                     </div>
-                    <ul class="language-selector absolute mt-3 md:mt-6 right-0 md:right-auto md:left-1/2 md:-translate-x-1/2 max-h-60 w-[160px] overflow-auto bg-[#fff] py-2 z-30 hidden rounded-[8px] shadow-box">
+                    <ul class="language-selector absolute mt-3 md:mt-6 right-0 md:right-auto md:left-1/2 md:-translate-x-1/2 max-h-60 w-[160px] overflow-auto bg-[#fff] py-2 z-30 hidden rounded-[8px] shadow-box-dark">
                         <li class="py-2 px-6">
                             <div class="relative cursor-pointer select-none sm:text-sm">
-                                <a href="https://cada.com/en/blog/" class="truncate text-start font-normal text-[14px] flex items-center gap-4 flex-wrap">
-                                    <img class="h-6 w-6 rounded-full" src="{{asset "/img/flag/english.png"}}" alt="image">
-                                    English
+                                <a href="https://cada.com/en/blog/" class="truncate text-start font-normal text-[14px]">
+                                    EN
                                 </a>
                             </div>
                         </li>
-                        <li class="py-2 px-6 active">
-                            <div class="relative cursor-pointer select-none sm:text-sm flex items-center gap-4 flex-wrap">
-                                <img class="h-6 w-6 rounded-full" src="{{asset "/img/flag/deutsch.png"}}" alt="image">
-                                <span class="block truncate text-start text-[14px] font-normal text-white flex-1">Deutsch</span>
-                            </div>
-                        </li>
-                        {{!-- <li class="py-2 px-6">
-                            <div class="relative cursor-pointer select-none sm:text-sm">
-                                <a href="#" class="truncate text-start font-normal text-[14px] flex items-center gap-4 flex-wrap">
-                                    <img class="h-6 w-6 rounded-full" src="{{asset "/img/flag/Italiano.png"}}" alt="image">
-                                    Italiano
-                                </a>
-                            </div>
-                        </li> --}}
-                        
-                        {{!-- <li class="py-2 px-6">
-                            <div class="relative cursor-pointer select-none sm:text-sm">
-                                <a href="/" class="truncate text-start font-normal text-[14px] flex items-center gap-4 flex-wrap">
-                                    <img class="h-6 w-6 rounded-full" src="{{asset "/img/flag/francais.png"}}" alt="image">
-                                    Français
-                                </a>
-                            </div>
-                        </li> --}}
                     </ul>
                 </div>
-                <a class="btn-primary !hidden lg:!inline-block header-button" href="https://booking.cada.com/de/appointment/" target="_blank">Kostenfreie Beratung</a>
+                <a class="btn-primary !hidden lg:!inline-block header-button" href="https://booking.cada.com/de/appointment/" target="_blank"><span>Kostenfreie Beratung</span></a>
                 <button class="hamgurger lg:hidden">
                     <span class="top"></span>
                     <span class="bottom"></span>
