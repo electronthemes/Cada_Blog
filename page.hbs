@@ -23,13 +23,11 @@
         {{/match}}
             
         <div class="page-full-wrapper">
-            {{#match @page.show_title_and_feature_image}}
-                <h1 class="post-headlines">
-                    {{title}}
-                </h1>
-            {{/match}}
+            <h1 class="post-headlines">
+                {{title}}
+            </h1>
             {{!-- post-full-content --}}
-            <div class="post-full-content">
+            <div class="post-full-content post-content" >
                 {{content}}
             </div>
         </div>
