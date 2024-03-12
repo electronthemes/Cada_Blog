@@ -6018,6 +6018,33 @@ ul.language-selector li:hover:after{
   }
 }
 
+.author-banner-content {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.author-banner-content h2{
+  font-size: 55px;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .author-banner-content {
+    padding-top: 25px;
+  }
+
+  .author-banner-content h2{
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .author-banner-content h2{
+    font-size: 25px;
+  }
+}
+
 .hover\:prose-lg:hover {
   font-size: 1.125rem;
   line-height: 1.7777778;

@@ -1637,5 +1637,26 @@ ul.language-selector li:hover:after{
         font-size: 35px;
         padding: 30px 0px;
     }
-    
+}
+.author-banner-content {
+    padding-top: 50px;
+    text-align: center;
+}
+.author-banner-content h2{
+    font-size: 55px;
+    font-weight: 600;
+    text-align: center;
+}
+@media screen and (max-width: 767px) {
+    .author-banner-content {
+        padding-top: 25px;
+    }
+    .author-banner-content h2{
+        font-size: 35px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .author-banner-content h2{
+        font-size: 25px;
+    }
 }
