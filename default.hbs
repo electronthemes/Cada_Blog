@@ -29,7 +29,14 @@
        
     <script src="{{asset "/js/scripts.js"}}"></script>
 
-
+    <script>
+        const languageBeforeUrl = document.querySelector('.language-curent-url-before');
+        const languageCurentUrl = document.querySelector('.other-article-url');
+        if(languageCurentUrl){
+            languageBeforeUrl.href = languageCurentUrl.innerHTML;
+            languageCurentUrl.style.display = 'none';
+        }
+    </script>
     {{!-- to show block scripts --}}
     {{{block "scripts"}}}
     {{!-- ghost footer --}}

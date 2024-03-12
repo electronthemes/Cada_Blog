@@ -146,7 +146,7 @@
                     <ul class="language-selector absolute mt-3 md:mt-6 right-0 md:right-auto md:left-1/2 md:-translate-x-1/2 max-h-60 w-[160px] overflow-auto bg-[#fff] py-2 z-30 hidden rounded-[8px] shadow-box-dark">
                         <li class="py-2 px-6">
                             <div class="relative cursor-pointer select-none sm:text-sm">
-                                <a href="https://cada.com/en/blog/" class="truncate text-start font-normal text-[14px]">
+                                <a href="https://cada.com/en/blog/" class="truncate language-curent-url-before text-start font-normal text-[14px]">
                                     EN
                                 </a>
                             </div>
@@ -165,6 +165,7 @@
     {{#is "post"}}<div class="progress-bar"></div>{{/is}}
 </header>
 {{!-- Header End --}}
+
 {{#is "post"}}
 <script>
     const handleProgressBar = (offsetNumber) => {
