@@ -1,6 +1,11 @@
 {{!< default}}
 
 {{#post}}
+
+{{#contentFor "additional_links"}}
+<link hreflang="de-CH" href="{{url absolute="true"}}">
+{{/contentFor}}
+
     <div class="pt-[150px] md:pt-[175px] pb-16 xs:pb-20 lg:pb-[129px] bg-[#FCF7E8] relative z-[1]">
         <img class="w-[40%] sm:w-auto absolute bottom-0 left-[5%] -z-[1]" src="{{asset 'img/post-header-shape-01.png'}}" alt="shape">
         <img class="w-[40%] sm:w-auto absolute top-0 right-0 -z-[1]" src="{{asset 'img/post-header-shape-02.png'}}" alt="shape">
