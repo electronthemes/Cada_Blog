@@ -1,5 +1,5 @@
 {
-    "name": "cada",
+    "name": "cada-greman",
     "description": "it's a ghost cada theme",
     "version": "1.0.0",
     "license": "MIT",
@@ -20,7 +20,7 @@
         "ghost-theme"
     ],
     "config": {
-        "posts_per_page": 9,
+        "posts_per_page": 6,
         "image_sizes": {
             "xxs": {
                 "width": 30
@@ -39,6 +39,14 @@
             },
             "xl": {
                 "width": 2000
+            }
+        },
+        "custom":{
+            "tags_filter": {
+                "type": "text"
+            },
+            "search_content_api":{
+                "type": "text"
             }
         },
         "card_assets": {

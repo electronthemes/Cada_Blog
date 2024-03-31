@@ -4,19 +4,64 @@
 <meta name="robots" content="noindex" />
 {{/contentFor}}
 
-{{> banner}}
+{{#tag}}
+    {{!-- Bradcamb --}}
+    <section class="pt-10 xs:pt-16 md:pt-10">
+        <div class="container">
+            <div class="flex sm:flex-row flex-wrap items-center gap-[14px] justify-start">
+                <a href="https://cada.com/en"
+                    class="flex whitespace-nowrap items-center gap-[5px] text-xs leading-[22px] text-black py-1 px-3 rounded-[32px] bg-[#EEEFF0]">
+                    {{> redesign/icons/home}}
+                    Cada
+                </a>
+                <span class="block w-[6px]">
+                    {{> redesign/icons/bradcamb-right-arrow}}
+                </span>
+                <a href="{{@site.url}}" class=" text-black text-xs leading-none whitespace-nowrap">Blog</a>
+                <span class="block w-[6px]">
+                    {{> redesign/icons/bradcamb-right-arrow}}
+                </span>
+                <p class=" text-[#777C85] text-xs leading-none sm:whitespace-nowrap block">{{name}}</p>
+            </div>
+        </div>
+    </section>
+{{/tag}}
+    {{!-- Latest Articles Start --}}
+    <section class="py-[32px] xs:py-[48px] sm:py-[60px]">
+        <div class="container">
+            <div class="mb-10 sm:mb-16 flex items-center justify-between gap-10">
+                <h2 class="text-3xl xs:text-4xl sm:text-[40px] !leading-tight font-semibold">Neueste Artikel</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-x-6 gap-y-10 md:gap-y-12 js-post-wrapper">
+                {{#foreach posts }}
+                {{> redesign/cards/allgemein-card class="js-post-card"}}
+                {{/foreach}}
+            </div>
+            <div class="text-center mt-10 show-more-box">
+                <a href="#" class="show-more rounded-lg py-4 px-6 bg-[#F5F6F7] text-base font-medium leading-none tracking-[-0.01px] text-black duration-300 inline-block">Mehr laden</a>
+            </div>
+        </div>
+    </section>
+    {{!-- Latest Articles End --}}
 
-{{!-- Home Card Area Start --}}
-<div class="py-[30px] xs:pt-[40px] lg:py-[60px] scroll-mt-100" id="articles">
-    <div class="container">
-        {{> post-loop}}
-    </div>
-</div>
-{{!-- Home Card Area End --}}
+    {{!-- Subscribe Area Start --}}
+    <section class="py-[32px] xs:py-[48px] sm:py-[60px]">
+        <div class="container">
+            {{> redesign/subscribe }}
+        </div>
+    </section>
+    {{!-- Subscribe Area End --}}
+
+{{!-- Effective Area End --}}
+{{!-- Social Freezing Area End --}}
+
+{{!-- Explore Area Start --}}
+{{> redesign/explore-tags}}
+{{!-- Explore Area End --}}
 
 {{!-- Sign Up Area Start --}}
-<div class="py-[30px] sm:py-10 lg:pt-[60px] lg:pb-[65px]">
-    <div class="max-w-[1480px] mx-auto px-5">
+<div class="py-[32px] xs:py-[48px] sm:py-[60px]">
+    <div class="max-w-[1224px] mx-auto">
         {{> sign-up}}
     </div>
 </div>

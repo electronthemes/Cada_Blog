@@ -1,0 +1,30 @@
+
+
+<div class="single-author-card single-experts-card group flex gap-6 md:gap-12 flex-col xs:flex-row sm:items-center md:rounded-none rounded-2xl md:p-0 sm:p-6 md:border-transparent border-transparent sm:border-border_color border">
+    <div class="w-full max-w-[316px] md:max-w-[392px] overflow-hidden md:p-6 md:rounded-[20px] md:border md:border-border_color  {{^if profile_image}}xs:h-[300px] sm:max-w-[398px] bg-[#EEEFF0]{{/if}}">
+        {{#if profile_image}}
+            <a class="xs:h-[350px] sm:h-[406px] md:min-h-[389] block overflow-hidden rounded-2xl md:rounded-[20px]" href="{{url}}">
+                {{> image
+                    image_class="lazyload w-full h-full   object-cover transform scale-100 duration-500 group-hover:scale-105"
+                    image_url=profile_image
+                    size_s=true
+                    size_m=true
+                }}
+            </a>
+        {{/if}}
+    </div>
+    <div class="sm:max-w-[578px] w-full">
+        <div class="flex md:items-end md:justify-between md:gap-5 pb-4 md:flex-row flex-col md:border-b md:border-border_color">
+            <div>
+                <h5 class="text-xl xs:text-[28px] font-semibold leading-[1.35] tracking-[-0.01px]">{{name}}</h5>
+                {{#if location}}
+                <span class="block text-sm xs:text-base leading-[22px] tracking-[-0.01px] mt-3 text-[#3D4044]">{{location}}</span>
+                {{/if}}
+            </div>
+            <div class="md:mb-3 pt-6 md:pt-0 mt-6 md:mt-0 border-t md:border-transparent border-border_color">
+                {{> authors-social}}
+            </div>
+        </div>
+         <p class="pt-4 text-sm xs:text-base text-[#3D4044] tracking-[-0.01px] experts-bio-text">{{bio}}</p>
+    </div>
+</div>

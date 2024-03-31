@@ -1,0 +1,48 @@
+<div class="group line-hover-wrap">
+    <div class="relative rounded-2xl overflow-hidden{{^if feature_image}} min-h-[240px] xs:h-[424px] sm:h-[270px] md:h-[413px] bg-[#EEEFF0]{{/if}}">
+        {{#if feature_image}}
+            <a class="block " href="{{url}}">
+            {{!--    {{> image
+                image_class="lazyload w-full  object-cover h-[240px] xs:h-[424px] sm:h-[270px] md:h-[413px] duration-500 transform scale-100 group-hover:scale-110"
+                image_url=feature_image
+                size_s=true
+                size_m=true
+            }} --}}
+            <img class="lazyload w-full  object-cover h-[240px] xs:h-[424px] sm:h-[270px] md:h-[413px] duration-500 transform scale-100 group-hover:scale-110" src="{{feature_image}}" alt="{{title}}">
+            </a>
+        {{/if}}
+        {{!-- tag --}}
+
+        <div class="flex items-center justify-start gap-2 absolute z-10 top-[14px] left-5">
+            {{#has tag="new"}}
+            {{#foreach tags limit="1"}}
+                <a href="{{url}}" class="text-xs leading-[18px] font-medium py-1 px-3 rounded-[32px] text-title duration-300 bg-primary">neu</a>
+            {{/foreach}}
+            {{/has}}
+            {{#if tags}}
+            {{#foreach tags limit="1"}}
+                <a href="{{url}}" class="text-xs leading-[18px] font-semibold py-1 px-3 bg-white rounded-[32px] text-pragrapgh duration-300 hover:text-black "><span class="sm:translate-y-[1px] block">{{name}}</span></a>
+            {{/foreach}}
+            
+            {{/if}}
+            
+        </div>
+        
+        
+
+        {{!-- Play Button --}}
+        {{!-- <a href="{{url}}" class="w-14 h-14 rounded-full bg-white flex items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 duration-300 hover:bg-primary">
+            {{> redesign/icons/play-icon}}
+        </a> --}}
+    </div>
+    <div class="mt-6 xs:mt-8">
+        <h5 class="text-lg xs:text-2xl sm:text-[28px] !leading-normal font-semibold underline-animation"><a href="{{url}}">{{title}}</a></h5>
+        <ul class="flex items-center mt-3 xs:mt-4 gap-4">
+            <li class="xs:text-sm text-[12px] leading-[20px] xs:leading-[22px] tracking-[-0.01px] text-light_gray">{{date published_at format="MMM, YYYY"}}</li>
+            <li class="xs:text-sm text-[12px] leading-[20px] xs:leading-[22px] tracking-[-0.01px] text-light_gray flex items-center gap-[6px]">
+                {{> redesign/icons/clock}}
+                {{reading_time minute="Nur eine Minute" minutes="% Proto"}}
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,27 +1,16 @@
 {{#has any="facebook, twitter, website"}}
-<div class="lg:w-[40px]">
-    <ul class="flex lg:flex-col lg:gap-2.5 gap-3 lg:items-start items-center">
-        {{#if website}}
-        <li>
-            <a class="xs:h-10 h-8 xs:w-10 w-8 block" href="{{website_url}}">
-                {{> icons/border-linkdin}}
-            </a>
-        </li>
-        {{/if}}
-        {{#if twitter}}
-        <li>
-            <a class="xs:h-10 h-8 xs:w-10 w-8 block" href="{{twitter_url}}">
-                {{> icons/border-instra}}
-            </a>
-        </li>
-        {{/if}}
-        {{#if facebook}}
-        <li>
-            <a class="xs:h-10 h-8 xs:w-10 w-8 block" href="{{facebook_url}}">
-                {{> icons/border-plus}}
-            </a>
-        </li>
-        {{/if}}
-    </ul>
-</div>
+    <div class="flex gap-5 relative">
+        
+        <a class="" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" href="https://twitter.com/share?text={{encode title}}&url={{url absolute="true"}}" target="_blank">
+            {{> icons/twitter}}
+        </a>
+
+        <a class="" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" href="https://www.linkedin.com/shareArticle?mini=true&url={{encode title}}&url={{url absolute="true"}}">
+            {{> icons/linkedIn}}
+        </a>
+        
+        <a class="" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" target="_blank">              
+             {{> icons/facebook}}
+        </a>
+    </div>
 {{/has}}

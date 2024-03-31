@@ -1,0 +1,26 @@
+{{#tag}}
+    {{!-- Effective Area Start --}}
+    {{!-- Explore Area Start --}}
+    {{#get "tags" limit="2" filter="visibility:public+slug:-~^'reviewer-'+slug:-~^'checker-'+slug:-{{slug}}" }}
+    {{#if tags}}
+        {{#foreach tags }}
+        <section class="py-[32px] xs:py-[48px] sm:py-[60px]">
+            <div class="container">
+                <div class="mb-8 xs:mb-10 md:mb-16 flex items-center justify-between gap-10">
+                    <h2 class="text-3xl xs:text-4xl sm:text-[40px] !leading-tight font-semibold">{{name}}</h2>
+                </div>
+                {{#get 'posts' include="tags" limit="6" filter="tag:{{slug}}" }}
+                {{#if posts}}
+                <div class="grid xs:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-6 gap-y-10">
+                    {{#foreach posts}}
+                    {{> redesign/cards/treatment-card}}
+                    {{/foreach}}
+                </div>
+                {{/if}}
+                {{/get}}
+            </div>
+        </section>
+        {{/foreach}}
+    {{/if}}
+    {{/get}}
+{{/tag}}

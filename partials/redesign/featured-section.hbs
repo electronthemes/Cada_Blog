@@ -1,0 +1,80 @@
+{{!-- Blog --}}
+<div class="hidden sm:flex items-start gap-[40px]">
+    <div class="max-w-[687px] w-full">
+        {{> redesign/cards/feature-card}}
+    </div>
+    <div class="max-w-[495px] w-full">
+        <h2 class="text-[40px] !leading-tight font-semibold pb-4 mb-10 border-b border-border_color">Featured
+            articles</h2>
+        <div class="">
+            <div class="pb-4 mb-4 border-b border-border_color featured-article">
+                <a href="#"
+                    class="text-xs leading-[18px] font-medium py-1 px-3 bg-[#F8F8F8] rounded-[32px] text-pragrapgh inline-block">Allgemein</a>
+                <h5 class="text-lg !leading-normal font-semibold tracking-[-0.01px] mt-3"><a
+                        href="#">Zyklusstörungen: Wie sich ein unregelmässiger Zyklus auf deinen Kinderwunsch
+                        auswirkt</a></h5>
+                <ul class="flex items-center mt-3 gap-4">
+                    <li class="text-sm leading-[22px] tracking-[-0.01px] text-light_gray">Mar, 2022</li>
+                    <li
+                        class="text-sm leading-[22px] tracking-[-0.01px] text-light_gray flex items-center gap-[6px]">
+                        {{> redesign/icons/clock}}
+                        9 min
+                    </li>
+                </ul>
+            </div>
+            <div class="pb-4 mb-4 border-b border-border_color featured-article">
+                <a href="#"
+                    class="text-xs leading-[18px] font-medium py-1 px-3 bg-[#F8F8F8] rounded-[32px] text-pragrapgh inline-block">Analyse</a>
+                <h5 class="text-lg !leading-normal font-semibold tracking-[-0.01px] mt-3"><a href="#">Progesteron
+                        Wirkung und Bedeutung bei Kinderwunsch</a></h5>
+                <ul class="flex items-center mt-3 gap-4">
+                    <li class="text-sm leading-[22px] tracking-[-0.01px] text-light_gray">Mar, 2022</li>
+                    <li
+                        class="text-sm leading-[22px] tracking-[-0.01px] text-light_gray flex items-center gap-[6px]">
+                        {{> redesign/icons/clock}}
+                        9 min
+                    </li>
+                </ul>
+            </div>
+            <div class="pb-4 mb-4 border-b border-border_color featured-article">
+                <a href="#"
+                    class="text-xs leading-[18px] font-medium py-1 px-3 bg-[#F8F8F8] rounded-[32px] text-pragrapgh inline-block">Allgemein</a>
+                <h5 class="text-lg !leading-normal font-semibold tracking-[-0.01px] mt-3"><a href="#">Natürliche
+                        Familienplanung (NFP), Verhütung und Kinderwunsch</a></h5>
+                <ul class="flex items-center mt-3 gap-4">
+                    <li class="text-sm leading-[22px] tracking-[-0.01px] text-light_gray">Mar, 2022</li>
+                    <li
+                        class="text-sm leading-[22px] tracking-[-0.01px] text-light_gray flex items-center gap-[6px]">
+                        {{> redesign/icons/clock}}
+                        9 min
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{!-- Blog Slider --}}
+<div class="block sm:hidden">
+    <h2 class="text-3xl xs:text-[36px] !leading-tight font-semibold mb-10">Featured
+        articles</h2>
+    <div class="swiper hero_slider max-w-[300px] xs:max-w-[560px]">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                {{> redesign/cards/feature-card}}
+            </div>
+            <div class="swiper-slide">
+                {{> redesign/cards/feature-card}}
+            </div>
+            <div class="swiper-slide">
+                {{> redesign/cards/feature-card}}
+            </div>
+            <div class="swiper-slide">
+                {{> redesign/cards/feature-card}}
+            </div>
+            <div class="swiper-slide">
+                {{> redesign/cards/feature-card}}
+            </div>
+        </div>
+    </div>
+    <div class="hero_slider_pagination"></div>
+</div>

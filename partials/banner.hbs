@@ -1,25 +1,51 @@
-{{!-- Banner Start --}}
-<div class="pt-[50px] pb-[30px] sm:py-[50px] lg:py-[60px]">
+{{!-- <span class="text-[14px] text-[#3D4044] block tracking-[-0.14px]">Unser Blog</span> --}}
+
+{{!-- Banner Area Start --}} 
+
+<section class="pt-10 pb-[32px] xs:pb-[45px] sm:pb-[60px] overflow-hidden">
     <div class="container">
-        <div class="max-w-[1224px] mx-auto flex items-center justify-between gap-8 sm:gap-10 flex-col sm:flex-row">
-            <div class="sm:max-w-[400px] md:max-w-[520px] w-full {{^if feature_image}}banner-center{{/if}}">
-                <span class="text-[14px] text-[#3D4044] block tracking-[-0.14px]">Unser Blog</span>
-                <h1 class="mt-2 md:mt-[18px] text-4xl md:text-[48px] font-semibold leading-[1.2]">{{@site.title}}</h1>
-                <p class="mt-3 md:mt-4 text-base md:text-lg tracking-[-0.18px]">{{@site.description}}</p>
-                {{!-- From --}}
-                <form class="mt-6 md:mt-10 flex gap-4 relative flex-wrap " data-members-form="subscribe">
-                    <input class="w-full flex-1 rounded-lg duration-300 bg-transparent py-3 px-4 border border-[#D0D5DD] focus:outline-none focus:border-primary shadow-none target:outline-none focus-visible:outline-none" type="email" placeholder="Deine E-Mail-Adresse" data-members-email required>
-                    <h4 class="success-message hidden p-5 w-full bg-[#fff]/75 text-[#008000] font-normal text-base text-center absolute top-full left-0">Danke schön! Ihre Einsendung ist eingegangen!</h4>
-                    <button class="btn-primary " type="submit">Bleibe informiert</button>
-                    <p data-members-error class="error-message mt-5 absolute top-full left-0 text-[#de2525] hidden"></p>
-                </form>
+        {{!-- Head --}}
+        <div class="sm:pb-10 mb-14 xs:mb-16 sm:mb-[36px]">
+            <div class="xs:text-center sm:text-left">
+                {{!-- <div class="flex items-center gap-[14px] xs:justify-center sm:justify-start">
+                    <a href="https://cada.com/en/blog/"
+                        class="flex items-center gap-[5px] text-xs leading-[22px] text-black py-1 px-3 rounded-[32px] bg-[#EEEFF0]">
+                        {{> redesign/icons/home}}
+                        Cada
+                    </a>
+                    {{> redesign/icons/bradcamb-right-arrow}}
+                    <p class=" text-light_gray text-xs leading-none">Blog</p>
+                </div> --}}
+                <h1 class="text-[40px] xs:text-[44px] md:text-5xl xl:text-[56px] font-semibold text-black !leading-tight mt-4 tracking-[-2%] xs:tracking-normal">
+                    {{@site.title}}
+                </h1>
             </div>
-            {{#if @site.cover_image}}
-                <div class="sm:max-w-[600px] max-h-[500px] w-full rounded-2xl overflow-hidden">
-                    <img class="h-full w-full object-cover" src="{{@site.cover_image}}" alt="{{@site.title}}">
+            <div class="flex flex-col sm:flex-row xs:items-center sm:items-end xs:justify-center sm:justify-between gap-6 xs:gap-10 mt-4 xs:text-center sm:text-left">
+                {{#if @site.description}}
+                <p class="text-sm xs:text-lg !leading-snug max-w-[680px] w-full">{{@site.description}}</p>
+                {{/if}}
+                <div class="sm:max-w-[300px] xl:max-w-[351px] w-full relative search-input-bar">
+                    <div class="sm:max-w-[300px] xl:max-w-[351px] w-full relative">
+                        <input
+                            class="h-[48px] w-full bg-transparent border py-3 pl-[14px] pr-8 border-[#D0D5DD] rounded-lg text-black placeholder:text-[#667085] search-input"
+                            type="text" placeholder="Suchen">
+                        <button class="absolute top-1/2 right-[17px] transform -translate-y-1/2 z-10">
+                            {{> redesign/icons/search}}
+                        </button>
+                    </div>
+                    <div class="search-result nicescrol shadow-md">
+                        <div class="custom">
+                            <h2 class="no-result">{{{t "<span>0</span> Ergebnisse zu diesem Schlüsselwort gefunden"}}}</h2>
+                            <div class="search-full-content"></div>
+                        </div>
+                    </div>
                 </div>
-            {{/if}}
+            </div>
         </div>
+        {{#get "posts" limit="4"  include="tags" filter="featured:true" }}
+        {{> redesign/banner-feature }}
+        {{/get}}
     </div>
-</div>
-{{!-- Banner End --}}
+</section>
+
+{{!-- Banner Area End --}}

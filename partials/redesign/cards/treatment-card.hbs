@@ -1,0 +1,51 @@
+<div class="group line-hover-wrap {{class}}">
+    <div class="relative rounded-2xl overflow-hidden  {{^if feature_image}}min-h-[240px] bg-[#EEEFF0]{{/if}}">
+        {{#if feature_image}}
+            <a href="{{url}}">
+                {{> image
+                image_class="lazyload w-full h-full duration-500 transform scale-100 group-hover:scale-110 max-h-[240px] min-h-[240px] object-cover"
+                image_url=feature_image
+                size_s=true
+                size_m=true
+            }}
+            </a>
+        {{/if}}
+
+        {{!-- tag --}}
+
+        
+            <div class="absolute z-10 top-[14px] left-5 flex gap-2">
+            {{!-- <a href="#"class="text-xs leading-[18px] font-medium py-1 px-3 rounded-[32px] text-title duration-300 bg-primary">New</a> --}}
+            {{!-- {{#get "tags" limit="1" filter="tags:new"}}
+               {{#foreach tags}}
+                    <a href="{{url}}" class="text-xs leading-[18px] font-semibold py-1 px-3 bg-white rounded-[32px] text-pragrapgh duration-300 hover:text-black "><span class="sm:translate-y-[1px] block">{{name}}</span></a>
+                {{/foreach}}
+            {{/get}}  --}}
+            {{#has tag="new"}}
+            {{#foreach tags limit="1"}}
+                <a href="{{url}}" class="text-xs leading-[18px] font-medium py-1 px-3 rounded-[32px] text-title duration-300 bg-primary">Neu</a>
+            {{/foreach}}
+            {{/has}}
+            {{#foreach tags limit="1"}}
+            <a 
+                href="{{url}}"
+                class="text-xs leading-[18px] font-semibold py-1 px-3 bg-white rounded-[32px] text-pragrapgh ">
+                <span class="block sm:translate-y-[1px]">{{name}}</span>
+            </a>
+            
+            {{/foreach}} 
+        </div>
+       
+    </div>
+    <div class="mt-6">
+        <h5 class="underline-animation text-lg xs:text-xl leading-[22px] xs:leading-[28px] font-semibold tracking-[-0.01px] font-inter"><a href="{{url}}">{{title}}</a>
+        </h5>
+        <ul class="flex items-center mt-3 gap-4">
+            <li class="text-xs xs:text-sm leading-[20px] xs:leading-[22px] tracking-[-0.01px] text-light_gray">{{date published_at format="MMM, YYYY"}}</li>
+            <li class="text-xs xs:text-sm leading-[20px] xs:leading-[22px] tracking-[-0.01px] text-light_gray flex items-center gap-[6px]">
+                {{> redesign/icons/clock}}
+                {{reading_time minute="Nur eine Minute" minutes="% Proto"}}
+            </li>
+        </ul>
+    </div>
+</div>

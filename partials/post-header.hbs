@@ -1,19 +1,128 @@
 <div class="max-w-[1016px] mx-auto">
-    <a href="{{@site.url}}/" class="flex items-center gap-[10px]">
-        {{> icons/back-arrow}}
-        Zurück zum Blog
-    </a>
-    <h1 class="text-[34px] xs:text-[44px] md:text-[56px] leadig-[1.1] font-semibold font-Jakarta mt-[18px]">
+
+    {{!-- Bradcamb --}}
+    <div class="flex items-center gap-[14px] xs:justify-center sm:justify-start">
+        <a href="https://cada.com/en/"
+            class="flex items-center gap-[5px] text-xs leading-[22px] text-black py-1 px-3 rounded-[32px] bg-[#EEEFF0]">
+            {{> redesign/icons/home}}
+            Cada
+        </a>
+        <span class="block w-[6px]">
+            {{> redesign/icons/bradcamb-right-arrow}}
+        </span>
+        <a href="{{@site.url}}" class=" text-black text-xs leading-none">Blog</a>
+        <span class="block w-[6px]">
+            {{> redesign/icons/bradcamb-right-arrow}}
+        </span>
+        {{#foreach tags limit="1"}}
+        <a href="{{url}}" class=" text-black text-xs leading-none whitespace-nowrap hidden xs:block">{{name}}</a>
+        {{/foreach}}
+        <span class="w-[6px] hidden xs:block">
+            {{> redesign/icons/bradcamb-right-arrow}}
+        </span>
+        <p class=" text-[#777C85] text-xs leading-none w-full whitespace-nowrap overflow-hidden text-ellipsis">{{title}}</p>
+    </div>
+
+    {{!-- Content --}}
+    <h1 class="text-[34px] xs:text-[44px] md:text-[56px] !leading-[1.3] font-semibold font-Jakarta mt-6 sm:mt-8">
         {{title}}
     </h1>
-    <ul class="flex items-center gap-3 mt-[18px] text-sm leading-none text-[#777C85] flex-nowrap">
-        {{#foreach tags limit="1"}}
-        <li class="w-full xs:w-auto hidden sm:block">
-            <a class="text-xs font-medium leading-none text-pragrapgh bg-[#fff] py-[10px] px-3 rounded-[32px] inline-block" href="{{url}}">{{name}}</a>
-        </li>
-        {{/foreach}}
-        <li>{{date published_at format="MMM DD, YYYY"}}</li>
-        <li class="w-1 h-1 rounded-full bg-dark/20"></li>
-        <li>{{reading_time minute="1 mins read" minutes="% mins read"}}</li>
-    </ul>
+     <div class="relative before:absolute sm:before:hidden before:top-1/2 before:right-0 post_header-scroll_section before:transform before:-translate-y-1/2 before:w-[36px] before:h-full before:z-10 popup-activation-class">
+    
+        <div class="py-3 sm:py-8 mt-6 sm:mt-8 border-t sm:border-y border-border_color flex items-center gap-2 md:gap-16 justify-between overflow-auto overflow-y-hidden scrollbar-style get-section-top">
+            <ul class="flex gap-2 sm:gap-4">
+                {{#primary_author}}
+                <li class=" text-xs leading-[20px] xs:text-sm xs:leading-[22px] tracking-[-0.01px] text-[#777C85] flex items-center gap-[6px] whitespace-nowrap px-4 sm:px-0 py-2 sm:py-0 rounded-lg sm:rounded-none bg-[#F8F8F8] sm:bg-transparent">
+                    Autor:
+                    <a class="text-[#DE893E] font-medium" href="{{url}}">{{name}}</a>
+                </li>
+                {{/primary_author}}
+                {{> redesign/post-reviewers}}
+                {{#foreach tags}}
+                <li class=" text-xs leading-[20px] xs:text-sm xs:leading-[22px] tracking-[-0.01px] text-[#777C85] flex items-center gap-[6px] whitespace-nowrap px-4 sm:px-0 py-2 sm:py-0 rounded-lg sm:rounded-none bg-[#F8F8F8] sm:bg-transparent checkers-tag after:absolute after:top-0 after:-left-2 after:h-full after:w-[1px] after:bg-border_color  after:opacity-0 sm:after:opacity-100 relative">
+                    Faktenchecker:
+                    <span class="text-[#DE893E] font-medium checkers-tag-text" href="{{url}}"  data-slug="{{slug}}">{{name}}</span>
+                </li>
+                {{/foreach}}
+            </ul>
+            <ul class="flex gap-2 md:gap-3">
+                <li class=" text-xs leading-[20px] xs:text-sm xs:leading-[22px] tracking-[-0.01px] text-[#777C85] flex items-center gap-[6px] whitespace-nowrap px-4 sm:px-0 py-2 sm:py-0 rounded-lg sm:rounded-none bg-[#F8F8F8] sm:bg-transparent">
+                    {{> redesign/icons/clock}}
+                    Lesezeit:
+                    <span class="text-black font-medium"> {{reading_time minute="Nur eine Minute" minutes="% Proto"}}</span>
+                </li>
+                <li class="w-[1px] bg-border_color hidden sm:block"></li>
+                <li class="text-xs leading-[20px] xs:text-sm xs:leading-[22px] tracking-[-0.01px] text-[#777C85] flex items-center gap-[6px] whitespace-nowrap px-4 sm:px-0 py-2 sm:py-0 rounded-lg sm:rounded-none bg-[#F8F8F8] sm:bg-transparent">
+                    {{> redesign/icons/calender}}
+                    Veröffentlichungs datum:
+                    <span class="text-black font-medium">{{date format="DD/MM/YYYY"}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
+
+<script>
+    const reviewerTag = document.querySelectorAll('.reviewer-tag');
+    const reviewerTagText = document.querySelector('.reviewer-tag-text');
+    reviewerTag.forEach((tag , index) => {
+        const singleTags = tag.children[0]
+        if(singleTags.getAttribute('data-slug').includes('reviewer-')) {
+           singleTags.textContent = singleTags.textContent.replace('reviewer', '').trim();
+           singleTags.textContent = singleTags.textContent.replace('Reviewer', '').trim();
+        }else{
+            tag.remove();
+        }
+        //reviewer bio text content call here
+        const reviewerBioText = tag.querySelector('.reviewer-bio-text');
+        const reviewerBioTextCatch =  tag.querySelector('.experts-bio');
+        if(reviewerBioTextCatch == null) {
+            if(reviewerBioText){
+                reviewerBioText.remove();
+            }
+        }else{
+            reviewerBioText.innerHTML = reviewerBioTextCatch.innerHTML;
+             ///popup queary here
+            document.querySelector('.reviewer_popup').classList.add('popup-closed');
+            const getSectionTop = document.querySelector('.get-section-top');
+            const reviewerPopup = document.querySelector('.reviewer_popup_area');
+            const div = `${reviewerPopup}`;
+            getSectionTop.insertAdjacentHTML('afterend', reviewerPopup.innerHTML);
+
+            tag.addEventListener('mouseenter', (e) => {
+                e.stopPropagation();
+                document.querySelector('.popup-activation-class').classList.add('popup-show');
+            })
+
+            tag.addEventListener('touchstart', (e) => {
+                e.stopPropagation();
+                document.querySelector('.popup-activation-class').classList.add('popup-show');
+            })
+
+
+            document.querySelector('body').addEventListener('click', (e) => {
+                const popupActivation = document.querySelector('.popup-activation-class')
+                if(!popupActivation.contains(e.target)){
+                     popupActivation.classList.remove('popup-show');
+                }
+               
+            })
+        }
+        
+    })
+</script>
+
+<script>
+    const checkerTag = document.querySelectorAll('.checkers-tag');
+    const checkerTagText = document.querySelector('.checkers-tag-text');
+    checkerTag.forEach(tag => {
+        const singleTags = tag.children[0]
+        if(singleTags.getAttribute('data-slug').includes('checker-')) {
+           singleTags.textContent = singleTags.textContent.replace('checker', '').trim();
+           singleTags.textContent = singleTags.textContent.replace('Checker', '').trim();
+        }else{
+            tag.remove();
+        }
+    })
+</script>
+

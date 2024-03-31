@@ -1,0 +1,31 @@
+{{!-- Blog --}}
+<div class="hidden sm:flex items-start gap-[40px]">
+    <div class="max-w-[687px] w-full">
+        {{#foreach posts to="1" filter="featured:true"}}
+            {{> redesign/cards/feature-card}}
+        {{/foreach}}
+    </div>
+   
+    <div class="max-w-[495px] w-full">
+        <div class="">
+            {{#foreach posts from="2" filter="featured:true"}}
+             {{#has number="2"}}
+            {{/has}}
+            {{> redesign/cards/feature-card-without-image}}
+            {{/foreach}}
+        </div>
+    </div>
+</div>
+{{!-- Blog Slider --}}
+<div class="block sm:hidden">
+    <div class="swiper hero_slider max-w-[300px] xs:max-w-[560px]">
+        <div class="swiper-wrapper">
+             {{#foreach posts}}
+            <div class="swiper-slide">
+                {{> redesign/cards/feature-card}}
+            </div>
+            {{/foreach}}
+        </div>
+    </div>
+    <div class="hero_slider_pagination"></div>
+</div>

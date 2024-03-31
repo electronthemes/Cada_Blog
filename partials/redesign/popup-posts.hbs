@@ -1,0 +1,24 @@
+{{!-- Popup --}}
+popup-post
+{{#get "pages" filter="tag:{{slug}}"}}
+{{#foreach pages}}
+    <div class="reviewer_popup w-[446px] bg-white rounded-xl hidden lg:flex items-start gap-[27px] shadow-md z-10 p-6 duration-300 group-hover:opacity-100 group-hover:visible transform ">
+        {{#if feature_image}}
+        <div class="max-w-[114px] h-[114px] rounded-xl overflow-hidden">
+            <img class="w-full h-full object-cover" src="{{feature_image}}" alt="adf">
+        </div>
+        {{/if}}
+        <div class="flex-1">
+            <p class="text-sm leading-[22px] tracking-[-0.01px] whitespace-normal reviewer-bio-text"></p>
+            <a href="{{url}}" class="mt-5 text-sm leading-[22px] tracking-[-0.01px] flex items-center gap-[15px] text-[#3D4044]">
+                Full bio
+                {{> redesign/icons/bradcamb-right-arrow}}
+            </a>
+            <div class="hidden">
+                {{content}}
+            </div>
+            
+        </div>
+    </div>
+{{/foreach}}
+{{/get}}

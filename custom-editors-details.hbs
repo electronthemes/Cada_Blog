@@ -1,0 +1,143 @@
+{{!< default}} 
+
+{{#page}}
+{{!-- Bradcamb --}}
+<section class="pt-10 xs:pt-16 md:pt-10">
+    <div class="container">
+        <div class="flex items-center gap-[14px] xs:justify-center sm:justify-start">
+            <a href="https://cada.com/en"
+                class="flex items-center gap-[5px] text-xs leading-[22px] text-black py-1 px-3 rounded-[32px] bg-[#EEEFF0]">
+                {{> redesign/icons/home}}
+                Cada
+            </a>
+            <span class="block w-[6px]">
+                {{> redesign/icons/bradcamb-right-arrow}}
+            </span>
+            <a href="{{@site.url}}" class=" text-black text-xs leading-none">Blog</a>
+            <span class="block w-[6px]">
+                {{> redesign/icons/bradcamb-right-arrow}}
+            </span>
+            <a href="/experts" class=" text-black text-xs leading-none whitespace-nowrap hidden xs:block">Autoren</a>
+            <span class="w-[6px] hidden xs:block">
+                {{> redesign/icons/bradcamb-right-arrow}}
+            </span>
+            <p class=" text-[#777C85] text-xs leading-none w-full whitespace-nowrap overflow-hidden text-ellipsis">{{title}}</p>
+        </div>
+    </div>
+</section>
+
+<section class="pt-[29px] pb-[32px] xs:pb-[48px] sm:pb-[60px]">
+    <div class="container">
+        <div class="single-author-card single-experts-card group flex gap-6 md:gap-12 flex-col xs:flex-row justify-start sm:items-start md:rounded-none rounded-2xl md:p-0 sm:p-6 md:border-transparent border-transparent sm:border-border_color border">
+            <div class="w-full max-w-[316px] md:max-w-[392px] overflow-hidden md:p-6 md:rounded-[20px] md:border md:border-border_color  {{^if feature_image}}xs:h-[300px] sm:max-w-[398px] bg-[#EEEFF0]{{/if}}">
+                {{#if feature_image}}
+                    <a class="xs:h-[350px] sm:h-[406px] md:min-h-[389] block overflow-hidden rounded-2xl md:rounded-[20px]" href="{{url}}">
+                        {{> image
+                            image_class="lazyload w-full h-full   object-cover transform scale-100 duration-500 group-hover:scale-105"
+                            image_url=feature_image
+                            size_s=true
+                            size_m=true
+                        }}
+                    </a>
+                {{/if}}
+            </div>
+            <div class="w-full">
+                <div class="flex md:items-end md:justify-between md:gap-5 pb-4 md:flex-row flex-col md:border-b md:border-border_color">
+                    <div>
+                        <h5 class="text-xl xs:text-[28px] font-semibold leading-[1.35] tracking-[-0.01px]">{{title}}</h5>
+                        {{#if custom_excerpt}}
+                        <span class="block text-sm xs:text-base leading-[22px] tracking-[-0.01px] mt-3 text-[#3D4044]">{{custom_excerpt}}</span>
+                        {{/if}}
+                    </div>
+                    <div class="md:mb-3 pt-6 md:pt-0 mt-6 md:mt-0 border-t md:border-transparent border-border_color">
+                        {{> experts-social}}
+                    </div>
+                </div>
+                <div class="max-w-[783px] w-full post-content excerpt-single-content">
+                    {{content}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{!-- Author Details End --}}
+
+<section class="py-[32px] xs:py-[48px] sm:py-[60px] overflow-hidden">
+    <div class="container">
+        <h2 class="text-3xl xs:text-4xl sm:text-[40px] leading-[43px] sm:leading-[48px] font-semibold mb-10 xs:mb-16">Artikel von {{title}}</h2>
+        {{#get "posts" filter="tag:{{primary_tag.slug}}" limit="all" include="tags"}}
+        <div class="grid xs:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-6 gap-y-10 mt-16 js-post-wrapper">
+            {{#foreach posts}}
+            {{> redesign/cards/treatment-card class="js-post-card"}}
+            {{/foreach}}
+        </div>
+        {{/get}}
+    </div>
+</section>
+{{/page}}
+
+{{!-- Sign Up Area Start --}}
+<div class="py-[32px] xs:py-[48px] sm:py-[60px]">
+    <div class="max-w-[1224px] mx-auto">
+        {{> sign-up}}
+    </div>
+</div>
+{{!-- Sign Up Area End --}}
+
+
+
+<script>
+    
+      // twitter link collect
+      const twitterLinkCatch =  document.querySelector('.expert_twiter-link');
+      const twitterLinkPush = document.querySelector('.experts-twitter');
+      if(twitterLinkCatch) {
+        twitterLinkPush.href = twitterLinkCatch.innerHTML;
+      }else{
+        twitterLinkPush.remove();
+      }
+      // facebook link collect
+      const facebookLinkCatch =  document.querySelector('.expert_facebook-link');
+      const facebookLinkPush = document.querySelector('.experts-facebook');
+      if(facebookLinkCatch) {
+        facebookLinkPush.href = facebookLinkCatch.innerHTML;
+      }else{
+        facebookLinkPush.remove();
+      }
+      // linkdin link collect
+      const linkdinLinkCatch =  document.querySelector('.expert_linkdin-link');
+      const linkdinLinkPush = document.querySelector('.experts-linkdin');
+      if(linkdinLinkCatch) {
+        linkdinLinkPush.href = linkdinLinkCatch.innerHTML;
+      }else{
+        linkdinLinkPush.remove();
+      }
+      // website link collect
+      const websiteLinkCatch =  document.querySelector('.expert_website-link');
+      const websiteLinkPush = document.querySelector('.experts-website');
+      if(websiteLinkCatch) {
+        websiteLinkPush.href = websiteLinkCatch.innerHTML;
+      }else{
+        websiteLinkPush.remove();
+      }
+
+      //location data collect 
+      const locationCatch =  document.querySelector('.experts-location');
+      const locationPush = document.querySelector('.experts-location-text');
+      const locationWrapper = document.querySelector('.experts-location-wrapprer');
+
+      if(locationCatch) {
+        locationPush.innerHTML = locationCatch.innerHTML;
+      }else{
+        locationWrapper.remove();
+      }
+      //availability data collect 
+      const availabilityCatch =  document.querySelector('.experts-availability');
+      const availabilityPush = document.querySelector('.experts-availability-text');
+      const availabilityWrapper = document.querySelector('.experts-availability-wrapprer');
+      if(availabilityCatch) {
+        availabilityPush.innerHTML = availabilityCatch.innerHTML;
+      }else{
+        availabilityWrapper.remove();
+      }
+</script>

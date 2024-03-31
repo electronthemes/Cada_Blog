@@ -1,0 +1,39 @@
+<div class="group line-hover-wrap">
+    <div class="relative rounded-2xl overflow-hidden {{^if feature_image}}min-h-[240px] bg-[#EEEFF0]{{/if}}">
+        {{#if feature_image}}
+            <a href="{{custom_excerpt}}">
+                {{> image
+                image_class="lazyload max-h-[240px] min-h-[240px] object-cover w-full duration-500 transform scale-100 group-hover:scale-110"
+                image_url=feature_image
+                size_s=true
+                size_m=true
+            }}
+            </a>
+        {{/if}}
+        {{!-- tag --}}
+        <div class="absolute z-10 top-[14px] left-5 flex gap-2">
+            {{#has tag="new"}}
+            {{#foreach tags limit="1"}}
+                <a href="{{url}}" class="text-xs leading-[18px] font-medium py-1 px-3 rounded-[32px] text-title duration-300 bg-primary">Neu</a>
+            {{/foreach}}
+            {{/has}}
+            {{#if tags}}
+            {{#foreach tags limit="1"}}
+            <a href="{{url}}"
+                class="text-xs leading-[18px] font-semibold py-1 px-3 bg-white rounded-[32px] text-pragrapgh "><span class="block translate-y-[1px]">{{name}}</span></a>
+            {{/foreach}}
+            {{/if}}
+        </div>
+
+     
+        
+        {{!-- Play Button --}}
+        <a href="{{custom_excerpt}}" class="popup-video w-[60px] h-[60px] rounded-full bg-white flex items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 duration-300">
+            {{> redesign/icons/play-icon}}
+        </a>
+    </div>
+    <div class="mt-6">
+        <h5 class="text-lg xs:text-xl leading-[22px] xs:leading-[28px] font-semibold tracking-[-0.01px] font-inter underline-animation"><a href="{{custom_excerpt}}">{{title}}</a>
+        </h5>
+    </div>
+</div>

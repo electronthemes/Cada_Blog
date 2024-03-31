@@ -11,24 +11,26 @@
     <div class="container">
         <div class="max-w-[1016px] mx-auto author-card-wrapper">
             <div class="lg:pb-[120px] sm:pb-[96px] pb-[64px]">
-                <div class="sm:mb-[64px] mb-8">
-                    <h3 class="lg:text-[40px] sm:text-[36px] text-[30px] leading-[1.2] text-[#000] font-semibold mb-4">Experts</h3>
+                <div class="sm:mb-[64px] mb-10">
+                    <h3 class="lg:text-[40px] sm:text-[36px] text-[30px] !leading-[1.2] text-[#000] font-semibold mb-4">Experts</h3>
                     <p class="sm:text-[18px] text-base">Etiam blandit dapibus libero, a tincidunt est rutrum vel. Duis nec pretium dolor. Vestibulum posuere mauris malesuada risus volutpat feugiat. Aliquam sodales a nisi et pellentesque. Phasellus in urna ornare quam dictum tempus.</p>
                 </div>
-                <div class="grid gap-8 sm:gap-[64px]">
+                <div class="grid gap-[52px] xs:gap-16 md:gap-[100px] xl:gap-[120px]">
                     {{#post}}
                         {{#foreach tags visibility="internal"}}
-                            {{> internal-tag-card}}
+                            {{> authors-card}}
                         {{/foreach}}
                     {{/post}}
                 </div>
             </div>
+
+            
             <div>
-                <div class="sm:mb-[64px] mb-8">
+                <div class="sm:mb-[64px] mb-10">
                     <h3 class="lg:text-[40px] sm:text-[36px] text-[30px] leading-[1.2] text-[#000] font-semibold mb-4">Editors</h3>
                     <p class="sm:text-[18px] text-base">Etiam blandit dapibus libero, a tincidunt est rutrum vel. Duis nec pretium dolor. Vestibulum posuere mauris malesuada risus volutpat feugiat. Aliquam sodales a nisi et pellentesque. Phasellus in urna ornare quam dictum tempus.</p>
                 </div>
-                <div class="grid gap-8 sm:gap-[64px]">
+                <div class="grid gap-[52px] xs:gap-16 md:gap-[100px] xl:gap-[120px]">
                     {{#get "authors"}}
                         {{#foreach authors}}
                             {{> authors-card}}
@@ -39,13 +41,15 @@
         </div>
     </div>
 </div>
-<div class="lg:pb-[60px]">
-    <div class="container">
-        <div class="max-w-[1224px] mx-auto">
-            {{> sign-up}}
-        </div>
+
+{{!-- Sign Up Area Start --}}
+<div class="py-[32px] xs:py-[48px] sm:py-[60px]">
+    <div class="max-w-[1224px] mx-auto">
+        {{> sign-up}}
     </div>
 </div>
+{{!-- Sign Up Area End --}}
+
 <script>
    const slotAuthorTitle = document.querySelectorAll('.slot-author-title');
    slotAuthorTitle.forEach(element => {

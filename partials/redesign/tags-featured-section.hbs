@@ -1,0 +1,12 @@
+ <!--Tag Featured Section -->
+{{#get "posts" include="tags" filter="tag:{{slug}}+featured:true" }}
+{{#if posts}}
+<section class="pt-[29px] pb-[32px] xs:pb-[48px] sm:pb-[60px] overflow-hidden">
+    <div class="container">
+        <div class="">
+            {{> redesign/banner-feature }}
+        </div>
+    </div>
+</section>
+{{/if}}
+{{/get}}

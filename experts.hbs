@@ -1,0 +1,111 @@
+{{!< default}}
+
+<div class="author-banner pt-[64px] sm:pt-[84px] lg:pt-[123px] pb-[70px] sm:pb-[100px] lg:pb-[164px]">
+    <div class="container">
+        <div class="max-w-[1016px] mx-auto text-center">
+            <h2 class="lg:text-[56px] sm:text-[36px] text-[30px] font-semibold leading-[1.2] lg:mb-5  mb-4 text-[#000]">Experten und Blog-Redakteure</h2>
+            <p class="max-w-[680px] sm:mx-auto text-base sm:text-[18px] leading-[1.55] tracking-[-0.18px] ">
+Etiam blandit dapibus libero, a tincidunt est rutrum vel. Duis nec pretium dolor. Vestibulum posuere mauris malesuada risus volutpat feugiat.</p>
+        </div>
+    </div>
+</div>
+<div class="lg:py-[120px] sm:py-[96px] py-[64px]">
+    <div class="container">
+        <div class="max-w-[1016px] mx-auto author-card-wrapper">
+            {{#get "pages" filter="tag:hash-experts"}}
+                {{#if pages}}
+                <div class="lg:pb-[120px] sm:pb-[96px] pb-[64px]">
+                    <div class="sm:mb-[64px] mb-10">
+                        <h3 class="lg:text-[40px] sm:text-[36px] text-[30px] !leading-[1.2] text-[#000] font-semibold mb-4">Experten</h3>
+                        <p class="sm:text-[18px] text-base">Etiam blandit dapibus libero, a tincidunt est rutrum vel. Duis nec pretium dolor. Vestibulum posuere mauris malesuada risus volutpat feugiat. Aliquam sodales a nisi et pellentesque. Phasellus in urna ornare quam dictum tempus.</p>
+                    </div>
+                    <div class="grid gap-[52px] xs:gap-16 md:gap-[100px] xl:gap-[120px]">
+                        {{#foreach pages}}
+                            {{> experts-card}}
+                        {{/foreach}}
+                    </div>
+                </div>
+                {{/if}}
+            {{/get}}
+            {{#get "pages" filter="tag:hash-editors"}}
+            {{#if pages}}
+            <div>
+                <div class="sm:mb-[64px] mb-10">
+                    <h3 class="lg:text-[40px] sm:text-[36px] text-[30px] leading-[1.2] text-[#000] font-semibold mb-4">Herausgeber</h3>
+                    <p class="sm:text-[18px] text-base">Etiam blandit dapibus libero, a tincidunt est rutrum vel. Duis nec pretium dolor. Vestibulum posuere mauris malesuada risus volutpat feugiat. Aliquam sodales a nisi et pellentesque. Phasellus in urna ornare quam dictum tempus.</p>
+                </div>
+                <div class="grid gap-[52px] xs:gap-16 md:gap-[100px] xl:gap-[120px]">
+                   {{#foreach pages}}
+                        {{> experts-card}}
+                    {{/foreach}}
+                </div>
+            </div>
+            {{/if}}
+            {{/get}}
+        </div>
+    </div>
+</div>
+
+<div class="py-[32px] xs:py-[48px] sm:py-[60px]">
+    <div class="max-w-[1224px] mx-auto">
+        {{> sign-up}}
+    </div>
+</div>
+
+
+<script>
+
+    const singleExpertCard = document.querySelectorAll('.single-experts-card');
+    singleExpertCard.forEach((singleExpert,index) => {
+      //bio text collect
+      const bioTextCatch =  singleExpert.querySelector('.experts-bio');
+      const BioTextPush = singleExpert.querySelector('.experts-bio-text');
+      if(bioTextCatch == null) {
+            BioTextPush.remove();
+      }else{
+        BioTextPush.innerHTML = bioTextCatch.innerHTML;
+      }
+      
+
+      // twitter link collect
+      const twitterLinkCatch =  singleExpert.querySelector('.expert_twiter-link');
+      const twitterLinkPush = singleExpert.querySelector('.experts-twitter');
+      if(twitterLinkCatch) {
+        twitterLinkPush.href = twitterLinkCatch.innerHTML;
+      }else{
+        twitterLinkPush.remove();
+      }
+      
+      // facebook link collect
+      const facebookLinkCatch =  singleExpert.querySelector('.expert_facebook-link');
+      const facebookLinkPush = singleExpert.querySelector('.experts-facebook');
+      if(facebookLinkCatch) {
+        facebookLinkPush.href = facebookLinkCatch.innerHTML;
+      }else{
+        facebookLinkPush.remove();
+      }
+
+
+      // linkdin link collect
+      const linkdinLinkCatch =  singleExpert.querySelector('.expert_linkdin-link');
+      const linkdinLinkPush = singleExpert.querySelector('.experts-linkdin');
+      if(linkdinLinkCatch) {
+        linkdinLinkPush.href = linkdinLinkCatch.innerHTML;
+      }else{
+        linkdinLinkPush.remove();
+      }
+
+
+      // website link collect
+      const websiteLinkCatch =  singleExpert.querySelector('.expert_website-link');
+      const websiteLinkPush = singleExpert.querySelector('.experts-website');
+      if(websiteLinkCatch) {
+        websiteLinkPush.href = websiteLinkCatch.innerHTML;
+      }else{
+        websiteLinkPush.remove();
+      }
+
+    })
+        
+
+</script>

@@ -15,9 +15,13 @@ module.exports = {
     colors:{
       transparent: 'transparent',
       dark: '#000000',
-      primary: '#ff993e',
+      primary: '#FFFDC6',
       pragrapgh: '#3D4044',
       white: '#ffffff',//use
+      light_gray: "#777C85",
+      black: "#000000",
+      green_light:"#085122",
+      border_color: "#DEDDE6",
       gray:{
         80: '#C3C5C5', //use
         50:'#F7F7F7',
@@ -30,7 +34,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/typography')
+    // require('@tailwindcss/typography')
   ],
 }
 

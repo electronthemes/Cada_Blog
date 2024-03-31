@@ -2,17 +2,164 @@
 
 {{> banner}}
 
-{{!-- Home Card Area Start --}}
-<div class="py-[30px] xs:pt-[40px] lg:py-[60px] scroll-mt-100" id="articles">
+{{!-- Treatment Area Start --}}
+{{#get "posts" limit="6" filter="tag:treatments" include="tags"}}
+{{#if posts}}
+<section class="py-[32px] xs:py-[48px] sm:py-[60px]">
     <div class="container">
-        {{> post-loop}}
+        <div class="mb-8 xs:mb-10 md:mb-16 flex items-center justify-between gap-10">
+            <h2 class="text-3xl xs:text-4xl sm:text-[40px] !leading-tight font-semibold">Behandlungen</h2>
+            <a href="tag/treatments" class="hidden xs:flex items-center gap-3 text-base leading-none text-black font-medium">
+                Mehr sehen
+                {{> redesign/icons/bradcamb-right-arrow}}
+            </a>
+        </div>
+        <div class="grid xs:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-6 gap-y-10">
+            {{#foreach posts}}
+            {{> redesign/cards/treatment-card class="js-post-card"}}
+            {{/foreach}}
+        </div>
+        <div class="block xs:hidden text-center mt-10">
+            <a href="tag/treatments" class="rounded-lg py-4 px-6 bg-[#F5F6F7] text-base font-medium leading-none tracking-[-0.01px] text-black duration-300 hover:bg-primary inline-block">Mehr sehen</a>
+        </div>
     </div>
-</div>
-{{!-- Home Card Area End --}}
+</section>
+{{/if}}
+{{/get}}
+{{!-- Subscribe Area Start --}}
+<section class="py-[32px] xs:py-[48px] sm:py-[60px]">
+    <div class="container">
+        {{> redesign/subscribe }}
+    </div>
+</section>
+{{!-- Subscribe Area End --}}
 
+{{!-- Video Hub Area Start --}}
+{{#get "posts" filter="tag:hash-video-hub" include="tags"}}
+{{#if posts}}
+<section class="py-[32px] xs:py-[48px] sm:py-[60px] overflow-hidden">
+    <div class="container">
+        <div class="mb-8 xs:mb-10 md:mb-16 flex items-center justify-between gap-10">
+            <h2 class="text-3xl xs:text-4xl sm:text-[40px] !leading-tight font-semibold flex flex-wrap items-center xs:gap-2 ">Check out the <a class="block" href="https://cada.com/de-ch/video-lounge/">Video Hub</a></h2>
+            <div class="hidden sm:flex gap-5">
+                <button class="video-hub-prev w-10 h-10 rounded-full border border-[#777C85] flex items-center justify-center duration-300 opacity-50 hover:opacity-100">
+                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.0859 5.37305L1.08803 5.58745" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5.67578 9.99805L1.08892 5.58661L5.50036 0.999757" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="video-hub-next w-10 h-10 rounded-full border border-[#777C85] flex items-center justify-center duration-300 opacity-50 hover:opacity-100">
+                    <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 6H12.5" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 1.5L12.5 6L8 10.5" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="">
+            <div class="swiper video-hub-slider max-w-[296px] xs:max-w-[308px] !mx-0 sm:max-w-none">
+                <div class="swiper-wrapper">
+                    {{#foreach posts}}
+                    <div class="swiper-slide">
+                        {{> redesign/cards/video-hub-card}}
+                    </div>
+                    {{/foreach}}
+                </div>
+            </div>
+            <div class="video-hub_pagination flex items-center justify-center gap-2 sm:hidden mt-10 xs:mt-16"></div>
+        </div>
+    </div>
+</section>
+{{/if}}
+{{/get}}
+{{!-- Video Hub AreaEnd --}}
+
+{{!-- Allgemein Area Start --}}
+{{#get "posts" limit="4" filter="tag:body" include="tags"}}
+{{#if posts}}
+<section class="py-[32px] xs:py-[48px] sm:py-[60px]">
+    <div class="container">
+        <div class="mb-10 sm:mb-16 flex items-center justify-between gap-10">
+            <h2 class="text-3xl xs:text-4xl sm:text-[40px] !leading-tight font-semibold">Körper</h2>
+            <a href="tag/body" class="hidden xs:flex items-center gap-3 text-base leading-none text-black font-medium">
+                Mehr sehen
+                {{> redesign/icons/bradcamb-right-arrow}}
+            </a>
+        </div>
+        <div class="grid md:grid-cols-2 gap-x-6 gap-y-10 md:gap-y-12">
+            {{#foreach posts }}
+            {{> redesign/cards/allgemein-card}}
+            {{/foreach}}
+        </div>
+        <div class="block xs:hidden text-center mt-10">
+            <a href="tag/allgemein" class="rounded-lg py-4 px-6 bg-[#F5F6F7] text-base font-medium leading-none tracking-[-0.01px] text-black duration-300 hover:bg-primary inline-block">Mehr sehen</a>
+        </div>
+    </div>
+</section>
+{{/if}}
+{{/get}}
+{{!-- Allgemein Area End --}}
+
+{{!-- Fertility Area Start --}}
+<section class="py-[32px] xs:py-[48px] sm:py-[60px]">
+    <div class="container"> 
+        {{> redesign/fertility}}
+    </div>
+</section>
+{{!-- Fertility Area End --}}
+
+{{!-- Analiysis Area Start --}}
+{{#get "posts" limit="4" filter="tag:analysis" include="tags"}}
+{{#if posts}}
+<section class="py-[32px] xs:py-[48px] sm:py-[60px] overflow-hidden">
+    <div class="container">
+        <div class="mb-8 xs:mb-10 md:mb-16 flex items-center justify-between gap-10">
+            <h2 class="text-3xl xs:text-4xl sm:text-[40px] !leading-tight font-semibold">Analyse</h2>
+            <a href="tag/analysis" class="hidden xs:flex items-center gap-3 text-base leading-none text-black font-medium">
+                Mehr sehen
+                {{> redesign/icons/bradcamb-right-arrow}}
+            </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-y-10 xs:gap-y-6 md:gap-6">
+            <div class="md:max-w-[807px] w-full grid-cols-2 gap-x-6 gap-y-6  md:gap-y-7 hidden xs:grid col-span-2">
+                {{#foreach posts}}
+                {{> redesign/cards/analiysis-card }}
+                {{/foreach}}
+            </div>
+            <div class="block xs:hidden">
+                <div class="swiper anaylisis-slider">
+                    <div class="swiper-wrapper">
+                        {{#foreach posts}}
+                        <div class="swiper-slide">
+                            {{> redesign/cards/analiysis-card  class="h-full"}}
+                        </div>
+                        {{/foreach}}
+                    </div>
+                </div>
+                <div class="anaylisis-slider_pagination flex items-center justify-center gap-2 sm:hidden mt-10"></div>
+            </div>
+            <div class="md:max-w-[360px] w-full relative rounded-2xl overflow-hidden max-h-[400px] md:max-h-full">
+                <img class="w-full h-full object-cover object-left-top" src="{{asset '/img/redesign/lab-1.jpg'}}" alt="Analysis">
+                <div class="absolute w-full xs:w-auto md:w-full bottom-0 left-0 px-5 lg:px-7 py-6 xs:py-8">
+                    <div class="bg-white rounded-xl p-6">
+                        <h3 class="text-xl xs:text-2xl sm:text-[28px] leading-[28px] xs:leading-[30px] sm:leading-[38px] font-semibold">Fruchtbarkeit <br> Analyse 2024</h3>
+                        <a class="!py-3 !px-5 text-base md:text-[15px] lg:text-base font-medium leading-[24px] tracking-[-0.01px] bg-black text-white rounded-lg inline-block mt-5 btn-primary" href="https://cada.com/en-ch/fertility-check/">Laden Sie die Analyse herunter</a>
+                    </div>
+                </div>
+            </div>
+            {{!-- Slider --}}
+        </div>
+    </div>
+</section>
+{{/if}}
+{{/get}}
+{{!-- Analiysis Area End --}}
+{{!-- Explore Area Start --}}
+{{> redesign/explore-tags}}
+{{!-- Explore Area End --}}
 {{!-- Sign Up Area Start --}}
-<div class="py-[30px] sm:py-10 lg:pt-[60px] lg:pb-[65px]">
-    <div class="max-w-[1480px] mx-auto px-5">
+<div class="py-[32px] xs:py-[48px] sm:py-[60px]">
+    <div class="max-w-[1224px] mx-auto">
         {{> sign-up}}
     </div>
 </div>

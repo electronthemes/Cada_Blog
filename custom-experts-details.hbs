@@ -1,0 +1,155 @@
+{{!< default}} 
+
+{{#page}}
+{{!-- Bradcamb --}}
+<section class="pt-10 xs:pt-16 md:pt-10">
+    <div class="container">
+        <div class="flex items-center gap-[14px] xs:justify-center sm:justify-start">
+        <a href="https://cada.com/en"
+            class="flex items-center gap-[5px] text-xs leading-[22px] text-black py-1 px-3 rounded-[32px] bg-[#EEEFF0]">
+            {{> redesign/icons/home}}
+            Cada
+        </a>
+        <span class="block w-[6px]">
+            {{> redesign/icons/bradcamb-right-arrow}}
+        </span>
+        <a href="{{@site.url}}" class=" text-black text-xs leading-none">Blog</a>
+        <span class="block w-[6px]">
+            {{> redesign/icons/bradcamb-right-arrow}}
+        </span>
+        <a href="/experts" class=" text-black text-xs leading-none whitespace-nowrap hidden xs:block">Experten</a>
+        <span class="w-[6px] hidden xs:block">
+            {{> redesign/icons/bradcamb-right-arrow}}
+        </span>
+        <p class=" text-[#777C85] text-xs leading-none w-full whitespace-nowrap overflow-hidden text-ellipsis">{{title}}</p>
+    </div>
+    </div>
+</section>
+
+
+{{!-- Author Details Start --}}
+<section class="pt-[29px] pb-[32px] xs:pb-[48px] sm:pb-[60px]">
+    <div class="container">
+        <div class="flex items-start gap-10 lg:gap-12 flex-col md:flex-row">
+            {{!-- Left Bar --}}
+            <div class="md:max-w-[392px] w-full xs:px-6 xs:pt-6 xs:pb-6 md:pb-10 xs:border xs:border-border_color xs:rounded-2xl overflow-hidden flex flex-col xs:flex-row md:flex-col gap-6">
+                <div class="xs:max-w-[316px] md:max-w-full w-full md:h-[314px] rounded-2xl overflow-hidden">
+                    {{#if feature_image}}
+                        {{> image
+                            image_class="lazyload w-full h-full object-cover"
+                            image_url=feature_image
+                            size_s=true
+                            size_m=true
+                        }}
+                    {{/if}}
+                </div>
+                <div class="">
+                    <div class="mb-4 xs:mb-6 pb-4 xs:pb-6 border-b border-border_color">
+                        <h3 class="text-xl xs:text-[28px] font-semibold leading-[28px] xs:leading-[38px]">{{title}}</h3>
+                        <span class="text-sm xs:text-base mt-4 block tracking-[-0.01px]">{{custom_excerpt}}</span>
+                    </div>
+                    <div class="mb-4 xs:mb-6 pb-4 xs:pb-6 border-b border-border_color experts-location-wrapprer">
+                        <h3 class="text-base xs:text-lg leading-[24px] xs:leading-[28px] font-semibold">Standort</h3>
+                        <p class="text-sm xs:text-base mt-4 tracking-[-0.01px] flex items-center gap-2">
+                            {{> redesign/icons/location}}
+                            <span class="experts-location-text block"></span>
+                        </p>
+                    </div>
+                    <div class="mb-4 xs:mb-6 pb-4 xs:pb-6 border-b border-border_color experts-availability-wrapprer">
+                        <h3 class="text-base xs:text-lg leading-[24px] xs:leading-[28px] font-semibold">Verfügbarkeit:</h3>
+                        <p class="text-sm xs:text-base mt-4 tracking-[-0.01px] flex items-center gap-2 translate-y-[-1px]">
+                            {{> redesign/icons/clock}}
+                            <span class="experts-availability-text block"></span>
+                        </p>
+                    </div>
+                    {{> experts-social}}
+                </div>
+            </div>
+            {{!-- main Content --}}
+            <div class="max-w-[783px] w-full post-content excerpt-single-content">
+                {{content}}
+            </div>
+        </div>
+    </div>
+</section>
+{{!-- Author Details End --}}
+
+<section class="py-[32px] xs:py-[48px] sm:py-[60px] overflow-hidden">
+    <div class="container">
+        <h2 class="text-3xl xs:text-4xl sm:text-[40px] leading-[43px] sm:leading-[48px] font-semibold mb-10 xs:mb-16">Artikel von {{title}}</h2>
+        {{#get "posts" filter="tag:{{primary_tag.slug}}" limit="all" include="tags"}}
+        <div class="grid xs:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-6 gap-y-10 mt-16 js-post-wrapper">
+            {{#foreach posts}}
+            {{> redesign/cards/treatment-card class="js-post-card"}}
+            {{/foreach}}
+        </div>
+        {{/get}}
+    </div>
+</section>
+{{/page}}
+
+{{!-- Sign Up Area Start --}}
+<div class="py-[32px] xs:py-[48px] sm:py-[60px]">
+    <div class="max-w-[1224px] mx-auto">
+        {{> sign-up}}
+    </div>
+</div>
+{{!-- Sign Up Area End --}}
+
+
+
+<script>
+    
+      // twitter link collect
+      const twitterLinkCatch =  document.querySelector('.expert_twiter-link');
+      const twitterLinkPush = document.querySelector('.experts-twitter');
+      if(twitterLinkCatch) {
+        twitterLinkPush.href = twitterLinkCatch.innerHTML;
+      }else{
+        twitterLinkPush.remove();
+      }
+      // facebook link collect
+      const facebookLinkCatch =  document.querySelector('.expert_facebook-link');
+      const facebookLinkPush = document.querySelector('.experts-facebook');
+      if(facebookLinkCatch) {
+        facebookLinkPush.href = facebookLinkCatch.innerHTML;
+      }else{
+        facebookLinkPush.remove();
+      }
+      // linkdin link collect
+      const linkdinLinkCatch =  document.querySelector('.expert_linkdin-link');
+      const linkdinLinkPush = document.querySelector('.experts-linkdin');
+      if(linkdinLinkCatch) {
+        linkdinLinkPush.href = linkdinLinkCatch.innerHTML;
+      }else{
+        linkdinLinkPush.remove();
+      }
+      // website link collect
+      const websiteLinkCatch =  document.querySelector('.expert_website-link');
+      const websiteLinkPush = document.querySelector('.experts-website');
+      if(websiteLinkCatch) {
+        websiteLinkPush.href = websiteLinkCatch.innerHTML;
+      }else{
+        websiteLinkPush.remove();
+      }
+
+      //location data collect 
+      const locationCatch =  document.querySelector('.experts-location');
+      const locationPush = document.querySelector('.experts-location-text');
+      const locationWrapper = document.querySelector('.experts-location-wrapprer');
+
+      if(locationCatch) {
+        locationPush.innerHTML = locationCatch.innerHTML;
+      }else{
+        locationWrapper.remove();
+      }
+      //availability data collect 
+      const availabilityCatch =  document.querySelector('.experts-availability');
+      const availabilityPush = document.querySelector('.experts-availability-text');
+      const availabilityWrapper = document.querySelector('.experts-availability-wrapprer');
+      if(availabilityCatch) {
+        availabilityPush.innerHTML = availabilityCatch.innerHTML;
+      }else{
+        availabilityWrapper.remove();
+      }
+</script>
