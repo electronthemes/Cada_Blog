@@ -3,7 +3,7 @@
         Rezensent:
         <p class="text-[#DE893E] font-medium reviewer-tag-text " data-slug="{{slug}}" >{{name}}</p>
         {{!-- Popup --}}
-        {{#get "pages" filter="tag:{{slug}}"}}
+        {{#get "pages" limit="1" filter="tag:{{slug}}"}}
         {{#foreach pages}}
         <div class="reviewer_popup_area">
             <div class="reviewer_popup w-[446px] bg-white rounded-xl grid lg:flex items-start gap-[27px] shadow-md z-10 p-6  duration-300 transform group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible invisible opacity-0">

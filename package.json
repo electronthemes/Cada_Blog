@@ -1,5 +1,5 @@
 {
-    "name": "cada-greman",
+    "name": "cada-german",
     "description": "it's a ghost cada theme",
     "version": "1.0.0",
     "license": "MIT",
@@ -43,10 +43,23 @@
         },
         "custom":{
             "tags_filter": {
-                "type": "text"
+                "type": "text",
+                "group": "homepage"
             },
             "search_content_api":{
                 "type": "text"
+            },
+            "home_category_one":{
+                "type": "text",
+                "group": "homepage"
+            },
+            "home_category_two":{
+                "type": "text",
+                "group": "homepage"
+            },
+            "home_category_three":{
+                "type": "text",
+                "group": "homepage"
             }
         },
         "card_assets": {

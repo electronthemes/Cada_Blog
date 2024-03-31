@@ -3,29 +3,37 @@
 {{> banner}}
 
 {{!-- Treatment Area Start --}}
-{{#get "posts" limit="6" filter="tag:treatments" include="tags"}}
-{{#if posts}}
-<section class="py-[32px] xs:py-[48px] sm:py-[60px]">
-    <div class="container">
-        <div class="mb-8 xs:mb-10 md:mb-16 flex items-center justify-between gap-10">
-            <h2 class="text-3xl xs:text-4xl sm:text-[40px] !leading-tight font-semibold">Behandlungen</h2>
-            <a href="tag/treatments" class="hidden xs:flex items-center gap-3 text-base leading-none text-black font-medium">
-                Mehr sehen
-                {{> redesign/icons/bradcamb-right-arrow}}
-            </a>
-        </div>
-        <div class="grid xs:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-6 gap-y-10">
-            {{#foreach posts}}
-            {{> redesign/cards/treatment-card class="js-post-card"}}
+{{#if @custom.home_category_one}}
+    {{#get "tags"  filter="slug:{{@custom.home_category_one}}" }}
+        {{#if tags}}
+            {{#foreach tags}}
+                <section class="py-[32px] xs:py-[48px] sm:py-[60px]">
+                    <div class="container">
+                        <div class="mb-8 xs:mb-10 md:mb-16 flex items-center justify-between gap-10">
+                            <h2 class="text-3xl xs:text-4xl sm:text-[40px] !leading-tight font-semibold">{{name}}</h2>
+                            <a href="{{url}}" class="hidden xs:flex items-center gap-3 text-base leading-none text-black font-medium">
+                                Mehr sehen
+                                {{> redesign/icons/bradcamb-right-arrow}}
+                            </a>
+                        </div>
+                        {{#get "posts" limit="4" filter="tag:{{slug}}" include="tags"}}
+                        {{#if posts}}
+                        <div class="grid xs:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-6 gap-y-10">
+                            {{#foreach posts}}
+                            {{> redesign/cards/treatment-card class="js-post-card"}}
+                            {{/foreach}}
+                        </div>
+                        {{/if}}
+                        {{/get}}
+                        <div class="block xs:hidden text-center mt-10">
+                            <a href="{{url}}" class="rounded-lg py-4 px-6 bg-[#F5F6F7] text-base font-medium leading-none tracking-[-0.01px] text-black duration-300 hover:bg-primary inline-block">Mehr sehen</a>
+                        </div>
+                    </div>
+                </section>
             {{/foreach}}
-        </div>
-        <div class="block xs:hidden text-center mt-10">
-            <a href="tag/treatments" class="rounded-lg py-4 px-6 bg-[#F5F6F7] text-base font-medium leading-none tracking-[-0.01px] text-black duration-300 hover:bg-primary inline-block">Mehr sehen</a>
-        </div>
-    </div>
-</section>
+        {{/if}}
+    {{/get}}
 {{/if}}
-{{/get}}
 {{!-- Subscribe Area Start --}}
 <section class="py-[32px] xs:py-[48px] sm:py-[60px]">
     <div class="container">
@@ -35,7 +43,7 @@
 {{!-- Subscribe Area End --}}
 
 {{!-- Video Hub Area Start --}}
-{{#get "posts" filter="tag:hash-video-hub" include="tags"}}
+{{!-- {{#get "posts" filter="tag:hash-video-hub" include="tags"}}
 {{#if posts}}
 <section class="py-[32px] xs:py-[48px] sm:py-[60px] overflow-hidden">
     <div class="container">
@@ -71,33 +79,41 @@
     </div>
 </section>
 {{/if}}
-{{/get}}
+{{/get}} --}}
 {{!-- Video Hub AreaEnd --}}
-
 {{!-- Allgemein Area Start --}}
-{{#get "posts" limit="4" filter="tag:body" include="tags"}}
-{{#if posts}}
-<section class="py-[32px] xs:py-[48px] sm:py-[60px]">
-    <div class="container">
-        <div class="mb-10 sm:mb-16 flex items-center justify-between gap-10">
-            <h2 class="text-3xl xs:text-4xl sm:text-[40px] !leading-tight font-semibold">Körper</h2>
-            <a href="tag/body" class="hidden xs:flex items-center gap-3 text-base leading-none text-black font-medium">
-                Mehr sehen
-                {{> redesign/icons/bradcamb-right-arrow}}
-            </a>
-        </div>
-        <div class="grid md:grid-cols-2 gap-x-6 gap-y-10 md:gap-y-12">
-            {{#foreach posts }}
-            {{> redesign/cards/allgemein-card}}
+{{#if @custom.home_category_two}}
+    {{#get "tags"  filter="slug:{{@custom.home_category_two}}" }}
+        {{#if tags}}
+            {{#foreach tags}}
+            <section class="py-[32px] xs:py-[48px] sm:py-[60px]">
+                <div class="container">
+                    <div class="mb-10 sm:mb-16 flex items-center justify-between gap-10">
+                        <h2 class="text-3xl xs:text-4xl sm:text-[40px] !leading-tight font-semibold">{{name}}</h2>
+                        <a href="{{url}}" class="hidden xs:flex items-center gap-3 text-base leading-none text-black font-medium">
+                            Mehr sehen
+                            {{> redesign/icons/bradcamb-right-arrow}}
+                        </a>
+                    </div>
+                    {{#get "posts" limit="4" filter="tag:{{slug}}" include="tags"}}
+                    {{#if posts}}
+                    <div class="grid md:grid-cols-2 gap-x-6 gap-y-10 md:gap-y-12">
+                        {{#foreach posts }}
+                        {{> redesign/cards/allgemein-card}}
+                        {{/foreach}}
+                    </div>
+                    {{/if}}
+                    {{/get}}
+                    <div class="block xs:hidden text-center mt-10">
+                        <a href="{{url}}" class="rounded-lg py-4 px-6 bg-[#F5F6F7] text-base font-medium leading-none tracking-[-0.01px] text-black duration-300 hover:bg-primary inline-block">Mehr sehen</a>
+                    </div>
+                </div>
+            </section>
             {{/foreach}}
-        </div>
-        <div class="block xs:hidden text-center mt-10">
-            <a href="tag/allgemein" class="rounded-lg py-4 px-6 bg-[#F5F6F7] text-base font-medium leading-none tracking-[-0.01px] text-black duration-300 hover:bg-primary inline-block">Mehr sehen</a>
-        </div>
-    </div>
-</section>
+        {{/if}}
+    {{/get}}
 {{/if}}
-{{/get}}
+
 {{!-- Allgemein Area End --}}
 
 {{!-- Fertility Area Start --}}
@@ -109,50 +125,63 @@
 {{!-- Fertility Area End --}}
 
 {{!-- Analiysis Area Start --}}
-{{#get "posts" limit="4" filter="tag:analysis" include="tags"}}
-{{#if posts}}
-<section class="py-[32px] xs:py-[48px] sm:py-[60px] overflow-hidden">
-    <div class="container">
-        <div class="mb-8 xs:mb-10 md:mb-16 flex items-center justify-between gap-10">
-            <h2 class="text-3xl xs:text-4xl sm:text-[40px] !leading-tight font-semibold">Analyse</h2>
-            <a href="tag/analysis" class="hidden xs:flex items-center gap-3 text-base leading-none text-black font-medium">
-                Mehr sehen
-                {{> redesign/icons/bradcamb-right-arrow}}
-            </a>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-y-10 xs:gap-y-6 md:gap-6">
-            <div class="md:max-w-[807px] w-full grid-cols-2 gap-x-6 gap-y-6  md:gap-y-7 hidden xs:grid col-span-2">
-                {{#foreach posts}}
-                {{> redesign/cards/analiysis-card }}
-                {{/foreach}}
-            </div>
-            <div class="block xs:hidden">
-                <div class="swiper anaylisis-slider">
-                    <div class="swiper-wrapper">
-                        {{#foreach posts}}
-                        <div class="swiper-slide">
-                            {{> redesign/cards/analiysis-card  class="h-full"}}
+{{#if @custom.home_category_three}}
+    {{#get "tags"  filter="slug:{{@custom.home_category_three}}"}}
+        {{#if tags}}
+            {{#foreach tags}}
+            <section class="py-[32px] xs:py-[48px] sm:py-[60px] overflow-hidden">
+                <div class="container">
+                    <div class="mb-8 xs:mb-10 md:mb-16 flex items-center justify-between gap-10">
+                        <h2 class="text-3xl xs:text-4xl sm:text-[40px] !leading-tight font-semibold">{{name}}</h2>
+                        <a href="{{url}}" class="hidden xs:flex items-center gap-3 text-base leading-none text-black font-medium">
+                            Mehr sehen
+                            {{> redesign/icons/bradcamb-right-arrow}}
+                        </a>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-y-10 xs:gap-y-6 md:gap-6">
+                        {{#get "posts" limit="4" filter="tag:{{slug}}" include="tags"}}
+                        {{#if posts}}
+                        <div class="md:max-w-[807px] w-full grid-cols-2 gap-x-6 gap-y-6  md:gap-y-7 hidden xs:grid col-span-2">
+                            {{#foreach posts}}
+                            {{> redesign/cards/analiysis-card }}
+                            {{/foreach}}
                         </div>
-                        {{/foreach}}
+                        {{/if}}
+                        {{/get}}
+                        {{#get "posts" limit="4" filter="tag:{{slug}}" include="tags"}}
+                        {{#if posts}}
+                        <div class="block xs:hidden">
+                            <div class="swiper anaylisis-slider">
+                                <div class="swiper-wrapper">
+                                    {{#foreach posts}}
+                                    <div class="swiper-slide">
+                                        {{> redesign/cards/analiysis-card  class="h-full"}}
+                                    </div>
+                                    {{/foreach}}
+                                </div>
+                            </div>
+                            <div class="anaylisis-slider_pagination flex items-center justify-center gap-2 sm:hidden mt-10"></div>
+                        </div>
+                        {{/if}}
+                        {{/get}}
+                        <div class="md:max-w-[360px] w-full relative rounded-2xl overflow-hidden max-h-[400px] md:max-h-full">
+                            <img class="w-full h-full object-cover object-left-top" src="{{asset '/img/redesign/lab-1.jpg'}}" alt="Analysis">
+                            <div class="absolute w-full xs:w-auto md:w-full bottom-0 left-0 px-5 lg:px-7 py-6 xs:py-8">
+                                <div class="bg-white rounded-xl p-6">
+                                    <h3 class="text-xl xs:text-2xl sm:text-[28px] leading-[28px] xs:leading-[30px] sm:leading-[38px] font-semibold">Fruchtbarkeit <br> Analyse 2024</h3>
+                                    <a class="!py-3 !px-5 text-base md:text-[15px] lg:text-base font-medium leading-[24px] tracking-[-0.01px] bg-black text-white rounded-lg inline-block mt-5 btn-primary" href="https://cada.com/en-ch/fertility-check/">Laden Sie die Analyse herunter</a>
+                                </div>
+                            </div>
+                        </div>
+                        {{!-- Slider --}}
                     </div>
                 </div>
-                <div class="anaylisis-slider_pagination flex items-center justify-center gap-2 sm:hidden mt-10"></div>
-            </div>
-            <div class="md:max-w-[360px] w-full relative rounded-2xl overflow-hidden max-h-[400px] md:max-h-full">
-                <img class="w-full h-full object-cover object-left-top" src="{{asset '/img/redesign/lab-1.jpg'}}" alt="Analysis">
-                <div class="absolute w-full xs:w-auto md:w-full bottom-0 left-0 px-5 lg:px-7 py-6 xs:py-8">
-                    <div class="bg-white rounded-xl p-6">
-                        <h3 class="text-xl xs:text-2xl sm:text-[28px] leading-[28px] xs:leading-[30px] sm:leading-[38px] font-semibold">Fruchtbarkeit <br> Analyse 2024</h3>
-                        <a class="!py-3 !px-5 text-base md:text-[15px] lg:text-base font-medium leading-[24px] tracking-[-0.01px] bg-black text-white rounded-lg inline-block mt-5 btn-primary" href="https://cada.com/en-ch/fertility-check/">Laden Sie die Analyse herunter</a>
-                    </div>
-                </div>
-            </div>
-            {{!-- Slider --}}
-        </div>
-    </div>
-</section>
+            </section>
+            {{/foreach}}
+        {{/if}}
+    {{/get}}
 {{/if}}
-{{/get}}
 {{!-- Analiysis Area End --}}
 {{!-- Explore Area Start --}}
 {{> redesign/explore-tags}}
