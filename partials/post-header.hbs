@@ -70,25 +70,26 @@
         if(singleTags.getAttribute('data-slug').includes('reviewer-')) {
            singleTags.textContent = singleTags.textContent.replace('reviewer', '').trim();
            singleTags.textContent = singleTags.textContent.replace('Reviewer', '').trim();
-        }else{
-            tag.remove();
-        }
-        //reviewer bio text content call here
-        const reviewerBioText = tag.querySelector('.reviewer-bio-text');
-        const reviewerBioTextCatch =  tag.querySelector('.experts-bio');
-        if(reviewerBioTextCatch == null) {
-            if(reviewerBioText){
-                reviewerBioText.remove();
+
+           //reviewer bio text content call here
+            const reviewerBioText = tag.querySelector('.reviewer-bio-text');
+            const reviewerBioTextCatch =  tag.querySelector('.experts-bio');
+            if(reviewerBioTextCatch == null) {
+                if(reviewerBioText){
+                    reviewerBioText.remove();
+                }
+            }else{
+                reviewerBioText.innerHTML = reviewerBioTextCatch.innerHTML;
+                
             }
-        }else{
-            reviewerBioText.innerHTML = reviewerBioTextCatch.innerHTML;
-             ///popup queary here
+
+            ///popup queary here
             document.querySelector('.reviewer_popup').classList.add('popup-closed');
             const getSectionTop = document.querySelector('.get-section-top');
             const reviewerPopup = document.querySelector('.reviewer_popup_area');
             const div = `${reviewerPopup}`;
             getSectionTop.insertAdjacentHTML('afterend', reviewerPopup.innerHTML);
-            console.log(getSectionTop)
+
             tag.addEventListener('mouseenter', (e) => {
                 e.stopPropagation();
                 document.querySelector('.popup-activation-class').classList.add('popup-show');
@@ -99,16 +100,17 @@
                 document.querySelector('.popup-activation-class').classList.add('popup-show');
             })
 
-
             document.querySelector('body').addEventListener('click', (e) => {
                 const popupActivation = document.querySelector('.popup-activation-class')
                 if(!popupActivation.contains(e.target)){
-                     popupActivation.classList.remove('popup-show');
+                        popupActivation.classList.remove('popup-show');
                 }
-               
+                
             })
+           
+        }else{
+            tag.remove();
         }
-        
     })
 </script>
 
