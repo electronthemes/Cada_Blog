@@ -924,6 +924,13 @@ video {
   box-sizing: content-box;
 }
 
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 .line-clamp-3 {
   overflow: hidden;
   display: -webkit-box;
@@ -7320,6 +7327,10 @@ a.single-search-result:last-child div {
     top: 100px;
   }
 
+  .sm\:top-\[72px\] {
+    top: 72px;
+  }
+
   .sm\:order-last {
     order: 9999;
   }
@@ -7679,6 +7690,10 @@ a.single-search-result:last-child div {
 
   .sm\:pt-\[84px\] {
     padding-top: 84px;
+  }
+
+  .sm\:pt-\[96px\] {
+    padding-top: 96px;
   }
 
   .sm\:text-left {
@@ -8166,6 +8181,10 @@ a.single-search-result:last-child div {
 
   .lg\:pl-\[95px\] {
     padding-left: 95px;
+  }
+
+  .lg\:pt-\[120px\] {
+    padding-top: 120px;
   }
 
   .lg\:pt-\[123px\] {

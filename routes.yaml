@@ -9,9 +9,6 @@ collections:
     permalink: /{slug}/
     template: post
 
-  /experts/:
-    permalink: /{slug}/
-    template: experts
 
 taxonomies:
   tag: /tag/{slug}/

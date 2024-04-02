@@ -380,7 +380,7 @@ https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.6/fuse.min.js
                                         <h5 class="post-title">${val.title}
                                         </h5>
                                     </div>
-                                    <p class="post-text line-clamp-3 mt-2 text-sm leading-[22px] tracking-[-0.01px] text-[#777C85]">${val.excerpt}</p>
+                                    <p class="post-text line-clamp-2 mt-2 text-sm leading-[22px] tracking-[-0.01px] text-[#777C85]">${val.excerpt}</p>
                                 </div>
                             </a>
                             `
