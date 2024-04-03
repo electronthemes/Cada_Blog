@@ -60,6 +60,30 @@
             "home_category_three":{
                 "type": "text",
                 "group": "homepage"
+            },
+            "fertility_title":{
+                "type": "text",
+                "group": "homepage"
+            },
+            "fertility_excerpt":{
+                "type": "text",
+                "group": "homepage"
+            },
+            "fertility_link":{
+                "type": "text",
+                "group": "homepage"
+            },
+            "analysis_image":{
+                "type": "image",
+                "group": "homepage"
+            },
+            "analysis_title":{
+                "type": "text",
+                "group": "homepage"
+            },
+            "analysis_link":{
+                "type": "text",
+                "group": "homepage"
             }
         },
         "card_assets": {

@@ -41,9 +41,9 @@
     </div>
 </section>
 {{!-- Subscribe Area End --}}
-
+{{> video-hub}}
 {{!-- Video Hub Area Start --}}
-{{#get "posts" filter="tag:hash-video-hub" include="tags"}}
+{{!-- {{#get "posts" filter="tag:hash-video-hub" include="tags"}}
 {{#if posts}}
 <section class="py-[32px] xs:py-[48px] sm:py-[60px] overflow-hidden">
     <div class="container">
@@ -79,7 +79,7 @@
     </div>
 </section>
 {{/if}}
-{{/get}}
+{{/get}} --}}
 {{!-- Video Hub AreaEnd --}}
 {{!-- Allgemein Area Start --}}
 {{#if @custom.home_category_two}}
@@ -165,12 +165,18 @@
                         </div>
                         {{/if}}
                         {{/get}}
-                        <div class="md:max-w-[360px] w-full relative rounded-2xl overflow-hidden max-h-[400px] md:max-h-full">
-                            <img class="w-full h-full object-cover object-left-top" src="{{asset '/img/redesign/lab-1.jpg'}}" alt="Analysis">
+                        <div class="md:max-w-[360px] w-full relative rounded-2xl overflow-hidden max-h-[400px] md:max-h-full {{^if @custom.analysis_image}} bg-primary {{/if}}">
+                            {{#if @custom.analysis_image}}
+                            <img class="w-full h-full object-cover object-left-top" src="{{@custom.analysis_image}}" alt="Analysis">
+                            {{/if}}
                             <div class="absolute w-full xs:w-auto md:w-full bottom-0 left-0 px-5 lg:px-7 py-6 xs:py-8">
                                 <div class="bg-white rounded-xl p-6">
-                                    <h3 class="text-xl xs:text-2xl sm:text-[28px] leading-[28px] xs:leading-[30px] sm:leading-[38px] font-semibold">Fruchtbarkeit <br> Analyse 2024</h3>
-                                    <a class="!py-3 !px-5 text-base md:text-[15px] lg:text-base font-medium leading-[24px] tracking-[-0.01px] bg-black text-white rounded-lg !inline-flex mt-5 btn-primary" href="https://cada.com/en-ch/fertility-check/">Mehr lesen</a>
+                                    {{#if @custom.analysis_title}}
+                                        <h3 class="text-xl xs:text-2xl sm:text-[28px] leading-[28px] xs:leading-[30px] sm:leading-[38px] font-semibold">{{{@custom.analysis_title}}}</h3>
+                                    {{/if}}
+                                    {{#if @custom.analysis_link}}
+                                        <a class="!py-3 !px-5 text-base md:text-[15px] lg:text-base font-medium leading-[24px] tracking-[-0.01px] bg-black text-white rounded-lg !inline-flex mt-5 btn-primary" href="{{@custom.analysis_link}}">Learn more</a>
+                                    {{/if}}
                                 </div>
                             </div>
                         </div>

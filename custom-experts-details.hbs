@@ -4,7 +4,7 @@
 {{!-- Bradcamb --}}
 <section class="pt-10 xs:pt-16 md:pt-10">
     <div class="container">
-        <div class="flex items-center gap-[14px] xs:justify-center sm:justify-start">
+        <div class="flex items-center gap-2 xs:gap-[14px] xs:justify-center sm:justify-start">
         <a href="https://cada.com/en"
             class="flex items-center gap-[5px] text-xs leading-[22px] text-black py-1 px-3 rounded-[32px] bg-[#EEEFF0]">
             {{> redesign/icons/home}}
@@ -17,8 +17,8 @@
         <span class="block w-[6px]">
             {{> redesign/icons/bradcamb-right-arrow}}
         </span>
-        <a href="/experts" class=" text-black text-xs leading-none whitespace-nowrap hidden xs:block">Experten</a>
-        <span class="w-[6px] hidden xs:block">
+        <a href="/experts" class=" text-black text-xs leading-none whitespace-nowrap block"><span class="xs:hidden flex items-end text-base text-black font-semibold">...</span><span class="hidden xs:block">Experten</span></a>
+        <span class="w-[6px] block">
             {{> redesign/icons/bradcamb-right-arrow}}
         </span>
         <p class=" text-[#777C85] text-xs leading-none w-full whitespace-nowrap overflow-hidden text-ellipsis">{{title}}</p>
