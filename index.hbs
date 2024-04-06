@@ -12,7 +12,7 @@
                         <div class="mb-8 xs:mb-10 md:mb-16 flex items-center justify-between gap-10">
                             <h2 class="text-3xl xs:text-4xl sm:text-[40px] !leading-tight font-semibold">{{name}}</h2>
                             <a href="{{url}}" class="hidden xs:flex items-center gap-3 text-base leading-none text-black font-medium">
-                                Mehr sehen
+                                Mehr entdecken
                                 {{> redesign/icons/bradcamb-right-arrow}}
                             </a>
                         </div>
@@ -26,7 +26,7 @@
                         {{/if}}
                         {{/get}}
                         <div class="block xs:hidden text-center mt-10">
-                            <a href="{{url}}" class="rounded-lg py-4 px-6 bg-[#F5F6F7] text-base font-medium leading-none tracking-[-0.01px] text-black duration-300 hover:bg-primary inline-block">Mehr sehen</a>
+                            <a href="{{url}}" class="rounded-lg py-4 px-6 bg-[#F5F6F7] text-base font-medium leading-none tracking-[-0.01px] text-black duration-300 hover:bg-primary inline-block">Mehr entdecken</a>
                         </div>
                     </div>
                 </section>
@@ -41,7 +41,10 @@
     </div>
 </section>
 {{!-- Subscribe Area End --}}
-{{> video-hub}}
+
+{{!-- {{> video-hub}} --}}
+
+
 {{!-- Video Hub Area Start --}}
 {{!-- {{#get "posts" filter="tag:hash-video-hub" include="tags"}}
 {{#if posts}}
@@ -91,7 +94,7 @@
                     <div class="mb-10 sm:mb-16 flex items-center justify-between gap-10">
                         <h2 class="text-3xl xs:text-4xl sm:text-[40px] !leading-tight font-semibold">{{name}}</h2>
                         <a href="{{url}}" class="hidden xs:flex items-center gap-3 text-base leading-none text-black font-medium">
-                            Mehr sehen
+                            Mehr entdecken
                             {{> redesign/icons/bradcamb-right-arrow}}
                         </a>
                     </div>
@@ -134,7 +137,7 @@
                     <div class="mb-8 xs:mb-10 md:mb-16 flex items-center justify-between gap-10">
                         <h2 class="text-3xl xs:text-4xl sm:text-[40px] !leading-tight font-semibold">{{name}}</h2>
                         <a href="{{url}}" class="hidden xs:flex items-center gap-3 text-base leading-none text-black font-medium">
-                            Mehr sehen
+                            Mehr entdecken
                             {{> redesign/icons/bradcamb-right-arrow}}
                         </a>
                     </div>
@@ -175,7 +178,7 @@
                                         <h3 class="text-xl xs:text-2xl sm:text-[28px] leading-[28px] xs:leading-[30px] sm:leading-[38px] font-semibold">{{{@custom.analysis_title}}}</h3>
                                     {{/if}}
                                     {{#if @custom.analysis_link}}
-                                        <a class="!py-3 !px-5 text-base md:text-[15px] lg:text-base font-medium leading-[24px] tracking-[-0.01px] bg-black text-white rounded-lg !inline-flex mt-5 btn-primary" href="{{@custom.analysis_link}}">Learn more</a>
+                                        <a class="!py-3 !px-5 text-base md:text-[15px] lg:text-base font-medium leading-[24px] tracking-[-0.01px] bg-black text-white rounded-lg !inline-flex mt-5 btn-primary" href="{{@custom.analysis_link}}">Erfahre wie</a>
                                     {{/if}}
                                 </div>
                             </div>
