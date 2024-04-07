@@ -39,16 +39,32 @@
           let singleHubWrapperPush = ''
           header = sliderHubData.stories
           //Dextop header script start
-          for (let item of header) {
-            if(item.content.title && item.content.ogImage.filename){
-              singleHubWrapperPush += `
+          header.forEach((item, index) => {
+              
+            if(index < 7 && index > 0){
+                singleHubWrapperPush += `
                 <div class="swiper-slide">
                     <a href="https://cada.com/de-ch/${item.full_slug}" class="group line-hover-wrap">
                         <div class="relative rounded-2xl overflow-hidden">
                           <img class="lazyload" src="${item.content.ogImage.filename}" alt="">
-                            {{!-- tag --}}
+                            {{!-- tag  item.content.category --}}
                         <div class="absolute z-10 top-[14px] left-5 flex gap-2">
-                            <div class="text-xs leading-[18px] font-semibold py-1 px-3 bg-white rounded-[32px] text-pragrapgh "><span class="block translate-y-[1px]">${item.content.category}</span>
+                            <div class="text-xs leading-[18px] font-semibold py-1 px-3 bg-white rounded-[32px] text-pragrapgh ">
+                `     
+                         if(item.content.category == "General"){
+                            singleHubWrapperPush += ` <span class="block translate-y-[1px]">Allgemein</span>`
+                         }else if(item.content.category == "Analysis"){
+                            singleHubWrapperPush += ` <span class="block translate-y-[1px]">Analyse</span>`
+                         }else if(item.content.category == "Body"){
+                            singleHubWrapperPush += ` <span class="block translate-y-[1px]">Körper</span>`
+                         }else if(item.content.category == "Treatments"){
+                            singleHubWrapperPush += ` <span class="block translate-y-[1px]">Behandlungen</span>`
+                         }else if(item.content.category == "Mind"){
+                            singleHubWrapperPush += ` <span class="block translate-y-[1px]">Geist</span>`
+                         } else{
+                            singleHubWrapperPush += ` <span class="block translate-y-[1px]">${item.content.category}</span>`
+                         }      
+                        singleHubWrapperPush += `      
                             </div>
                         </div>
                             {{!-- Play Button --}}
@@ -70,7 +86,7 @@
                 </div>
               `
             }
-          }
+          })
             singleHubWrapper.innerHTML = singleHubWrapperPush
       });
 </script>
