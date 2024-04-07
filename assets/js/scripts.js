@@ -134,7 +134,7 @@ https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.6/fuse.min.js
                     var posts = $('.js-post-card', data),
                         postwrapper = $('.js-post-wrapper')
                     postwrapper.append(posts)
-                    a.text('Load more')
+                    a.text('Mehr entdecken')
                     pagination_next_page_number++
                     pagination_next_page_number >
                         pagination_available_pages_number &&

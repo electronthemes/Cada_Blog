@@ -14,6 +14,8 @@
         {{/if}}
     </div>
     <div class="w-full sm:w-[50%] xl:w-[500px] max-h-[300px] sm:max-h-max">
-        <img class="h-full w-full object-cover" src="{{asset '/img/redesign/fertility-thumb2.jpg'}}" alt="fertility">
+        {{#if @custom.fertility_image}}
+        <img class="h-full w-full object-cover" src="{{@custom.fertility_image}}" alt="fertility">
+        {{/if}}
     </div>
 </div>

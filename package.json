@@ -44,33 +44,44 @@
         "custom":{
             "tags_filter": {
                 "type": "text",
-                "group": "homepage"
+                "group": "homepage",
+                "default": "korper, geist, analyse"
             },
             "search_content_api":{
                 "type": "text"
             },
             "home_category_one":{
                 "type": "text",
-                "group": "homepage"
+                "group": "homepage",
+                "default": "geist"
             },
             "home_category_two":{
                 "type": "text",
-                "group": "homepage"
+                "group": "homepage",
+                "default": "korper"
             },
             "home_category_three":{
                 "type": "text",
-                "group": "homepage"
+                "group": "homepage",
+                "default": "analyse"
             },
             "fertility_title":{
                 "type": "text",
-                "group": "homepage"
+                "group": "homepage",
+                "default": "Natürliche Fruchtbarkeitsbooster"
             },
             "fertility_excerpt":{
                 "type": "text",
-                "group": "homepage"
+                "group": "homepage",
+                "default": "Eine Anpassung deines Lebensstils und deiner Ernährung kann deine Fruchtbarkeit nachhaltig steigern!"
             },
             "fertility_link":{
                 "type": "text",
+                "group": "homepage",
+                "default": "https://cada.com/de/blog/fruchtbarkeit-erhohen/"
+            },
+            "fertility_image":{
+                "type": "image",
                 "group": "homepage"
             },
             "analysis_image":{
@@ -79,11 +90,13 @@
             },
             "analysis_title":{
                 "type": "text",
-                "group": "homepage"
+                "group": "homepage",
+                "default": "Klarheit über eure Fruchtbarkeit"
             },
             "analysis_link":{
                 "type": "text",
-                "group": "homepage"
+                "group": "homepage",
+                "default": "https://cada.com/de-ch/fruchtbarkeitsanalyse/"
             }
         },
         "card_assets": {
