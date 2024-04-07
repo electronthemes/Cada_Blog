@@ -30,19 +30,20 @@
     
         <div class="py-3 sm:py-8 mt-6 sm:mt-8 border-t sm:border-y border-border_color flex items-center gap-2 md:gap-16 justify-between overflow-auto overflow-y-hidden scrollbar-style get-section-top">
             <ul class="flex gap-2 sm:gap-4">
-                {{#foreach tags}}
+                {{!-- {{#foreach tags}}
                 <li class=" text-xs leading-[20px] xs:text-sm xs:leading-[22px] tracking-[-0.01px] text-[#777C85] flex items-center gap-[6px] whitespace-nowrap px-4 sm:px-0 py-2 sm:py-0 rounded-lg sm:rounded-none bg-[#F8F8F8] sm:bg-transparent author-tag">
                     Autor:
                     <a class="text-[#DE893E] font-medium author-tag-text" href="/experts/#editors" data-slug="{{slug}}">{{name}}</a>
                 </li>
-                {{/foreach}}
+                {{/foreach}} --}}
+                 {{> redesign/post-editors}}
                 {{> redesign/post-reviewers}}
-                {{#foreach tags}}
+                {{!-- {{#foreach tags}}
                 <li class=" text-xs leading-[20px] xs:text-sm xs:leading-[22px] tracking-[-0.01px] text-[#777C85] flex items-center gap-[6px] whitespace-nowrap px-4 sm:px-0 py-2 sm:py-0 rounded-lg sm:rounded-none bg-[#F8F8F8] sm:bg-transparent checkers-tag after:absolute after:top-0 after:-left-2 after:h-full after:w-[1px] after:bg-border_color  after:opacity-0 sm:after:opacity-100 relative">
                     Faktenchecker:
                     <span class="text-[#DE893E] font-medium checkers-tag-text" href="{{url}}"  data-slug="{{slug}}">{{name}}</span>
                 </li>
-                {{/foreach}}
+                {{/foreach}} --}}
             </ul>
             <ul class="flex gap-2 md:gap-3 mr-5 sm:mr-0">
                 <li class=" text-xs leading-[20px] xs:text-sm xs:leading-[22px] tracking-[-0.01px] text-[#777C85] flex items-center gap-[6px] whitespace-nowrap px-4 sm:px-0 py-2 sm:py-0 rounded-lg sm:rounded-none bg-[#F8F8F8] sm:bg-transparent">
@@ -64,6 +65,7 @@
 <script>
     const reviewerTag = document.querySelectorAll('.reviewer-tag');
     const reviewerTagText = document.querySelector('.reviewer-tag-text');
+    const activationClass = document.querySelector('.popup-activation-class')
     reviewerTag.forEach((tag , index) => {
         const singleTags = tag.children[0]
         if(singleTags.getAttribute('data-slug').includes('reviewer-')) {
@@ -79,7 +81,6 @@
                 }
             }else{
                 reviewerBioText.innerHTML = reviewerBioTextCatch.innerHTML;
-                
             }
 
             ///popup queary here
@@ -89,20 +90,23 @@
             const div = `${reviewerPopup}`;
             getSectionTop.insertAdjacentHTML('afterend', reviewerPopup.innerHTML);
 
-            tag.addEventListener('mouseenter', (e) => {
+            document.querySelector('.reviewer-tag').addEventListener('mouseenter', (e) => {
                 e.stopPropagation();
-                document.querySelector('.popup-activation-class').classList.add('popup-show');
+                
+                activationClass.classList.remove('editor-popup-show');
+                activationClass.classList.add('reviewer-popup-show');
             })
 
-            tag.addEventListener('touchstart', (e) => {
+            document.querySelector('.reviewer-tag').addEventListener('touchstart', (e) => {
                 e.stopPropagation();
-                document.querySelector('.popup-activation-class').classList.add('popup-show');
+                activationClass.classList.remove('editor-popup-show');
+                activationClass.classList.add('reviewer-popup-show');
             })
 
             document.querySelector('body').addEventListener('click', (e) => {
                 const popupActivation = document.querySelector('.popup-activation-class')
                 if(!popupActivation.contains(e.target)){
-                        popupActivation.classList.remove('popup-show');
+                        popupActivation.classList.remove('reviewer-popup-show');
                 }
                 
             })
@@ -111,8 +115,78 @@
             tag.remove();
         }
     })
-</script>
 
+    
+    
+</script>
+<script>
+    const authorTag = document.querySelectorAll('.author-tag');
+    authorTag.forEach(tag => {
+        const singleTags = tag.children[0]
+        if(singleTags.getAttribute('data-slug').includes('editors-')) {
+           singleTags.textContent = singleTags.textContent.replace('editors', '').trim();
+           singleTags.textContent = singleTags.textContent.replace('Editors', '').trim();
+
+           //reviewer bio text content call here
+            const editorsBioText = tag.querySelector('.editors-bio-text');
+            const editorsBioTextCatch =  tag.querySelector('.experts-bio');
+            if(editorsBioTextCatch == null) {
+                if(editorsBioText){
+                    editorsBioText.remove();
+                }
+            }else{
+                editorsBioText.innerHTML = editorsBioTextCatch.innerHTML;
+                
+            }
+
+            ///popup queary here
+            document.querySelector('.editors_popup').classList.add('popup-closed');
+            const getSectionTop = document.querySelector('.get-section-top');
+            const editorsPopup = document.querySelector('.editors_popup_area');
+            const div = `${editorsPopup}`;
+            getSectionTop.insertAdjacentHTML('afterend', editorsPopup.innerHTML);
+
+            document.querySelector('.author-tag').addEventListener('mouseenter', (e) => {
+                e.stopPropagation();
+                activationClass.classList.remove('reviewer-popup-show');
+                activationClass.classList.add('editor-popup-show');
+            })
+
+            document.querySelector('.author-tag').addEventListener('touchstart', (e) => {
+                e.stopPropagation();
+                activationClass.classList.remove('reviewer-popup-show');
+                activationClass.classList.add('editor-popup-show');
+            })
+
+            document.querySelector('body').addEventListener('click', (e) => {
+                const popupActivation = document.querySelector('.popup-activation-class')
+                if(!popupActivation.contains(e.target)){
+                        popupActivation.classList.remove('editor-popup-show');
+                }
+                
+            })
+        }else{
+            tag.remove();
+        }
+        // Function to check if the user has scrolled to a certain point
+        function checkScroll() {
+            var scrollY = window.scrollY || window.pageYOffset;
+            
+            // Adjust the threshold as needed
+            var triggerPoint = 10;
+            
+            // Load the Twitter script when the user scrolls past the trigger point
+            if (scrollY) {
+                // Remove the scroll event listener to avoid multiple script loads
+                activationClass.classList.remove('reviewer-popup-show');
+                activationClass.classList.remove('editor-popup-show');
+            }
+        }
+        // Attach the scroll event listener
+        window.addEventListener('scroll', checkScroll);
+    })
+</script>
+{{!-- 
 <script>
     const checkerTag = document.querySelectorAll('.checkers-tag');
     const checkerTagText = document.querySelector('.checkers-tag-text');
@@ -135,5 +209,5 @@
             tag.remove();
         }
     })
-</script>
+</script> --}}
 

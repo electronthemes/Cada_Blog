@@ -1,0 +1,30 @@
+{{#foreach tags}}
+    <li class="text-xs leading-[20px] xs:text-sm xs:leading-[22px] tracking-[-0.01px] text-[#777C85] flex items-center gap-[6px] whitespace-nowrap px-4 sm:px-0 py-2 sm:py-0 rounded-lg sm:rounded-none bg-[#F8F8F8] sm:bg-transparent author-tag cursor-pointer">
+        Autor:
+        <p class="text-[#DE893E] font-medium author-tag-text" data-slug="{{slug}}">{{name}}</p>
+        {{!-- Popup --}}
+        {{#get "pages" limit="1" filter="tag:{{slug}}"}}
+        {{#foreach pages}}
+        <div class="editors_popup_area">
+            <div class="editors_popup w-[446px] bg-white rounded-xl grid xs:flex items-start gap-[27px] shadow-md z-10 p-6  duration-300 transform group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible invisible opacity-0">
+                {{#if feature_image}}
+                <a href="{{url}}" class="w-[114px] h-[114px] block rounded-xl overflow-hidden">
+                    <img class="w-full h-full object-cover" src="{{feature_image}}" alt="adf">
+                </a>
+                {{/if}}
+                <div class="flex-1">
+                    <p class="text-sm leading-[22px] tracking-[-0.01px] whitespace-normal editors-bio-text line-clamp-3"></p>
+                    <a href="{{url}}" class="mt-5 text-sm leading-[22px] font-semibold tracking-[-0.01px] flex items-center gap-[15px] text-[#3D4044]">
+                        Full bio
+                        {{> redesign/icons/bradcamb-right-arrow}}
+                    </a>
+                    <div class="hidden">
+                        {{content}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/foreach}}
+        {{/get}}
+    </li>
+{{/foreach}}
