@@ -18,7 +18,9 @@
                 <div>
                     <div class="sm:mb-[64px] mb-10">
                         <h3 class="lg:text-[40px] sm:text-[36px] text-[30px] !leading-[1.2] text-[#000] font-semibold mb-4">Experten</h3>
-                        <p class="sm:text-[18px] text-base">Etiam blandit dapibus libero, a tincidunt est rutrum vel. Duis nec pretium dolor. Vestibulum posuere mauris malesuada risus volutpat feugiat. Aliquam sodales a nisi et pellentesque. Phasellus in urna ornare quam dictum tempus.</p>
+                        {{#if @custom.experts_description_text}}
+                            <p class="sm:text-[18px] text-base">{{@custom.experts_description_text}}</p>
+                        {{/if}}
                     </div>
                     <div class="grid gap-[52px] xs:gap-16 md:gap-[100px] xl:gap-[120px]">
                         {{#foreach pages}}
@@ -33,7 +35,9 @@
             <div id="editors" class="lg:pt-[120px] sm:pt-[96px] pt-[64px]">
                 <div class="sm:mb-[64px] mb-10">
                     <h3 class="lg:text-[40px] sm:text-[36px] text-[30px] leading-[1.2] text-[#000] font-semibold mb-4">Herausgeber</h3>
-                    <p class="sm:text-[18px] text-base">Etiam blandit dapibus libero, a tincidunt est rutrum vel. Duis nec pretium dolor. Vestibulum posuere mauris malesuada risus volutpat feugiat. Aliquam sodales a nisi et pellentesque. Phasellus in urna ornare quam dictum tempus.</p>
+                    {{#if @custom.editors_description_text}}
+                        <p class="sm:text-[18px] text-base">{{@custom.editors_description_text}}</p>
+                    {{/if}}
                 </div>
                 <div class="grid gap-[52px] xs:gap-16 md:gap-[100px] xl:gap-[120px]">
                    {{#foreach pages}}
