@@ -116,7 +116,14 @@
         }
     })
 
-    
+    const authorTags = document.querySelector('.author-tag');
+    if(!authorTags) {
+        console.log("not author")
+        activationClass.classList.add("only-reviewer-popup");
+    }else{
+        activationClass.classList.remove("only-reviewer-popup");
+        console.log("show author")
+    }
     
 </script>
 <script>
