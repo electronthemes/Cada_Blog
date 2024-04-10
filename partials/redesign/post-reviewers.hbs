@@ -1,6 +1,6 @@
 {{#foreach tags}}
     <li class=" text-xs leading-[20px] xs:text-sm xs:leading-[22px] tracking-[-0.01px] text-[#777C85] flex items-center gap-[6px] px-4 sm:px-0 py-2 sm:py-0 rounded-lg sm:rounded-none bg-[#F8F8F8] sm:bg-transparent relative group whitespace-nowrap reviewer-tag  after:absolute after:top-0 after:-left-2 after:h-full after:w-[1px] after:bg-border_color  after:opacity-0 sm:after:opacity-100">
-        Rezensent:
+        Geprüft von:
         <p class="text-[#DE893E] font-medium reviewer-tag-text " data-slug="{{slug}}" >{{name}}</p>
         {{!-- Popup --}}
         {{#get "pages" limit="1" filter="tag:{{slug}}"}}
