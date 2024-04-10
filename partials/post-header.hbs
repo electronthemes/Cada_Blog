@@ -30,13 +30,7 @@
     
         <div class="py-3 sm:py-8 mt-6 sm:mt-8 border-t sm:border-y border-border_color flex items-center gap-2 md:gap-16 justify-between overflow-auto overflow-y-hidden scrollbar-style get-section-top">
             <ul class="flex gap-2 sm:gap-4">
-                {{!-- {{#foreach tags}}
-                <li class=" text-xs leading-[20px] xs:text-sm xs:leading-[22px] tracking-[-0.01px] text-[#777C85] flex items-center gap-[6px] whitespace-nowrap px-4 sm:px-0 py-2 sm:py-0 rounded-lg sm:rounded-none bg-[#F8F8F8] sm:bg-transparent author-tag">
-                    Autor:
-                    <a class="text-[#DE893E] font-medium author-tag-text" href="/experts/#editors" data-slug="{{slug}}">{{name}}</a>
-                </li>
-                {{/foreach}} --}}
-                 {{> redesign/post-editors}}
+                {{> redesign/post-editors}}
                 {{> redesign/post-reviewers}}
             </ul>
             <ul class="flex gap-2 md:gap-3 mr-5 sm:mr-0">
@@ -60,7 +54,22 @@
     const reviewerTag = document.querySelectorAll('.reviewer-tag');
     const reviewerTagText = document.querySelector('.reviewer-tag-text');
     const activationClass = document.querySelector('.popup-activation-class')
+
+    
+    
+
+    {{!-- const headerContainerWidth = document.querySelector('.post_header-scroll_section');
+    const reviewerPopup = headerContainerWidth.querySelector('.reviewer_popup');
+    const reviewerOffset = reviewerTagText.getBoundingClientRect().left + reviewerTagText.offsetWidth / 2;
+    const outsideContainerWidth = (window.innerWidth - headerContainerWidth.offsetWidth) / 2;
+    const reviewerPopupPosition = reviewerOffset - outsideContainerWidth - 223;
+    reviewerPopup.style.left = `${reviewerPopupPosition}px`;
+    console.log(reviewerPopupPosition, reviewerOffset, outsideContainerWidth, reviewerPopup) --}}
+
+
+    // reviewer tag text content call here
     reviewerTag.forEach((tag , index) => {
+
         const singleTags = tag.children[0]
         if(singleTags.getAttribute('data-slug').includes('reviewer-')) {
            singleTags.textContent = singleTags.textContent.replace('reviewer', '').trim();
@@ -102,9 +111,7 @@
                 if(!popupActivation.contains(e.target)){
                         popupActivation.classList.remove('reviewer-popup-show');
                 }
-                
             })
-           
         }else{
             tag.remove();
         }
@@ -112,11 +119,9 @@
 
     const authorTags = document.querySelector('.author-tag');
     if(!authorTags) {
-        console.log("not author")
         activationClass.classList.add("only-reviewer-popup");
     }else{
         activationClass.classList.remove("only-reviewer-popup");
-        console.log("show author")
     }
     
 </script>
@@ -137,7 +142,6 @@
                 }
             }else{
                 editorsBioText.innerHTML = editorsBioTextCatch.innerHTML;
-                
             }
 
             ///popup queary here
@@ -164,7 +168,6 @@
                 if(!popupActivation.contains(e.target)){
                         popupActivation.classList.remove('editor-popup-show');
                 }
-                
             })
         }else{
             tag.remove();
@@ -172,10 +175,8 @@
         // Function to check if the user has scrolled to a certain point
         function checkScroll() {
             var scrollY = window.scrollY || window.pageYOffset;
-            
             // Adjust the threshold as needed
             var triggerPoint = 10;
-            
             // Load the Twitter script when the user scrolls past the trigger point
             if (scrollY) {
                 // Remove the scroll event listener to avoid multiple script loads
@@ -186,29 +187,11 @@
         // Attach the scroll event listener
         window.addEventListener('scroll', checkScroll);
     })
-</script>
-{{!-- 
-<script>
-    const checkerTag = document.querySelectorAll('.checkers-tag');
-    const checkerTagText = document.querySelector('.checkers-tag-text');
-    checkerTag.forEach(tag => {
-        const singleTags = tag.children[0]
-        if(singleTags.getAttribute('data-slug').includes('checker-')) {
-           singleTags.textContent = singleTags.textContent.replace('checker', '').trim();
-           singleTags.textContent = singleTags.textContent.replace('Checker', '').trim();
-        }else{
-            tag.remove();
-        }
-    })
-    const authorTag = document.querySelectorAll('.author-tag');
-    authorTag.forEach(tag => {
-        const singleTags = tag.children[0]
-        if(singleTags.getAttribute('data-slug').includes('editors-')) {
-           singleTags.textContent = singleTags.textContent.replace('editors', '').trim();
-           singleTags.textContent = singleTags.textContent.replace('Editors', '').trim();
-        }else{
-            tag.remove();
-        }
-    })
-</script> --}}
 
+    const popupWrapper = document.querySelector('.popup-activation-class');
+    if(popupWrapper.childElementCount === 2) {
+        popupWrapper.classList.add('only-reviewer-popup-show');
+    }
+    
+
+</script>

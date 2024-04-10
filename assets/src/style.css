@@ -2093,11 +2093,7 @@ ul.language-selector li:hover:after{
         top: 100% !important;
     }
 }
-@media screen and (max-width: 450px) {
-    .reviewer_popup::before{
-        left: 80% !important;
-    }
-}
+
 .post_header-scroll_section::before {
     background: linear-gradient(270deg, #FFFFFF 40.28%, rgba(255, 255, 255, 0) 100%);
 }
@@ -2215,8 +2211,13 @@ header.header-area {
   .reviewer_popup,.editors_popup{
     position: absolute;
     top: calc(100% - 15px);
-    left: 60px;
+    left: 115px;
   }
+
+.only-reviewer-popup-show .reviewer_popup {
+    left: -60px;
+}
+
 
 .popup-activation-class .reviewer_popup,.popup-activation-class .editors_popup {
     transform: translateY(30px) !important;
@@ -2246,6 +2247,18 @@ header.header-area {
         top: calc(100% - 10px);
         left: 0px;
         width: 100%;
+    }
+    .reviewer_popup::before {
+        left: 65%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .reviewer_popup::before{
+        left: 80%;
+    }
+    .only-reviewer-popup-show .reviewer_popup::before {
+        left: 46%;
     }
 }
 
