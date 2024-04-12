@@ -13,12 +13,11 @@
         {{!-- tag --}}
         
             <div class="absolute z-10 top-[14px] left-0 flex gap-2 justify-between xs:justify-start w-full xs:w-auto px-[15px]">
-                {{#has tag="new"}}
+                {{#has tag="Neu"}}
                     {{#foreach tags limit="1"}}
                         <a href="{{url}}" class="text-xs leading-[18px] font-medium py-1 px-3 rounded-[32px] text-title duration-300 bg-primary">Neu</a>
                     {{/foreach}}
                 {{/has}}
-                {{!-- <a href="#"class="text-xs leading-[18px] font-medium py-1 px-3 rounded-[32px] text-title duration-300 bg-primary inline-block">New</a> --}}
                 {{#if tags}}
                 {{#foreach tags limit="1"}}
                     <a href="{{url}}" class="text-xs leading-[18px] font-medium py-1 px-3 bg-white rounded-[32px] text-pragrapgh inline-block"><span class="sm:translate-y-[1px] block">{{name}}</span></a>
