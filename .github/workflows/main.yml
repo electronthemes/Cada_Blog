@@ -2,8 +2,7 @@ name: Cada Blog Theme
 on:
   push:
     branches:
-      - master
-      - main
+      - redesign-website
 jobs:
   deploy:
     runs-on: ubuntu-22.04

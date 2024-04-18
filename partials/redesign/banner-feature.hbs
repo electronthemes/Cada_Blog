@@ -11,7 +11,7 @@
         <div class="">
             {{#foreach posts from="2" filter="featured:true"}}
              {{#has number="2"}}
-             <h2 class="text-[40px] !leading-tight font-semibold mb-10  {{not-authors}}">Ausgewählte Artikel</h2>
+             <h2 class="text-[40px] !leading-tight font-semibold mb-10  {{not-authors}}">Empfohlene Artikel</h2>
             {{/has}}
             {{> redesign/cards/feature-card-without-image}}
             {{/foreach}}
@@ -20,7 +20,7 @@
 </div>
 {{!-- Blog Slider --}}
 <div class="block sm:hidden">
-    <h2 class="text-3xl xs:text-[36px] !leading-tight font-semibold mb-10 xs:mb-8 sm:mb-10 {{not-authors}}">Ausgewählte Artikel</h2>
+    <h2 class="text-3xl xs:text-[36px] !leading-tight font-semibold mb-10 xs:mb-8 sm:mb-10 {{not-authors}}">Empfohlene Artikel</h2>
     <div class="swiper hero_slider max-w-[300px] xs:max-w-[560px]">
         <div class="swiper-wrapper">
              {{#foreach posts}}
